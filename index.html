@@ -44,11 +44,9 @@
       "priceRange": "€€"
     }
     </script>
-    <!-- Importation des polices Google Fonts : Plus Jakarta Sans pour les titres, Inter pour le corps de texte -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
-    <!-- Chargement de Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -85,13 +83,11 @@
         }
     </script>
     <style>
-        /* Styles utilitaires personnalisés pour les transitions fluides et barres de défilement */
         body {
             background-color: #FAF9F6;
             color: #1A1816;
             -webkit-font-smoothing: antialiased;
         }
-        /* Personnalisation du curseur range pour le simulateur */
         input[type=range] {
             -webkit-appearance: none;
             background: transparent;
@@ -114,7 +110,6 @@
             background: #E5E1D8;
             border-radius: 999px;
         }
-        /* Masquer la scrollbar horizontale sur les filtres mobiles */
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
@@ -146,7 +141,6 @@
     <!-- ==================== 2. HEADER FIXE ÉPURÉ ==================== -->
     <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-stone-200 transition-all">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
-            <!-- Logo Réaliste 3D Isométrique : Dalles de carrelage & peigne à colle cranté -->
             <a href="/" class="flex items-center gap-3.5 group focus:outline-none">
                 <div class="w-12 h-12 rounded-xl bg-[#1B4332] border border-[#2D6A4F]/40 flex items-center justify-center shadow-md shrink-0 overflow-hidden p-1 group-hover:scale-[1.03] transition-transform" title="Carreaux Das (RENOV'IT SARL) - Carrelage & Pose Professionnelle">
                     <svg viewBox="0 0 64 64" width="40" height="40" class="w-full h-full block" xmlns="http://www.w3.org/2000/svg">
@@ -169,33 +163,20 @@
                                 <stop offset="100%" stop-color="#475569"/>
                             </linearGradient>
                         </defs>
-                        <!-- Lit de mortier-colle (joints sombres entre les dalles) -->
                         <polygon points="32,12 56,24 32,36 8,24" fill="#0F291E"/>
                         <polygon points="8,24 32,36 32,41 8,29" fill="#081C15"/>
                         <polygon points="56,24 32,36 32,41 56,29" fill="#133326"/>
-
-                        <!-- Dalle 1 (Haut - Marbre clair) -->
                         <polygon points="32,13.5 43,19 32,24.5 21,19" fill="url(#hdrTileTopLight)"/>
                         <path d="M26,18 Q31,19.5 36,17" stroke="#94A3B8" stroke-width="0.7" fill="none" opacity="0.7"/>
-
-                        <!-- Dalle 2 (Gauche - Vert sauge minéral) -->
                         <polygon points="19.5,19.8 30.5,25.3 19.5,30.8 8.5,25.3" fill="url(#hdrTileTopSage)"/>
                         <polygon points="8.5,25.3 19.5,30.8 19.5,33.2 8.5,27.7" fill="#40916C"/>
-
-                        <!-- Dalle 3 (Droite - Pierre claire) -->
                         <polygon points="44.5,19.8 55.5,25.3 44.5,30.8 33.5,25.3" fill="url(#hdrTileTopLight)"/>
                         <polygon points="55.5,25.3 44.5,30.8 44.5,33.2 55.5,27.7" fill="#64748B"/>
-
-                        <!-- Dalle 4 (Bas - Accent Terracotta avec relief) -->
                         <polygon points="32,26 43,31.5 32,37 21,31.5" fill="url(#hdrTileTopTerracotta)"/>
                         <polygon points="21,31.5 32,37 32,39.5 21,34" fill="#92400E"/>
                         <polygon points="43,31.5 32,37 32,39.5 43,34" fill="#78350F"/>
-
-                        <!-- Peigne à colle cranté de carreleur en bas -->
                         <g transform="translate(0, 2)">
-                            <!-- Lame crantée en acier inoxydable -->
                             <polygon points="14,44 38,37 42,46 39,47 38,44.5 36,45 37,47.5 34,48.5 33,46 31,46.5 32,49 29,50 28,47.5 26,48 27,50.5 24,51.5 23,49 21,49.5 22,52 18,53" fill="url(#hdrTrowelSteel)" stroke="#334155" stroke-width="0.5"/>
-                            <!-- Manche ergonomique bois/terracotta -->
                             <rect x="23" y="36" width="13" height="4.2" rx="2" transform="rotate(-16 29 38)" fill="#D97706" stroke="#78350F" stroke-width="0.6"/>
                         </g>
                     </svg>
@@ -215,7 +196,6 @@
                 </div>
             </a>
 
-            <!-- Navigation Principale Desktop -->
             <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-stone-700">
                 <div class="relative group">
                     <a href="/#catalogue" class="hover:text-forest-700 transition-colors py-2 inline-flex items-center gap-1">Catalogue
@@ -227,6 +207,7 @@
                             <a href="/effet-marbre" class="block px-3 py-2 rounded-lg hover:bg-stone-100">Carrelage Effet Marbre</a>
                             <a href="/effet-bois" class="block px-3 py-2 rounded-lg hover:bg-stone-100">Parquet Céramique Effet Bois</a>
                             <a href="/effet-beton" class="block px-3 py-2 rounded-lg hover:bg-stone-100">Carrelage Effet Béton</a>
+                            <a href="/carrelage-exterieur" class="block px-3 py-2 rounded-lg hover:bg-stone-100">Carrelage Extérieur</a>
                             <a href="/exterieur-r11" class="block px-3 py-2 rounded-lg hover:bg-stone-100">Dalles Extérieur R11</a>
                             <a href="/#catalogue" class="block px-3 py-2 rounded-lg hover:bg-stone-100 font-semibold text-forest-800 border-t border-stone-100 mt-1">Tous les modèles</a>
                         </div>
@@ -240,7 +221,6 @@
                 </a>
             </nav>
 
-            <!-- Actions Droite : Devis rapide & Panier -->
             <div class="flex items-center gap-3">
                 <a href="#simulateur" class="hidden sm:inline-flex items-center gap-2 text-xs font-semibold text-stone-700 hover:text-stone-900 bg-stone-100 hover:bg-stone-200/80 px-3.5 py-2.5 rounded-xl transition-colors">
                     <svg class="w-4 h-4 text-forest-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -258,13 +238,13 @@
                 </button>
             </div>
         </div>
-        <!-- Navigation Mobile secondaire -->
         <div class="lg:hidden border-t border-stone-100 bg-stone-50/90 px-4 py-2 flex items-center justify-between text-xs font-medium text-stone-600 overflow-x-auto no-scrollbar gap-5">
             <a href="/#catalogue" class="whitespace-nowrap hover:text-forest-700">Catalogue</a>
             <a href="/effet-pierre" class="whitespace-nowrap hover:text-forest-700">Effet Pierre</a>
             <a href="/effet-marbre" class="whitespace-nowrap hover:text-forest-700">Effet Marbre</a>
             <a href="/effet-bois" class="whitespace-nowrap hover:text-forest-700">Effet Bois</a>
             <a href="/effet-beton" class="whitespace-nowrap hover:text-forest-700">Effet Béton</a>
+            <a href="/carrelage-exterieur" class="whitespace-nowrap hover:text-forest-700">Carrelage Extérieur</a>
             <a href="/exterieur-r11" class="whitespace-nowrap hover:text-forest-700">Extérieur R11</a>
             <a href="#fournitures" class="whitespace-nowrap hover:text-forest-700">Fournitures</a>
             <a href="#echantillons" class="whitespace-nowrap hover:text-forest-700">Échantillons</a>
@@ -277,7 +257,6 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
                 
-                <!-- Colonne Gauche : Éditorial & Actions -->
                 <div class="lg:col-span-6 space-y-7">
                     <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-stone-200 shadow-xs text-xs font-semibold text-stone-700 tracking-wide">
                         <span class="w-2 h-2 rounded-full bg-forest-700"></span>
@@ -296,7 +275,6 @@
                         Sans frais de showroom coûteux, accédez directement aux collections grès cérame 1er choix rectifié livrées <strong class="font-semibold text-stone-800">partout en France</strong>. Bénéficiez de la <strong class="font-semibold text-stone-800">TVA réduite à 10%</strong> et de notre <strong class="font-semibold text-stone-800">garantie décennale</strong> en confiant la pose à nos équipes dans le <strong class="font-semibold text-stone-800">Loiret (45)</strong>, en <strong class="font-semibold text-stone-800">Île-de-France</strong> et en <strong class="font-semibold text-stone-800">région parisienne</strong>.
                     </p>
 
-                    <!-- Boutons d'action principaux -->
                     <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-1">
                         <a href="#catalogue" class="inline-flex items-center justify-center gap-2.5 bg-forest-800 hover:bg-forest-700 text-white font-semibold text-sm px-6 py-4 rounded-xl shadow-sm transition-all">
                             <span>Explorer le catalogue</span>
@@ -312,7 +290,6 @@
                         </a>
                     </div>
 
-                    <!-- Indicateurs de confiance discrets -->
                     <div class="pt-4 border-t border-stone-200/80 grid grid-cols-3 gap-4 text-xs">
                         <div>
                             <span class="block font-display font-bold text-lg text-stone-900">-30% à -45%</span>
@@ -329,7 +306,6 @@
                     </div>
                 </div>
 
-                <!-- Colonne Droite : Visuel Architectural Haute Résolution -->
                 <div class="lg:col-span-6 relative">
                     <div class="relative rounded-2xl overflow-hidden shadow-xl border border-stone-200/60 aspect-[4/3] bg-stone-200">
                         <img 
@@ -338,10 +314,7 @@
                             class="w-full h-full object-cover object-center"
                             onerror="this.src='https://placehold.co/1200x900/E5E1D8/292622?text=Carreaux+Das+SARL+-+Collection+Architecte'"
                         >
-                        <!-- Dégradé subtil en bas pour lisibilité du badge -->
                         <div class="absolute inset-0 bg-gradient-to-t from-stone-900/50 via-transparent to-transparent"></div>
-                        
-                        <!-- Badge discret sur l'image -->
                         <div class="absolute bottom-4 left-4 right-4 sm:right-auto bg-white/95 backdrop-blur-md px-4 py-3 rounded-xl shadow-lg border border-stone-200/80 flex items-center gap-3">
                             <div class="w-8 h-8 rounded-lg bg-forest-50 text-forest-800 flex items-center justify-center shrink-0">
                                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -358,7 +331,6 @@
 
             </div>
 
-            <!-- Barre de Réassurance Épurée avec Icônes Vectorielles Fines -->
             <div class="mt-14 bg-white rounded-2xl border border-stone-200/90 p-6 shadow-xs grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="flex items-start gap-3.5">
                     <div class="w-10 h-10 rounded-xl bg-stone-100 text-forest-800 flex items-center justify-center shrink-0">
@@ -411,8 +383,7 @@
         </div>
     </section>
 
-    <!-- ==================== 4. CATALOGUE GRÈS CÉRAME 1ER CHOIX ==================== -->
-    <!-- ==================== PAGE DÉDIÉE CATÉGORIE (affichée sur /effet-pierre, /effet-marbre, ...) ==================== -->
+    <!-- ==================== PAGE DÉDIÉE CATÉGORIE ==================== -->
     <section id="category-hero" class="hidden relative overflow-hidden bg-stone-900 text-white">
         <img id="category-hero-img" src="" alt="" class="absolute inset-0 w-full h-full object-cover opacity-35">
         <div class="absolute inset-0 bg-gradient-to-r from-stone-950/90 via-stone-900/70 to-stone-900/30"></div>
@@ -437,10 +408,10 @@
         </div>
     </section>
 
+    <!-- ==================== 4. CATALOGUE GRÈS CÉRAME 1ER CHOIX ==================== -->
     <section id="catalogue" class="py-16 lg:py-24 bg-white border-t border-stone-200/80">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            <!-- En-tête de section & Recherche -->
             <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
                 <div>
                     <span id="catalogue-kicker" class="text-xs font-bold uppercase tracking-widest text-forest-700 block mb-2">Collection Permanente</span>
@@ -449,7 +420,6 @@
                     <p class="inline-flex items-center gap-1.5 mt-3 text-xs font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 px-3 py-1.5 rounded-lg">🚚 Livraison gratuite partout en France dès 900 € d'achat</p>
                 </div>
 
-                <!-- Barre de recherche rapide -->
                 <div class="relative w-full md:w-72">
                     <input 
                         type="text" 
@@ -464,7 +434,6 @@
                 </div>
             </div>
 
-            <!-- Filtres par style -->
             <div id="category-filters" class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-4 mb-8">
                 <a href="/#catalogue" data-cat="Tous" class="cat-btn active px-4 py-2 rounded-xl text-xs font-semibold transition-all bg-stone-900 text-white shadow-xs whitespace-nowrap">
                     Tous les modèles
@@ -481,196 +450,16 @@
                 <a href="/effet-beton" data-cat="Effet Béton" class="cat-btn px-4 py-2 rounded-xl text-xs font-semibold transition-all bg-stone-100 text-stone-700 hover:bg-stone-200 whitespace-nowrap">
                     Effet Béton
                 </a>
+                <a href="/carrelage-exterieur" data-cat="Carrelage Extérieur" class="cat-btn px-4 py-2 rounded-xl text-xs font-semibold transition-all bg-stone-100 text-stone-700 hover:bg-stone-200 whitespace-nowrap">
+                    Carrelage Extérieur
+                </a>
                 <a href="/exterieur-r11" data-cat="Extérieur R11" class="cat-btn px-4 py-2 rounded-xl text-xs font-semibold transition-all bg-stone-100 text-stone-700 hover:bg-stone-200 whitespace-nowrap">
                     Extérieur R11
                 </a>
             </div>
 
-            <!-- Grille Produits Épurée -->
-            <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <article class="group bg-white rounded-2xl border border-stone-200/90 overflow-hidden shadow-xs hover:shadow-lg hover:border-stone-300 transition-all flex flex-col justify-between">
-                    <div>
-                        <div onclick="openProductModal('magda-perla')" class="relative aspect-[4/3] bg-stone-100 overflow-hidden cursor-pointer">
-                            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=85" alt="Magda Perla - Carrelage Effet Pierre 60x120 cm" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute top-3 left-3 flex items-center gap-1.5">
-                                <span class="bg-white/95 backdrop-blur-xs text-stone-900 text-[11px] font-bold px-2.5 py-1 rounded-lg shadow-xs">60x120 cm</span>
-                                <span class="bg-forest-800 text-white text-[11px] font-bold px-2 py-1 rounded-lg shadow-xs">-33%</span>
-                            </div>
-                        </div>
-                        <div class="p-6 pb-4">
-                            <span class="text-[11px] font-semibold uppercase tracking-wider text-stone-400">Effet Pierre</span>
-                            <h3 onclick="openProductModal('magda-perla')" class="font-display font-bold text-lg text-stone-900 mt-0.5 cursor-pointer group-hover:text-forest-800 transition-colors">Magda Perla</h3>
-                            <div class="mt-4 pt-4 border-t border-stone-100 flex items-baseline justify-between">
-                                <div>
-                                    <span class="text-xs text-stone-400 line-through mr-1.5">44,90 €</span>
-                                    <span class="font-display font-bold text-2xl text-stone-900">29,90 €</span>
-                                    <span class="text-xs text-stone-500">TTC/m²</span>
-                                </div>
-                            </div>
-                            <p class="text-xs text-forest-800 font-medium mt-1.5 flex items-center gap-1.5">
-                                <span class="w-1.5 h-1.5 rounded-full bg-forest-600"></span>
-                                <span>Avec notre pose (TVA 10%) : <strong>27,50 €/m²</strong></span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="px-6 pb-6 pt-2 flex flex-col sm:flex-row gap-2.5">
-                        <button onclick="openProductModal('magda-perla')" class="flex-1 bg-stone-900 hover:bg-forest-800 text-white text-xs font-semibold py-3 px-4 rounded-xl transition-colors text-center">Calculer &amp; Commander</button>
-                        <button onclick="addSampleDirectly('magda-perla')" class="px-3.5 py-3 rounded-xl border border-stone-200 hover:border-stone-300 hover:bg-stone-50 text-stone-700 text-xs font-semibold transition-colors text-center">Échantillon (5 €)</button>
-                    </div>
-                </article>
-                <article class="group bg-white rounded-2xl border border-stone-200/90 overflow-hidden shadow-xs hover:shadow-lg hover:border-stone-300 transition-all flex flex-col justify-between">
-                    <div>
-                        <div onclick="openProductModal('travertin-romain')" class="relative aspect-[4/3] bg-stone-100 overflow-hidden cursor-pointer">
-                            <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1600&q=85" alt="Travertin Romain Naturel - Carrelage Effet Pierre 60x90 cm" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute top-3 left-3 flex items-center gap-1.5">
-                                <span class="bg-white/95 backdrop-blur-xs text-stone-900 text-[11px] font-bold px-2.5 py-1 rounded-lg shadow-xs">60x90 cm</span>
-                                <span class="bg-forest-800 text-white text-[11px] font-bold px-2 py-1 rounded-lg shadow-xs">-35%</span>
-                            </div>
-                        </div>
-                        <div class="p-6 pb-4">
-                            <span class="text-[11px] font-semibold uppercase tracking-wider text-stone-400">Effet Pierre</span>
-                            <h3 onclick="openProductModal('travertin-romain')" class="font-display font-bold text-lg text-stone-900 mt-0.5 cursor-pointer group-hover:text-forest-800 transition-colors">Travertin Romain Naturel</h3>
-                            <div class="mt-4 pt-4 border-t border-stone-100 flex items-baseline justify-between">
-                                <div>
-                                    <span class="text-xs text-stone-400 line-through mr-1.5">49,00 €</span>
-                                    <span class="font-display font-bold text-2xl text-stone-900">31,90 €</span>
-                                    <span class="text-xs text-stone-500">TTC/m²</span>
-                                </div>
-                            </div>
-                            <p class="text-xs text-forest-800 font-medium mt-1.5 flex items-center gap-1.5">
-                                <span class="w-1.5 h-1.5 rounded-full bg-forest-600"></span>
-                                <span>Avec notre pose (TVA 10%) : <strong>29,20 €/m²</strong></span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="px-6 pb-6 pt-2 flex flex-col sm:flex-row gap-2.5">
-                        <button onclick="openProductModal('travertin-romain')" class="flex-1 bg-stone-900 hover:bg-forest-800 text-white text-xs font-semibold py-3 px-4 rounded-xl transition-colors text-center">Calculer &amp; Commander</button>
-                        <button onclick="addSampleDirectly('travertin-romain')" class="px-3.5 py-3 rounded-xl border border-stone-200 hover:border-stone-300 hover:bg-stone-50 text-stone-700 text-xs font-semibold transition-colors text-center">Échantillon (5 €)</button>
-                    </div>
-                </article>
-                <article class="group bg-white rounded-2xl border border-stone-200/90 overflow-hidden shadow-xs hover:shadow-lg hover:border-stone-300 transition-all flex flex-col justify-between">
-                    <div>
-                        <div onclick="openProductModal('calacatta-gold')" class="relative aspect-[4/3] bg-stone-100 overflow-hidden cursor-pointer">
-                            <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1600&q=85" alt="Calacatta Gold Satiné - Carrelage Effet Marbre 60x120 cm" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute top-3 left-3 flex items-center gap-1.5">
-                                <span class="bg-white/95 backdrop-blur-xs text-stone-900 text-[11px] font-bold px-2.5 py-1 rounded-lg shadow-xs">60x120 cm</span>
-                                <span class="bg-forest-800 text-white text-[11px] font-bold px-2 py-1 rounded-lg shadow-xs">-38%</span>
-                            </div>
-                        </div>
-                        <div class="p-6 pb-4">
-                            <span class="text-[11px] font-semibold uppercase tracking-wider text-stone-400">Effet Marbre</span>
-                            <h3 onclick="openProductModal('calacatta-gold')" class="font-display font-bold text-lg text-stone-900 mt-0.5 cursor-pointer group-hover:text-forest-800 transition-colors">Calacatta Gold Satiné</h3>
-                            <div class="mt-4 pt-4 border-t border-stone-100 flex items-baseline justify-between">
-                                <div>
-                                    <span class="text-xs text-stone-400 line-through mr-1.5">54,90 €</span>
-                                    <span class="font-display font-bold text-2xl text-stone-900">33,90 €</span>
-                                    <span class="text-xs text-stone-500">TTC/m²</span>
-                                </div>
-                            </div>
-                            <p class="text-xs text-forest-800 font-medium mt-1.5 flex items-center gap-1.5">
-                                <span class="w-1.5 h-1.5 rounded-full bg-forest-600"></span>
-                                <span>Avec notre pose (TVA 10%) : <strong>31,00 €/m²</strong></span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="px-6 pb-6 pt-2 flex flex-col sm:flex-row gap-2.5">
-                        <button onclick="openProductModal('calacatta-gold')" class="flex-1 bg-stone-900 hover:bg-forest-800 text-white text-xs font-semibold py-3 px-4 rounded-xl transition-colors text-center">Calculer &amp; Commander</button>
-                        <button onclick="addSampleDirectly('calacatta-gold')" class="px-3.5 py-3 rounded-xl border border-stone-200 hover:border-stone-300 hover:bg-stone-50 text-stone-700 text-xs font-semibold transition-colors text-center">Échantillon (5 €)</button>
-                    </div>
-                </article>
-                <article class="group bg-white rounded-2xl border border-stone-200/90 overflow-hidden shadow-xs hover:shadow-lg hover:border-stone-300 transition-all flex flex-col justify-between">
-                    <div>
-                        <div onclick="openProductModal('chene-miel')" class="relative aspect-[4/3] bg-stone-100 overflow-hidden cursor-pointer">
-                            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1600&q=85" alt="Chêne Miel Rectifié - Carrelage Effet Bois 20x120 cm" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute top-3 left-3 flex items-center gap-1.5">
-                                <span class="bg-white/95 backdrop-blur-xs text-stone-900 text-[11px] font-bold px-2.5 py-1 rounded-lg shadow-xs">20x120 cm</span>
-                                <span class="bg-forest-800 text-white text-[11px] font-bold px-2 py-1 rounded-lg shadow-xs">-30%</span>
-                            </div>
-                        </div>
-                        <div class="p-6 pb-4">
-                            <span class="text-[11px] font-semibold uppercase tracking-wider text-stone-400">Effet Bois</span>
-                            <h3 onclick="openProductModal('chene-miel')" class="font-display font-bold text-lg text-stone-900 mt-0.5 cursor-pointer group-hover:text-forest-800 transition-colors">Chêne Miel Rectifié</h3>
-                            <div class="mt-4 pt-4 border-t border-stone-100 flex items-baseline justify-between">
-                                <div>
-                                    <span class="text-xs text-stone-400 line-through mr-1.5">41,50 €</span>
-                                    <span class="font-display font-bold text-2xl text-stone-900">28,90 €</span>
-                                    <span class="text-xs text-stone-500">TTC/m²</span>
-                                </div>
-                            </div>
-                            <p class="text-xs text-forest-800 font-medium mt-1.5 flex items-center gap-1.5">
-                                <span class="w-1.5 h-1.5 rounded-full bg-forest-600"></span>
-                                <span>Avec notre pose (TVA 10%) : <strong>26,50 €/m²</strong></span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="px-6 pb-6 pt-2 flex flex-col sm:flex-row gap-2.5">
-                        <button onclick="openProductModal('chene-miel')" class="flex-1 bg-stone-900 hover:bg-forest-800 text-white text-xs font-semibold py-3 px-4 rounded-xl transition-colors text-center">Calculer &amp; Commander</button>
-                        <button onclick="addSampleDirectly('chene-miel')" class="px-3.5 py-3 rounded-xl border border-stone-200 hover:border-stone-300 hover:bg-stone-50 text-stone-700 text-xs font-semibold transition-colors text-center">Échantillon (5 €)</button>
-                    </div>
-                </article>
-                <article class="group bg-white rounded-2xl border border-stone-200/90 overflow-hidden shadow-xs hover:shadow-lg hover:border-stone-300 transition-all flex flex-col justify-between">
-                    <div>
-                        <div onclick="openProductModal('beton-anthracite')" class="relative aspect-[4/3] bg-stone-100 overflow-hidden cursor-pointer">
-                            <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?auto=format&fit=crop&w=1600&q=85" alt="Béton Ciré Anthracite - Carrelage Effet Béton 80x80 cm" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute top-3 left-3 flex items-center gap-1.5">
-                                <span class="bg-white/95 backdrop-blur-xs text-stone-900 text-[11px] font-bold px-2.5 py-1 rounded-lg shadow-xs">80x80 cm</span>
-                                <span class="bg-forest-800 text-white text-[11px] font-bold px-2 py-1 rounded-lg shadow-xs">-32%</span>
-                            </div>
-                        </div>
-                        <div class="p-6 pb-4">
-                            <span class="text-[11px] font-semibold uppercase tracking-wider text-stone-400">Effet Béton</span>
-                            <h3 onclick="openProductModal('beton-anthracite')" class="font-display font-bold text-lg text-stone-900 mt-0.5 cursor-pointer group-hover:text-forest-800 transition-colors">Béton Ciré Anthracite</h3>
-                            <div class="mt-4 pt-4 border-t border-stone-100 flex items-baseline justify-between">
-                                <div>
-                                    <span class="text-xs text-stone-400 line-through mr-1.5">43,90 €</span>
-                                    <span class="font-display font-bold text-2xl text-stone-900">29,80 €</span>
-                                    <span class="text-xs text-stone-500">TTC/m²</span>
-                                </div>
-                            </div>
-                            <p class="text-xs text-forest-800 font-medium mt-1.5 flex items-center gap-1.5">
-                                <span class="w-1.5 h-1.5 rounded-full bg-forest-600"></span>
-                                <span>Avec notre pose (TVA 10%) : <strong>27,30 €/m²</strong></span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="px-6 pb-6 pt-2 flex flex-col sm:flex-row gap-2.5">
-                        <button onclick="openProductModal('beton-anthracite')" class="flex-1 bg-stone-900 hover:bg-forest-800 text-white text-xs font-semibold py-3 px-4 rounded-xl transition-colors text-center">Calculer &amp; Commander</button>
-                        <button onclick="addSampleDirectly('beton-anthracite')" class="px-3.5 py-3 rounded-xl border border-stone-200 hover:border-stone-300 hover:bg-stone-50 text-stone-700 text-xs font-semibold transition-colors text-center">Échantillon (5 €)</button>
-                    </div>
-                </article>
-                <article class="group bg-white rounded-2xl border border-stone-200/90 overflow-hidden shadow-xs hover:shadow-lg hover:border-stone-300 transition-all flex flex-col justify-between">
-                    <div>
-                        <div onclick="openProductModal('pierre-vals-r11')" class="relative aspect-[4/3] bg-stone-100 overflow-hidden cursor-pointer">
-                            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=85" alt="Pierre de Vals Extérieur 20mm - Carrelage Extérieur R11 60x60 cm (Ép. 20mm)" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute top-3 left-3 flex items-center gap-1.5">
-                                <span class="bg-white/95 backdrop-blur-xs text-stone-900 text-[11px] font-bold px-2.5 py-1 rounded-lg shadow-xs">60x60 cm (Ép. 20mm)</span>
-                                <span class="bg-forest-800 text-white text-[11px] font-bold px-2 py-1 rounded-lg shadow-xs">-34%</span>
-                            </div>
-                        </div>
-                        <div class="p-6 pb-4">
-                            <span class="text-[11px] font-semibold uppercase tracking-wider text-stone-400">Extérieur R11</span>
-                            <h3 onclick="openProductModal('pierre-vals-r11')" class="font-display font-bold text-lg text-stone-900 mt-0.5 cursor-pointer group-hover:text-forest-800 transition-colors">Pierre de Vals Extérieur 20mm</h3>
-                            <div class="mt-4 pt-4 border-t border-stone-100 flex items-baseline justify-between">
-                                <div>
-                                    <span class="text-xs text-stone-400 line-through mr-1.5">52,00 €</span>
-                                    <span class="font-display font-bold text-2xl text-stone-900">34,50 €</span>
-                                    <span class="text-xs text-stone-500">TTC/m²</span>
-                                </div>
-                            </div>
-                            <p class="text-xs text-forest-800 font-medium mt-1.5 flex items-center gap-1.5">
-                                <span class="w-1.5 h-1.5 rounded-full bg-forest-600"></span>
-                                <span>Avec notre pose (TVA 10%) : <strong>31,60 €/m²</strong></span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="px-6 pb-6 pt-2 flex flex-col sm:flex-row gap-2.5">
-                        <button onclick="openProductModal('pierre-vals-r11')" class="flex-1 bg-stone-900 hover:bg-forest-800 text-white text-xs font-semibold py-3 px-4 rounded-xl transition-colors text-center">Calculer &amp; Commander</button>
-                        <button onclick="addSampleDirectly('pierre-vals-r11')" class="px-3.5 py-3 rounded-xl border border-stone-200 hover:border-stone-300 hover:bg-stone-50 text-stone-700 text-xs font-semibold transition-colors text-center">Échantillon (5 €)</button>
-                    </div>
-                </article>
-            </div>
+            <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
 
-            <!-- Message si aucun résultat -->
             <div id="no-results" class="hidden text-center py-16 bg-stone-50 rounded-2xl border border-stone-200">
                 <p class="text-stone-600 font-medium">Aucun modèle ne correspond à votre recherche.</p>
                 <button onclick="resetFilters()" class="mt-3 text-xs font-semibold text-forest-700 underline">Réinitialiser les filtres</button>
@@ -685,16 +474,14 @@
                 <div>
                     <span class="text-xs font-bold uppercase tracking-widest text-stone-500 block mb-1.5">Mise en œuvre</span>
                     <h2 class="font-display text-2xl font-bold text-stone-900">Fournitures &amp; Outillage Pro</h2>
-                    <p class="text-sm text-stone-600 mt-1">Les produits techniques sélectionnés par nos poseurs pour une tenue durable.</p>
+                    <p class="text-sm text-stone-600 mt-1">Sélectionnez vos quantités à l'unité ou demandez un tarif dégressif à la palette sur devis.</p>
                 </div>
                 <span class="text-xs font-medium text-stone-500 bg-white px-3 py-1.5 rounded-lg border border-stone-200">
                     Inclus automatiquement dans nos forfaits avec pose
                 </span>
             </div>
 
-            <div id="supplies-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Généré dynamiquement par JS -->
-            </div>
+            <div id="supplies-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
         </div>
     </section>
 
@@ -703,8 +490,6 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-stone-900 rounded-3xl overflow-hidden shadow-xl border border-stone-800">
                 <div class="grid grid-cols-1 lg:grid-cols-12">
-                    
-                    <!-- Colonne Gauche : Explications & Contrôles -->
                     <div class="lg:col-span-7 p-8 sm:p-12 text-white space-y-8">
                         <div>
                             <span class="inline-block px-3 py-1 rounded-full bg-forest-800/80 border border-forest-600/50 text-emerald-300 text-xs font-semibold tracking-wide mb-4">
@@ -718,7 +503,6 @@
                             </p>
                         </div>
 
-                        <!-- Boutons rapides de surface -->
                         <div>
                             <div class="flex justify-between items-center mb-3">
                                 <label for="surface-slider" class="text-xs font-semibold uppercase tracking-wider text-stone-400">Surface de votre projet</label>
@@ -749,7 +533,6 @@
                         </div>
                     </div>
 
-                    <!-- Colonne Droite : Résultats chiffrés -->
                     <div class="lg:col-span-5 bg-stone-800/60 p-8 sm:p-12 border-t lg:border-t-0 lg:border-l border-stone-800 flex flex-col justify-center space-y-6">
                         <div class="space-y-4">
                             <div class="flex justify-between items-center pb-3 border-b border-stone-700/80">
@@ -772,7 +555,6 @@
                             </p>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -817,8 +599,7 @@
         </div>
     </section>
 
-    <!-- ==================== 8. FOOTER COMPLET & MENTIONS LÉGALES SARL ==================== -->
-        <!-- ==================== 7. ZONES D'INTERVENTION POSE & LIVRAISON ==================== -->
+    <!-- ==================== ZONES D'INTERVENTION POSE & LIVRAISON ==================== -->
     <section id="zones-intervention" class="py-16 lg:py-20 bg-white border-t border-stone-200/80">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-12">
@@ -830,7 +611,6 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Carte Pose Régionale -->
                 <div class="bg-stone-50 p-8 rounded-2xl border border-stone-200/90 space-y-4">
                     <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-forest-50 text-forest-800 border border-forest-200 text-xs font-semibold">
                         <span class="w-1.5 h-1.5 rounded-full bg-forest-700"></span>
@@ -854,7 +634,6 @@
                     </ul>
                 </div>
 
-                <!-- Carte Livraison Nationale -->
                 <div class="bg-stone-50 p-8 rounded-2xl border border-stone-200/90 space-y-4">
                     <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white text-stone-800 border border-stone-200 text-xs font-semibold">
                         Vente Directe Négoce &bull; France Métropolitaine
@@ -884,11 +663,10 @@
         </div>
     </section>
 
-<footer class="bg-stone-900 text-stone-300 pt-16 pb-10 border-t border-stone-800">
+    <!-- ==================== 8. FOOTER COMPLET & MENTIONS LÉGALES SARL ==================== -->
+    <footer class="bg-stone-900 text-stone-300 pt-16 pb-10 border-t border-stone-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-stone-800">
-                
-                <!-- Identité SARL -->
                 <div class="space-y-4">
                     <div class="flex items-center gap-3">
                         <div class="w-11 h-11 rounded-xl bg-[#1B4332] border border-[#2D6A4F]/40 flex items-center justify-center shadow-md shrink-0 overflow-hidden p-1">
@@ -949,7 +727,6 @@
                     </div>
                 </div>
 
-                <!-- Navigation -->
                 <div>
                     <h4 class="font-display font-semibold text-sm text-white uppercase tracking-wider mb-4">Catalogue &amp; Services</h4>
                     <ul class="space-y-2.5 text-xs text-stone-400">
@@ -957,12 +734,12 @@
                         <li><a href="/effet-marbre" class="hover:text-white transition-colors">Carrelage Effet Marbre</a></li>
                         <li><a href="/effet-bois" class="hover:text-white transition-colors">Parquet Céramique Effet Bois</a></li>
                         <li><a href="/effet-beton" class="hover:text-white transition-colors">Carrelage Effet Béton</a></li>
+                        <li><a href="/carrelage-exterieur" class="hover:text-white transition-colors">Carrelage Extérieur</a></li>
                         <li><a href="/exterieur-r11" class="hover:text-white transition-colors">Dalles Terrasse Extérieur R11</a></li>
                         <li><a href="#fournitures" class="hover:text-white transition-colors">Colles C2TE S1 &amp; Joints Pro</a></li>
                     </ul>
                 </div>
 
-                <!-- Engagements -->
                 <div>
                     <h4 class="font-display font-semibold text-sm text-white uppercase tracking-wider mb-4">Garanties Clients</h4>
                     <ul class="space-y-2.5 text-xs text-stone-400">
@@ -974,7 +751,6 @@
                     </ul>
                 </div>
 
-                <!-- Contact & Devis -->
                 <div>
                     <h4 class="font-display font-semibold text-sm text-white uppercase tracking-wider mb-4">Service Client &amp; Devis</h4>
                     <p class="text-xs text-stone-400 leading-relaxed mb-3">
@@ -1000,14 +776,12 @@
                 </div>
             </div>
 
-            <!-- Bas de footer avec accès discret Gérant -->
             <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500">
                 <p>&copy; 2026 Carreaux Das (Enseigne de RENOV'IT SARL). Tous droits réservés. Prix affichés en Euros TTC.</p>
                 
                 <div class="flex items-center gap-6">
                     <button onclick="openLegalModal('cgv')" class="hover:text-stone-300 transition-colors">CGV &amp; Livraison</button>
                     <button onclick="openLegalModal('mentions')" class="hover:text-stone-300 transition-colors">Mentions Légales</button>
-                    <!-- Bouton discret Espace Gérant -->
                     <button onclick="openAdminModal()" class="inline-flex items-center gap-1.5 text-stone-500 hover:text-stone-300 transition-colors focus:outline-none" title="Accès réservé à la gérance">
                         <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
@@ -1023,8 +797,6 @@
     <div id="product-modal" class="fixed inset-0 z-50 hidden overflow-y-auto bg-stone-900/70 backdrop-blur-xs p-4 sm:p-6 flex items-center justify-center">
         <div class="bg-white rounded-3xl max-w-4xl w-full overflow-hidden shadow-2xl border border-stone-200 my-auto animate-fadeIn">
             <div class="grid grid-cols-1 lg:grid-cols-12">
-                
-                <!-- Galerie Photo Gauche -->
                 <div class="lg:col-span-5 bg-stone-100 relative flex flex-col justify-between p-6">
                     <button onclick="closeProductModal()" class="lg:hidden self-end w-9 h-9 rounded-full bg-white text-stone-700 flex items-center justify-center shadow-sm mb-3">
                         <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
@@ -1034,12 +806,8 @@
                         <img id="modal-img" src="" alt="" class="w-full h-full object-cover">
                     </div>
 
-                    <!-- Miniatures de vue -->
-                    <div id="modal-thumbs" class="flex gap-2.5 mt-4">
-                        <!-- Injecté par JS -->
-                    </div>
+                    <div id="modal-thumbs" class="flex gap-2.5 mt-4"></div>
 
-                    <!-- Spécifications techniques condensées -->
                     <div class="mt-6 bg-white rounded-xl p-4 border border-stone-200/80 space-y-2 text-xs">
                         <div class="flex justify-between">
                             <span class="text-stone-500">Format &amp; Finition</span>
@@ -1060,7 +828,6 @@
                     </div>
                 </div>
 
-                <!-- Configurateur & Calculateur Droite -->
                 <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between">
                     <div>
                         <div class="flex items-start justify-between gap-4">
@@ -1082,7 +849,6 @@
                             Description technique du carreau.
                         </p>
 
-                        <!-- Choix de la formule : Livraison seule vs Fourniture + Pose TVA 10% -->
                         <div class="mt-6">
                             <label class="block text-xs font-bold uppercase tracking-wider text-stone-500 mb-2.5">1. Choisissez votre formule</label>
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -1109,7 +875,6 @@
                             </div>
                         </div>
 
-                        <!-- Calculateur de surface et cartons -->
                         <div class="mt-6 bg-stone-50 rounded-2xl p-4 sm:p-5 border border-stone-200/90">
                             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                                 <div>
@@ -1122,13 +887,11 @@
                                 </div>
                             </div>
 
-                            <!-- Option +10% marge de coupe -->
                             <label class="flex items-center gap-2.5 mt-3.5 pt-3.5 border-t border-stone-200/80 cursor-pointer select-none">
                                 <input type="checkbox" id="calc-margin" checked onchange="recalculateModal()" class="w-4 h-4 rounded text-forest-700 focus:ring-forest-700 border-stone-300">
                                 <span class="text-xs text-stone-700 font-medium">Ajouter +10% de marge de coupe recommandée (chutes &amp; plinthes)</span>
                             </label>
 
-                            <!-- Résultat du calcul cartons -->
                             <div class="mt-4 bg-white rounded-xl p-3.5 border border-stone-200 flex items-center justify-between text-xs">
                                 <div>
                                     <span class="text-stone-500 block">Quantité exacte arrondie au carton :</span>
@@ -1142,7 +905,6 @@
                         </div>
                     </div>
 
-                    <!-- Boutons d'action modale -->
                     <div class="mt-6 pt-4 border-t border-stone-100 flex flex-col sm:flex-row gap-3">
                         <button onclick="addSampleFromModal()" class="sm:w-auto px-4 py-3.5 rounded-xl border border-stone-300 hover:bg-stone-50 text-xs font-semibold text-stone-700 transition-colors">
                             Échantillon (5 € remboursé)
@@ -1155,20 +917,16 @@
                         </button>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
 
     <!-- ==================== DRAWER LATÉRAL PANIER / DEMANDE DE DEVIS ==================== -->
     <div id="cart-drawer" class="fixed inset-0 z-50 hidden">
-        <!-- Backdrop -->
         <div onclick="toggleCart(false)" class="absolute inset-0 bg-stone-900/60 backdrop-blur-xs transition-opacity"></div>
-        
-        <!-- Panneau droit -->
-        <div class="absolute right-0 top-0 bottom-0 w-full max-w-lg bg-white shadow-2xl flex flex-col justify-between">
-            <!-- Header Drawer -->
-            <div class="p-6 border-b border-stone-200 flex items-center justify-between bg-stone-50">
+        <div class="absolute right-0 top-0 bottom-0 w-full max-w-lg bg-white shadow-2xl flex flex-col">
+            <!-- Header fixe -->
+            <div class="p-6 border-b border-stone-200 flex items-center justify-between bg-stone-50 shrink-0">
                 <div>
                     <h3 class="font-display font-bold text-lg text-stone-900">Votre Sélection &amp; Devis</h3>
                     <p class="text-xs text-stone-500">Commandez en ligne ou recevez un devis chiffré sous 24h</p>
@@ -1178,79 +936,79 @@
                 </button>
             </div>
 
-            <!-- Liste des articles -->
-            <div id="cart-items-container" class="flex-1 overflow-y-auto p-6 space-y-4">
-                <!-- Généré par JS -->
-            </div>
+            <!-- Zone entièrement défilante (articles + adresse + validation) -->
+            <div id="cart-scroll-area" class="flex-1 overflow-y-auto flex flex-col justify-between">
+                <div id="cart-items-container" class="p-6 space-y-4"></div>
 
-            <!-- Pied de panier & Règlement -->
-            <div id="cart-footer" class="p-6 border-t border-stone-200 bg-stone-50 space-y-4">
-                <div class="space-y-1.5 text-sm">
-                    <div class="flex justify-between text-stone-600">
-                        <span>Sous-total articles TTC</span>
-                        <span id="cart-subtotal" class="font-semibold text-stone-900">0,00 €</span>
-                    </div>
-                    <div class="flex justify-between text-xs text-stone-500">
-                        <span>Livraison palettisée / Échantillons</span>
-                        <span id="cart-shipping">Calculée selon département</span>
-                    </div>
-                    <div id="free-shipping-box" class="mt-2 p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-900">
-                        <p id="free-shipping-msg" class="font-semibold">Livraison gratuite dès 900 € d'achat</p>
-                        <div class="mt-2 h-1.5 rounded-full bg-emerald-100 overflow-hidden">
-                            <div id="free-shipping-bar" class="h-full bg-emerald-600 rounded-full transition-all" style="width:0%"></div>
+                <div id="cart-footer" class="p-6 border-t border-stone-200 bg-stone-50 space-y-4">
+                    <div class="space-y-1.5 text-sm">
+                        <div class="flex justify-between text-stone-600">
+                            <span>Sous-total articles TTC</span>
+                            <span id="cart-subtotal" class="font-semibold text-stone-900">0,00 €</span>
+                        </div>
+                        <div class="flex justify-between text-xs text-stone-500">
+                            <span>Livraison palettisée / Échantillons</span>
+                            <span id="cart-shipping">Calculée selon département</span>
+                        </div>
+                        <div id="free-shipping-box" class="mt-2 p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-900">
+                            <p id="free-shipping-msg" class="font-semibold">Livraison gratuite dès 900 € d'achat</p>
+                            <div class="mt-2 h-1.5 rounded-full bg-emerald-100 overflow-hidden">
+                                <div id="free-shipping-bar" class="h-full bg-emerald-600 rounded-full transition-all" style="width:0%"></div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Sélecteur de finalisation -->
-                <div class="space-y-2 pt-2">
-                    <label class="block text-xs font-bold uppercase tracking-wider text-stone-600">Mode de finalisation</label>
-                    <select id="checkout-method" onchange="updateCheckoutInfo()" class="w-full px-3.5 py-2.5 bg-white border border-stone-300 rounded-xl text-xs font-semibold text-stone-800 focus:outline-none focus:border-forest-700">
-                        <option value="devis">Demande de Devis gratuit sous 24h (avec ou sans pose)</option>
-                        <option value="card">Règlement sécurisé CB / 3x-4x sans frais (Stripe / SumUp)</option>
-                        <option value="virement">Virement bancaire direct SARL (RIB affiché)</option>
-                    </select>
-                </div>
-
-                <!-- Zone d'information dynamique selon mode choisi -->
-                <div id="checkout-method-details" class="bg-white p-3.5 rounded-xl border border-stone-200 text-xs text-stone-600 space-y-2">
-                    <p>Renseignez votre email ou téléphone pour recevoir votre devis détaillé avec calcul de livraison ou forfait pose TVA 10%.</p>
-                    <input type="text" id="client-contact" placeholder="Votre email ou numéro de téléphone..." class="w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-lg text-xs focus:outline-none focus:border-forest-700">
-                </div>
-
-                <!-- Informations de livraison (obligatoires avant paiement CB ou virement) -->
-                <div id="delivery-form" class="hidden bg-white p-3.5 rounded-xl border border-stone-200 text-xs text-stone-600 space-y-2.5">
-                    <div class="flex items-center justify-between">
-                        <p class="text-xs font-bold uppercase tracking-wider text-stone-700">Informations de livraison</p>
-                        <span class="text-[10px] text-stone-400">* obligatoire</span>
+                    <div class="space-y-2 pt-2">
+                        <label class="block text-xs font-bold uppercase tracking-wider text-stone-600">Mode de finalisation</label>
+                        <select id="checkout-method" onchange="updateCheckoutInfo()" class="w-full px-3.5 py-2.5 bg-white border border-stone-300 rounded-xl text-xs font-semibold text-stone-800 focus:outline-none focus:border-forest-700">
+                            <option value="devis">Demande de Devis gratuit sous 24h (avec ou sans pose)</option>
+                            <option value="card">Règlement sécurisé CB / 3x-4x sans frais (Stripe / SumUp)</option>
+                            <option value="virement">Virement bancaire direct SARL (RIB affiché)</option>
+                        </select>
                     </div>
-                    <div class="grid grid-cols-2 gap-2">
-                        <input type="text" id="dlv-firstname" autocomplete="given-name" placeholder="Prénom *" class="dlv-input w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-lg text-xs focus:outline-none focus:border-forest-700">
-                        <input type="text" id="dlv-lastname" autocomplete="family-name" placeholder="Nom *" class="dlv-input w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-lg text-xs focus:outline-none focus:border-forest-700">
-                    </div>
-                    <input type="email" id="dlv-email" autocomplete="email" placeholder="Email *" class="dlv-input w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-lg text-xs focus:outline-none focus:border-forest-700">
-                    <input type="tel" id="dlv-phone" autocomplete="tel" placeholder="Téléphone (prise de RDV livraison) *" class="dlv-input w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-lg text-xs focus:outline-none focus:border-forest-700">
-                    <input type="text" id="dlv-address" autocomplete="address-line1" placeholder="Adresse de livraison (n° et rue) *" class="dlv-input w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-lg text-xs focus:outline-none focus:border-forest-700">
-                    <input type="text" id="dlv-address2" autocomplete="address-line2" placeholder="Complément (bât., étage, digicode...)" class="w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-lg text-xs focus:outline-none focus:border-forest-700">
-                    <div class="grid grid-cols-3 gap-2">
-                        <input type="text" id="dlv-zip" autocomplete="postal-code" inputmode="numeric" maxlength="5" placeholder="Code postal *" class="dlv-input col-span-1 w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-lg text-xs focus:outline-none focus:border-forest-700">
-                        <input type="text" id="dlv-city" autocomplete="address-level2" placeholder="Ville *" class="dlv-input col-span-2 w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-lg text-xs focus:outline-none focus:border-forest-700">
-                    </div>
-                    <textarea id="dlv-notes" rows="2" placeholder="Accès camion hayon, contraintes de livraison... (facultatif)" class="w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-lg text-xs focus:outline-none focus:border-forest-700"></textarea>
-                    <p class="text-[11px] text-stone-500">Livraison en France métropolitaine uniquement, sur rendez-vous téléphonique.</p>
-                </div>
 
-                <button onclick="submitOrderOrQuote()" class="w-full bg-forest-800 hover:bg-forest-700 text-white font-semibold text-sm py-3.5 px-6 rounded-xl shadow-sm transition-colors">
-                    Valider ma demande
-                </button>
+                    <div id="checkout-method-details" class="bg-white p-3.5 rounded-xl border border-stone-200 text-xs text-stone-600 space-y-2">
+                        <p>Renseignez vos coordonnées pour recevoir votre devis détaillé par email sous 24h (livraison, tarif palette ou pose TVA 10%).</p>
+                        <input type="text" id="client-name-quote" placeholder="Votre nom / prénom..." class="w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-lg text-xs focus:outline-none focus:border-forest-700">
+                        <input type="text" id="client-contact" placeholder="Votre email ou numéro de téléphone *..." class="w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-lg text-xs focus:outline-none focus:border-forest-700">
+                        <input type="text" id="client-city-quote" placeholder="Code postal / Ville du chantier ou livraison..." class="w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-lg text-xs focus:outline-none focus:border-forest-700">
+                    </div>
+
+                    <div id="delivery-form" class="hidden bg-white p-3.5 rounded-xl border border-stone-200 text-xs text-stone-600 space-y-2.5">
+                        <div class="flex items-center justify-between">
+                            <p class="text-xs font-bold uppercase tracking-wider text-stone-700">Informations de livraison</p>
+                            <span class="text-[10px] text-stone-400">* obligatoire</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2">
+                            <input type="text" id="dlv-firstname" autocomplete="given-name" placeholder="Prénom *" class="dlv-input w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-lg text-xs focus:outline-none focus:border-forest-700">
+                            <input type="text" id="dlv-lastname" autocomplete="family-name" placeholder="Nom *" class="dlv-input w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-lg text-xs focus:outline-none focus:border-forest-700">
+                        </div>
+                        <input type="email" id="dlv-email" autocomplete="email" placeholder="Email *" class="dlv-input w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-lg text-xs focus:outline-none focus:border-forest-700">
+                        <input type="tel" id="dlv-phone" autocomplete="tel" placeholder="Téléphone (prise de RDV livraison) *" class="dlv-input w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-lg text-xs focus:outline-none focus:border-forest-700">
+                        <input type="text" id="dlv-address" autocomplete="address-line1" placeholder="Adresse de livraison (n° et rue) *" class="dlv-input w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-lg text-xs focus:outline-none focus:border-forest-700">
+                        <input type="text" id="dlv-address2" autocomplete="address-line2" placeholder="Complément (bât., étage, digicode...)" class="w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-lg text-xs focus:outline-none focus:border-forest-700">
+                        <div class="grid grid-cols-3 gap-2">
+                            <input type="text" id="dlv-zip" autocomplete="postal-code" inputmode="numeric" maxlength="6" placeholder="Code postal *" class="dlv-input col-span-1 w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-lg text-xs focus:outline-none focus:border-forest-700">
+                            <input type="text" id="dlv-city" autocomplete="address-level2" placeholder="Ville *" class="dlv-input col-span-2 w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-lg text-xs focus:outline-none focus:border-forest-700">
+                        </div>
+                        <textarea id="dlv-notes" rows="2" placeholder="Accès camion hayon, contraintes de livraison... (facultatif)" class="w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-lg text-xs focus:outline-none focus:border-forest-700"></textarea>
+                        <p class="text-[11px] text-stone-500">Livraison en France métropolitaine uniquement, sur rendez-vous téléphonique.</p>
+                    </div>
+
+                    <!-- Message d'erreur visible directement au-dessus du bouton -->
+                    <div id="checkout-error-box" class="hidden p-3 rounded-xl bg-rose-50 border border-rose-200 text-xs font-medium text-rose-800"></div>
+
+                    <button onclick="submitOrderOrQuote()" class="w-full bg-forest-800 hover:bg-forest-700 text-white font-semibold text-sm py-3.5 px-6 rounded-xl shadow-sm transition-colors">
+                        Valider ma demande
+                    </button>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- ==================== MODALE ESPACE GÉRANT (CACHÉE PAR DÉFAUT) ==================== -->
+    <!-- ==================== MODALE ESPACE GÉRANT ==================== -->
     <div id="admin-modal" class="fixed inset-0 z-50 hidden overflow-y-auto bg-stone-900/75 backdrop-blur-xs p-4 flex items-center justify-center">
         <div class="bg-white rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl border border-stone-200">
-            <!-- Entête modale gérant -->
             <div class="p-6 bg-stone-900 text-white flex items-center justify-between">
                 <div class="flex items-center gap-2.5">
                     <svg class="w-5 h-5 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -1269,7 +1027,6 @@
                 </div>
             </div>
 
-            <!-- Onglets d'authentification (Connexion / Créer son mot de passe) -->
             <div id="admin-auth-tabs" class="flex border-b border-stone-200 bg-stone-100 text-xs font-semibold">
                 <button id="tab-login-btn" onclick="switchAdminAuthTab('login')" class="flex-1 py-3 px-4 text-center border-b-2 border-forest-800 text-forest-900 bg-white transition-all flex items-center justify-center gap-1.5">
                     <svg class="w-4 h-4 text-forest-700" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"/></svg>
@@ -1277,11 +1034,8 @@
                 </button>
             </div>
 
-            <!-- Étape 1 : Connexion rapide -->
             <div id="admin-login-view" class="p-6 sm:p-8 space-y-4">
-                <div id="admin-login-badge" class="p-3.5 rounded-xl text-xs bg-stone-50 border border-stone-200/90 text-stone-700 leading-relaxed">
-                    <!-- Rempli dynamiquement -->
-                </div>
+                <div id="admin-login-badge" class="p-3.5 rounded-xl text-xs bg-stone-50 border border-stone-200/90 text-stone-700 leading-relaxed"></div>
 
                 <div class="space-y-1.5">
                     <div class="flex items-center justify-between">
@@ -1304,17 +1058,31 @@
                 </div>
             </div>
 
-            <!-- Étape 1-bis : Créer / Définir son mot de passe -->
-            <!-- Étape 2 : Panneau de gestion -->
             <div id="admin-panel-view" class="hidden p-6 sm:p-8 space-y-8 max-h-[80vh] overflow-y-auto">
                 <div class="rounded-xl border border-stone-200 bg-stone-50 p-4 text-sm" role="status" aria-live="polite">
                     <p id="admin-catalog-status">Vérification du catalogue en ligne…</p>
-                    <p class="text-xs text-stone-600 mt-1">Après confirmation de publication, vos modèles et leurs photos restent enregistrés en ligne, même si vous fermez cette page.</p>
+                    <p class="text-xs text-stone-600 mt-1">Après confirmation de publication, vos modèles, fournitures et photos restent enregistrés en ligne pour tous vos clients.</p>
                     <button type="button" onclick="retryOnlineCatalog()" class="text-forest-800 underline text-xs mt-2">Vérifier et réessayer les publications</button>
                 </div>
-                <!-- Ajout nouveau modèle -->
+
+                <!-- 0. Demandes de devis clients reçues -->
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between border-b border-stone-200 pb-2">
+                        <h4 class="font-display font-bold text-base text-stone-900 flex items-center gap-2">
+                            <span>Demandes de devis reçues</span>
+                            <span id="adm-quotes-count" class="bg-emerald-600 text-white text-[11px] font-bold px-2 py-0.5 rounded-full">0</span>
+                        </h4>
+                        <button type="button" onclick="loadAdminQuotes()" class="text-xs font-semibold text-forest-800 hover:underline">Actualiser</button>
+                    </div>
+                    <div id="adm-quotes-list" class="space-y-2.5 text-xs">
+                        <p class="text-stone-400">Chargement des demandes de devis...</p>
+                    </div>
+                </div>
+
+                <!-- 1. Ajout / modification modèle carrelage -->
                 <div class="space-y-4">
-                    <h4 class="font-display font-bold text-base text-stone-900 border-b border-stone-200 pb-2">1. Ajouter un nouveau modèle au catalogue</h4>
+                    <h4 id="adm-prod-form-title" class="font-display font-bold text-base text-stone-900 border-b border-stone-200 pb-2">1. Ajouter ou modifier un modèle du catalogue</h4>
+                    <input type="hidden" id="adm-prod-id" value="">
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-xs">
                         <div>
                             <label class="block font-semibold text-stone-700 mb-1">Nom du modèle *</label>
@@ -1327,6 +1095,7 @@
                                 <option value="Effet Marbre">Effet Marbre</option>
                                 <option value="Effet Bois">Effet Bois</option>
                                 <option value="Effet Béton">Effet Béton</option>
+                                <option value="Carrelage Extérieur">Carrelage Extérieur</option>
                                 <option value="Extérieur R11">Extérieur R11</option>
                             </select>
                         </div>
@@ -1359,7 +1128,6 @@
                         </div>
                     </div>
 
-                    <!-- Champ d'import de photos -->
                     <div class="space-y-2.5 pt-1">
                         <div class="flex items-center justify-between">
                             <label class="block text-xs font-semibold text-stone-700">Photos du produit (1 ou plusieurs photos)</label>
@@ -1375,7 +1143,6 @@
                             <span class="text-[11px] text-stone-500 mt-0.5">JPG, PNG ou WebP &bull; Compression automatique haute qualité</span>
                             <input type="file" id="adm-photo-input" accept="image/*" multiple onchange="handleAdminPhotoUpload(event)" class="hidden">
                         </label>
-                        <!-- Aperçu des miniatures importées -->
                         <div id="adm-photo-preview-grid" class="hidden grid grid-cols-3 sm:grid-cols-4 gap-2.5 pt-1"></div>
                     </div>
 
@@ -1383,7 +1150,10 @@
                         <button type="button" id="adm-publish-btn" onclick="adminAddProduct()" class="bg-forest-800 hover:bg-forest-700 text-white text-xs font-semibold px-4 py-2.5 rounded-xl shadow-xs transition-colors">
                             Publier le modèle dans le catalogue
                         </button>
-                        <button type="button" onclick="exportPublishedHtmlForNetlify()" class="bg-stone-100 hover:bg-stone-200 text-stone-800 border border-stone-300 text-xs font-semibold px-4 py-2.5 rounded-xl transition-colors flex items-center gap-1.5" title="Télécharge une copie du fichier index.html avec tous vos modèles (sauvegarde facultative : les modèles sont déjà publiés en ligne)">
+                        <button type="button" onclick="resetAdminProductForm()" class="bg-white hover:bg-stone-100 text-stone-700 border border-stone-300 text-xs font-semibold px-3.5 py-2.5 rounded-xl transition-colors">
+                            Nouveau modèle
+                        </button>
+                        <button type="button" onclick="exportPublishedHtmlForNetlify()" class="bg-stone-100 hover:bg-stone-200 text-stone-800 border border-stone-300 text-xs font-semibold px-4 py-2.5 rounded-xl transition-colors flex items-center gap-1.5">
                             <svg class="w-3.5 h-3.5 text-forest-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                             </svg>
@@ -1392,19 +1162,65 @@
                     </div>
                 </div>
 
-                <!-- Gestion du stock -->
+                <!-- 2. Gestion du stock et suppression de tous les modèles -->
                 <div class="space-y-4">
                     <h4 class="font-display font-bold text-base text-stone-900 border-b border-stone-200 pb-2 flex items-center gap-2">
-                        <span>Stock des modèles</span>
+                        <span>2. Stock &amp; Suppression des modèles (préenregistrés et ajoutés)</span>
                         <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
                     </h4>
-                    <p class="text-xs text-stone-500">Cochez les modèles en stock : un point vert « En stock » s'affiche sur leur fiche et dans le configurateur. Les changements sont visibles immédiatement par tous vos clients.</p>
+                    <p class="text-xs text-stone-500">Cochez les modèles en stock ou cliquez sur « Supprimer » pour retirer définitivement un modèle du catalogue en ligne.</p>
                     <div id="adm-stock-list" class="divide-y divide-stone-100 border border-stone-200 rounded-xl text-xs"></div>
                 </div>
 
-                <!-- Configuration Paiements -->
+                <!-- 3. Gestion des Fournitures & Outillage -->
                 <div class="space-y-4">
-                    <h4 class="font-display font-bold text-base text-stone-900 border-b border-stone-200 pb-2">2. Paramètres d'encaissement SARL</h4>
+                    <h4 class="font-display font-bold text-base text-stone-900 border-b border-stone-200 pb-2">3. Fournitures &amp; Outillage (Ajouter, Modifier ou Supprimer)</h4>
+                    <input type="hidden" id="adm-sup-id" value="">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-xs">
+                        <div>
+                            <label class="block font-semibold text-stone-700 mb-1">Nom de la fourniture *</label>
+                            <input type="text" id="adm-sup-name" placeholder="Ex: Mortier-Colle Flexible C2TE S1" class="w-full px-3 py-2 border border-stone-300 rounded-lg focus:outline-none focus:border-forest-700">
+                        </div>
+                        <div>
+                            <label class="block font-semibold text-stone-700 mb-1">Conditionnement / Sous-titre</label>
+                            <input type="text" id="adm-sup-sub" placeholder="Ex: Sac 25 kg • Gris ou Blanc" class="w-full px-3 py-2 border border-stone-300 rounded-lg focus:outline-none focus:border-forest-700">
+                        </div>
+                        <div>
+                            <label class="block font-semibold text-stone-700 mb-1">Prix TTC à l'unité (€)</label>
+                            <input type="number" id="adm-sup-price" value="24.90" step="0.10" class="w-full px-3 py-2 border border-stone-300 rounded-lg focus:outline-none focus:border-forest-700">
+                        </div>
+                        <div>
+                            <label class="block font-semibold text-stone-700 mb-1">Photo de la fourniture</label>
+                            <input type="file" id="adm-sup-photo" accept="image/*" onchange="handleAdminSupplyPhoto(event)" class="w-full px-2 py-1.5 border border-stone-300 rounded-lg bg-stone-50 text-xs">
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label class="block font-semibold text-stone-700 mb-1">Domaine d'application</label>
+                            <textarea id="adm-sup-domain" rows="2" placeholder="Ex: Collage de grès cérame grand format en sol et mur intérieur/extérieur, plancher chauffant, locaux à fort trafic..." class="w-full px-3 py-2 border border-stone-300 rounded-lg focus:outline-none focus:border-forest-700"></textarea>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label class="block font-semibold text-stone-700 mb-1">Caractéristiques techniques</label>
+                            <textarea id="adm-sup-specs" rows="2" placeholder="Ex: Norme EN 12004 C2TE S1 • Temps ouvert 30 min • Consommation 4 à 7 kg/m² selon peigne • Sac 25 kg (48 sacs / palette)." class="w-full px-3 py-2 border border-stone-300 rounded-lg focus:outline-none focus:border-forest-700"></textarea>
+                        </div>
+                    </div>
+                    <div id="adm-sup-photo-preview" class="hidden flex items-center gap-3 bg-stone-50 p-2.5 rounded-xl border border-stone-200 text-xs">
+                        <img id="adm-sup-preview-img" src="" alt="Aperçu fourniture" class="w-12 h-12 rounded-lg object-cover border border-stone-300">
+                        <span class="text-stone-600 flex-1">Photo associée à cette fourniture</span>
+                        <button type="button" onclick="clearAdminSupplyPhoto()" class="text-rose-700 hover:underline font-medium">Retirer la photo</button>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-2.5">
+                        <button type="button" id="adm-sup-save-btn" onclick="adminSaveSupply()" class="bg-forest-800 hover:bg-forest-700 text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition-colors">
+                            Enregistrer la fourniture
+                        </button>
+                        <button type="button" onclick="resetAdminSupplyForm()" class="px-3.5 py-2.5 rounded-xl border border-stone-300 text-xs font-semibold text-stone-700 hover:bg-stone-50">
+                            Nouvelle fourniture
+                        </button>
+                    </div>
+                    <div id="adm-supplies-list" class="divide-y divide-stone-100 border border-stone-200 rounded-xl text-xs"></div>
+                </div>
+
+                <!-- 4. Configuration Paiements -->
+                <div class="space-y-4">
+                    <h4 class="font-display font-bold text-base text-stone-900 border-b border-stone-200 pb-2">4. Paramètres d'encaissement SARL</h4>
                     <div class="space-y-3 text-xs">
                         <div>
                             <label class="block font-semibold text-stone-700 mb-1">Lien de paiement Stripe / SumUp (CB &amp; 3x/4x)</label>
@@ -1437,7 +1253,7 @@
     <script>
         // --- DONNÉES DU CATALOGUE ---
         let products = [
-            {
+{
                 id: 'magda-perla',
                 name: 'Magda Perla',
                 category: 'Effet Pierre',
@@ -1544,41 +1360,54 @@
                     'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85'
                 ],
                 desc: 'Dalle forte épaisseur 20 mm ingélive pour terrasses et plages de piscine. Pose facile sur plots réglables, sur lit de gravier ou collée sur dalle béton.'
-            }
+            },
+
         ];
 
-        // --- DONNÉES FOURNITURES PRO ---
-        const supplies = [
+        // --- DONNÉES FOURNITURES PRO (AVEC DOMAINE D'APPLICATION & CARACTÉRISTIQUES TECHNIQUES) ---
+        let supplies = [
             {
                 id: 'colle-c2te',
                 name: 'Mortier-Colle Flexible C2TE S1',
                 subtitle: 'Sac 25 kg • Gris ou Blanc • Grands formats',
-                price: 24.90
+                price: 24.90,
+                image: '',
+                domain: 'Collage de grès cérame et pierres naturelles jusqu’à 120x120 cm en sol et mur intérieur/extérieur, plancher chauffant et pièces humides.',
+                specs: 'Norme EN 12004 C2TE S1 • Déformable • Temps ouvert 30 min • Consommation : 4 à 7 kg/m² (double encollage) • Conditionnement : sac 25 kg (48 sacs/palette).'
             },
             {
                 id: 'joint-hydro',
                 name: 'Joint Fin Hydrofuge Anti-Taches',
                 subtitle: 'Seau 5 kg • Coloris Pierre, Gris ou Blanc',
-                price: 18.50
+                price: 18.50,
+                image: '',
+                domain: 'Jointoiement fin de carrelage sol et mur en séjour, cuisine, salle de bain, douche à l’italienne et terrasse extérieure.',
+                specs: 'Norme EN 13888 CG2 WA • Largeur de joint : 1 à 6 mm • Hydrofugé & fongicide • Consommation : 0,3 à 0,8 kg/m² selon format • Seau 5 kg.'
             },
             {
                 id: 'croisillons-auto',
                 name: 'Kit Croisillons Autonivelants 2mm',
                 subtitle: 'Seau 250 cadrans + 100 cales réutilisables',
-                price: 34.00
+                price: 34.00,
+                image: '',
+                domain: 'Mise à niveau parfaite des dalles grand format rectifiées (60x60, 60x120, 80x80, lames bois) au sol comme au mur.',
+                specs: 'Épaisseur de joint : 2 mm • Pour carreaux épaisseur 3 à 12 mm • Cales haute résistance réutilisables • Rendement : env. 40 à 60 m² en 60x120 cm.'
             },
             {
                 id: 'primaire-accroche',
                 name: 'Primaire d’Accrochage Universel',
                 subtitle: 'Bidon 5 L • Chape anhydrite & ancien carrelage',
-                price: 39.90
+                price: 39.90,
+                image: '',
+                domain: 'Préparation et régulation de porosité des supports avant ragréage ou pose collée (chape ciment, anhydrite, ancien carrelage, plaques de plâtre).',
+                specs: 'Sans solvant • Séchage rapide : 1h à 2h • Rendement : 100 à 150 g/m² (soit 35 à 50 m² par bidon de 5 L) • Prêt à l’emploi.'
             }
         ];
 
         // --- ÉTAT GLOBAL DE L'APPLICATION ---
         let currentCategory = 'Tous';
         let activeProduct = null;
-        let modalMode = 'supply'; // 'supply' (TVA 20%) ou 'pose' (TVA 10%)
+        let modalMode = 'supply';
         let cart = [];
         let adminSettings = {
             stripeUrl: 'https://buy.stripe.com/7sY00l1SWfzh96h66n7Re00',
@@ -1614,6 +1443,13 @@
                 seoTitle: 'Carrelage Effet Béton Ciré Grand Format | Carreaux Das',
                 intro: "L'esprit loft et béton ciré, sans fissures ni traitement : des teintes grises et sable contemporaines en grands formats rectifiés pour des joints quasi invisibles.",
                 points: ['Style contemporain / loft', 'Joints fins 2 mm', 'Sol & mur, intérieur']
+            },
+            'carrelage-exterieur': {
+                cat: 'Carrelage Extérieur',
+                title: 'Carrelage Extérieur',
+                seoTitle: 'Carrelage Extérieur Terrasse & Balcon Grès Cérame | Carreaux Das',
+                intro: "Carrelage grès cérame spécialement conçu pour l'extérieur : terrasses, balcons, contours de piscine et allées. Résistant au gel, antidérapant et facile d'entretien.",
+                points: ['Résistant au gel & UV', 'Adhérence sécurisée R10 / R11', 'Terrasse, balcon & plage piscine']
             },
             'exterieur-r11': {
                 cat: 'Extérieur R11',
@@ -1699,7 +1535,6 @@
                 const savedSettings = localStorage.getItem('carreauxdas_admin_settings');
                 if (savedSettings) {
                     adminSettings = Object.assign(adminSettings, JSON.parse(savedSettings));
-                    // Remplace l'ancien lien de démonstration (non fonctionnel) éventuellement enregistré
                     if (!adminSettings.stripeUrl || adminSettings.stripeUrl.includes('carreauxdas-sarl')) {
                         adminSettings.stripeUrl = 'https://buy.stripe.com/7sY00l1SWfzh96h66n7Re00';
                     }
@@ -1724,14 +1559,16 @@
             }
         }
 
-        // --- CATALOGUE EN LIGNE (modèles et photos ajoutés depuis l'espace gérant) ---
+        // --- CATALOGUE EN LIGNE ---
         async function loadOnlineCatalog() {
             try {
                 const res = await fetch('/api/catalog', { cache: 'no-store' });
                 if (!res.ok) throw new Error('Catalogue indisponible');
-                const { products: online = [], stock = {} } = await res.json();
+                const { products: online = [], stock = {}, hiddenIds = [], supplies: onlineSupplies = [] } = await res.json();
+                const hiddenSet = new Set(hiddenIds);
+                products = products.filter(p => !hiddenSet.has(p.id));
                 const existingIds = new Set(products.map(p => p.id));
-                const newOnes = online.filter(p => p && p.id && !existingIds.has(p.id));
+                const newOnes = online.filter(p => p && p.id && !hiddenSet.has(p.id) && !existingIds.has(p.id));
                 online.forEach(op => {
                     const idx = products.findIndex(p => p.id === op.id);
                     if (idx !== -1) products[idx] = op;
@@ -1740,8 +1577,20 @@
                 products.forEach(p => {
                     if (Object.prototype.hasOwnProperty.call(stock, p.id)) p.inStock = Boolean(stock[p.id]);
                 });
+                onlineSupplies.forEach(os => {
+                    const idx = supplies.findIndex(s => s.id === os.id);
+                    const normalized = {
+                        ...os,
+                        domain: os.domain || os.desc || '',
+                        specs: os.specs || ''
+                    };
+                    if (idx !== -1) supplies[idx] = Object.assign({}, supplies[idx], normalized);
+                    else supplies.push(normalized);
+                });
                 renderProducts();
+                renderSupplies();
                 renderAdminStockList();
+                renderAdminSuppliesList();
                 setCatalogStatus('Catalogue en ligne accessible. Les publications confirmées sont enregistrées durablement.');
                 return true;
             } catch (e) {
@@ -1792,7 +1641,6 @@
             return adminApi('POST', '/api/admin/products', { ...product, images });
         }
 
-        // Publie en ligne les modèles et statuts de stock restés uniquement sur cet appareil
         async function syncLocalDataOnline() {
             if (syncingLocalData) return;
             let localProducts = [];
@@ -1803,7 +1651,7 @@
             } catch (e) {}
             if (!Array.isArray(localProducts)) localProducts = [];
             if (!localStock || typeof localStock !== 'object' || Array.isArray(localStock)) localStock = {};
-            if ((!Array.isArray(localProducts) || localProducts.length === 0) && Object.keys(localStock).length === 0) return;
+            if (localProducts.length === 0 && Object.keys(localStock).length === 0) return;
 
             showToast('Publication en ligne des modèles enregistrés sur cet appareil…');
             syncingLocalData = true;
@@ -1815,7 +1663,6 @@
                     const idx = products.findIndex(p => p.id === saved.id);
                     if (idx !== -1) products[idx] = saved; else products.unshift(saved);
                     remaining.splice(remaining.indexOf(lp), 1);
-                    // Retirer uniquement le modèle confirmé par le serveur.
                     try { localStorage.setItem('carreauxdas_custom_products', JSON.stringify(remaining)); } catch (e) {}
                     published++;
                 } catch (e) {
@@ -1870,7 +1717,6 @@
             grid.innerHTML = filtered.map(p => `
                 <article class="group bg-white rounded-2xl border border-stone-200/90 overflow-hidden shadow-xs hover:shadow-lg hover:border-stone-300 transition-all flex flex-col justify-between">
                     <div>
-                        <!-- Visuel 4:3 cliquable -->
                         <div onclick="openProductModal('${p.id}')" class="relative aspect-[4/3] bg-stone-100 overflow-hidden cursor-pointer">
                             <img 
                                 src="${p.images[0]}" 
@@ -1878,7 +1724,6 @@
                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                                 onerror="this.src='https://placehold.co/800x600/E5E1D8/292622?text=${encodeURIComponent(p.name)}'"
                             >
-                            <!-- Badges sobres en haut -->
                             <div class="absolute top-3 left-3 flex items-center gap-1.5">
                                 <span class="bg-white/95 backdrop-blur-xs text-stone-900 text-[11px] font-bold px-2.5 py-1 rounded-lg shadow-xs">
                                     ${p.format}
@@ -1893,14 +1738,12 @@
                             </span>` : ''}
                         </div>
 
-                        <!-- Infos essentielles épurées -->
                         <div class="p-6 pb-4">
                             <span class="text-[11px] font-semibold uppercase tracking-wider text-stone-400">${p.category}</span>
                             <h3 onclick="openProductModal('${p.id}')" class="font-display font-bold text-lg text-stone-900 mt-0.5 cursor-pointer group-hover:text-forest-800 transition-colors">
                                 ${p.name}
                             </h3>
 
-                            <!-- Tarification claire -->
                             <div class="mt-4 pt-4 border-t border-stone-100 flex items-baseline justify-between">
                                 <div>
                                     <span class="text-xs text-stone-400 line-through mr-1.5">${p.oldPrice.toFixed(2).replace('.', ',')} €</span>
@@ -1909,7 +1752,6 @@
                                 </div>
                             </div>
 
-                            <!-- Ligne discrète prix avec pose TVA 10% -->
                             <p class="text-xs text-forest-800 font-medium mt-1.5 flex items-center gap-1.5">
                                 <span class="w-1.5 h-1.5 rounded-full bg-forest-600"></span>
                                 <span>Avec notre pose (TVA 10%) : <strong>${p.pricePose.toFixed(2).replace('.', ',')} €/m²</strong></span>
@@ -1917,7 +1759,6 @@
                         </div>
                     </div>
 
-                    <!-- 2 Boutons d'action nets -->
                     <div class="px-6 pb-6 pt-2 flex flex-col sm:flex-row gap-2.5">
                         <button onclick="openProductModal('${p.id}')" class="flex-1 bg-stone-900 hover:bg-forest-800 text-white text-xs font-semibold py-3 px-4 rounded-xl transition-colors text-center">
                             Calculer &amp; Commander
@@ -1951,28 +1792,81 @@
             setCategory(pageCategorySlug ? categoryPages[pageCategorySlug].cat : 'Tous');
         }
 
-        // --- RENDU DES FOURNITURES PRO ---
+        // --- RENDU DES FOURNITURES PRO (QUANTITÉ, OPTION PALETTE SUR DEVIS, DOMAINE D'APPLICATION & CARACTÉRISTIQUES TECHNIQUES) ---
         function renderSupplies() {
             const grid = document.getElementById('supplies-grid');
-            grid.innerHTML = supplies.map(s => `
-                <div class="bg-white rounded-2xl p-5 border border-stone-200/90 flex flex-col justify-between shadow-xs">
+            const esc = str => String(str || '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+            grid.innerHTML = supplies.map(s => {
+                const domainText = s.domain || s.desc || 'Mise en œuvre professionnelle sol et mur intérieur/extérieur.';
+                const specsText = s.specs || 'Conforme aux normes européennes en vigueur • Qualité professionnelle sélectionnée par nos poseurs.';
+                return `
+                <div class="bg-white rounded-2xl overflow-hidden border border-stone-200/90 flex flex-col justify-between shadow-xs hover:shadow-md transition-all">
                     <div>
-                        <div class="w-9 h-9 rounded-xl bg-stone-100 text-stone-700 flex items-center justify-center mb-4">
-                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                            </svg>
+                        ${s.image ? `
+                        <div class="aspect-[4/3] bg-stone-100 overflow-hidden">
+                            <img src="${esc(s.image)}" alt="${esc(s.name)}" class="w-full h-full object-cover">
+                        </div>` : `
+                        <div class="p-5 pb-0">
+                            <div class="w-9 h-9 rounded-xl bg-stone-100 text-stone-700 flex items-center justify-center">
+                                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                                </svg>
+                            </div>
+                        </div>`}
+                        <div class="p-5 space-y-3">
+                            <div>
+                                <h3 class="font-display font-bold text-sm text-stone-900">${esc(s.name)}</h3>
+                                <p class="text-xs font-medium text-forest-800 mt-0.5 leading-relaxed">${esc(s.subtitle)}</p>
+                            </div>
+
+                            <div class="bg-stone-50 rounded-xl p-3 border border-stone-200/70 space-y-2 text-[11px] leading-relaxed">
+                                <div>
+                                    <span class="font-bold uppercase tracking-wider text-stone-700 block text-[10px]">Domaine d'application</span>
+                                    <p class="text-stone-600 mt-0.5">${esc(domainText)}</p>
+                                </div>
+                                <div class="pt-1.5 border-t border-stone-200/70">
+                                    <span class="font-bold uppercase tracking-wider text-stone-700 block text-[10px]">Caractéristiques techniques</span>
+                                    <p class="text-stone-600 mt-0.5">${esc(specsText)}</p>
+                                </div>
+                            </div>
                         </div>
-                        <h3 class="font-display font-bold text-sm text-stone-900">${s.name}</h3>
-                        <p class="text-xs text-stone-500 mt-1 leading-relaxed">${s.subtitle}</p>
                     </div>
-                    <div class="mt-5 pt-3.5 border-t border-stone-100 flex items-center justify-between">
-                        <span class="font-display font-bold text-base text-stone-900">${s.price.toFixed(2).replace('.', ',')} € <span class="text-[11px] font-normal text-stone-400">TTC</span></span>
-                        <button onclick="addSupplyToCart('${s.id}')" class="bg-stone-100 hover:bg-stone-900 hover:text-white text-stone-800 text-xs font-semibold px-3 py-2 rounded-lg transition-colors">
-                            + Ajouter
-                        </button>
+
+                    <div class="px-5 pb-5 pt-3.5 border-t border-stone-100 space-y-3">
+                        <div class="flex items-center justify-between gap-2">
+                            <div>
+                                <span class="font-display font-bold text-base text-stone-900">${Number(s.price).toFixed(2).replace('.', ',')} €</span>
+                                <span class="text-[11px] font-normal text-stone-400">TTC / unité</span>
+                            </div>
+                            <div class="inline-flex items-center border border-stone-300 rounded-lg bg-stone-50 overflow-hidden">
+                                <button type="button" onclick="stepSupplyQty('${esc(s.id)}', -1)" class="px-2.5 py-1 text-xs font-bold text-stone-700 hover:bg-stone-200 transition-colors" aria-label="Diminuer la quantité">&minus;</button>
+                                <input type="number" id="sup-qty-${esc(s.id)}" min="1" max="500" value="1" class="w-10 text-center text-xs font-bold text-stone-900 bg-white py-1 focus:outline-none">
+                                <button type="button" onclick="stepSupplyQty('${esc(s.id)}', 1)" class="px-2.5 py-1 text-xs font-bold text-stone-700 hover:bg-stone-200 transition-colors" aria-label="Augmenter la quantité">+</button>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col gap-1.5">
+                            <button type="button" onclick="addSupplyToCart('${esc(s.id)}')" class="w-full bg-stone-900 hover:bg-forest-800 text-white text-xs font-semibold py-2.5 px-3 rounded-xl transition-colors">
+                                + Ajouter au panier
+                            </button>
+                            <button type="button" onclick="addSupplyPalletQuote('${esc(s.id)}')" class="w-full bg-forest-50 hover:bg-forest-100 text-forest-900 border border-forest-200 text-[11px] font-semibold py-2 px-3 rounded-xl transition-colors flex items-center justify-center gap-1.5">
+                                <svg class="w-3.5 h-3.5 text-forest-700 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                                </svg>
+                                <span>Prix à la palette (sur devis)</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
-            `).join('');
+                `;
+            }).join('');
+        }
+
+        function stepSupplyQty(supplyId, delta) {
+            const input = document.getElementById(`sup-qty-${supplyId}`);
+            if (!input) return;
+            const current = Math.max(1, parseInt(input.value, 10) || 1);
+            input.value = Math.min(500, Math.max(1, current + delta));
         }
 
         // --- MODALE FICHE PRODUIT & CALCULATEUR ---
@@ -2001,7 +1895,6 @@
             document.getElementById('modal-price-supply').textContent = activeProduct.priceSupply.toFixed(2).replace('.', ',');
             document.getElementById('modal-price-pose').textContent = activeProduct.pricePose.toFixed(2).replace('.', ',');
 
-            // Image principale et miniatures
             const mainImg = document.getElementById('modal-img');
             mainImg.src = activeProduct.images[0];
             
@@ -2109,16 +2002,48 @@
             const s = supplies.find(item => item.id === supplyId);
             if (!s) return;
 
+            const qtyInput = document.getElementById(`sup-qty-${supplyId}`);
+            const qty = Math.max(1, parseInt(qtyInput?.value, 10) || 1);
+            const unitPrice = Number(s.price);
+            const lineTotal = +(unitPrice * qty).toFixed(2);
+
             cart.push({
                 uid: Date.now(),
                 type: 'supply',
-                title: s.name,
-                detail: s.subtitle,
-                price: s.price
+                title: qty > 1 ? `${s.name} (x${qty})` : s.name,
+                detail: `${qty} unité(s) × ${unitPrice.toFixed(2).replace('.', ',')} € • ${s.subtitle}`,
+                price: lineTotal
             });
 
+            if (qtyInput) qtyInput.value = '1';
             renderCart();
-            showToast(`${s.name} ajouté au panier.`);
+            showToast(`${qty} × ${s.name} ajouté au panier.`);
+        }
+
+        function addSupplyPalletQuote(supplyId) {
+            const s = supplies.find(item => item.id === supplyId);
+            if (!s) return;
+
+            const qtyInput = document.getElementById(`sup-qty-${supplyId}`);
+            const qty = Math.max(1, parseInt(qtyInput?.value, 10) || 1);
+
+            cart.push({
+                uid: Date.now(),
+                type: 'quote',
+                title: `Tarif Palette (sur devis) : ${s.name}`,
+                detail: `Demande de prix dégressif palette complète (${qty} palette(s) souhaitée(s)) • ${s.subtitle}`,
+                price: 0
+            });
+
+            if (qtyInput) qtyInput.value = '1';
+            const methodSelect = document.getElementById('checkout-method');
+            if (methodSelect) {
+                methodSelect.value = 'devis';
+                updateCheckoutInfo();
+            }
+            renderCart();
+            toggleCart(true);
+            showToast(`Demande de tarif palette pour « ${s.name} » ajoutée au devis.`);
         }
 
         function removeCartItem(uid) {
@@ -2153,12 +2078,15 @@
             let total = 0;
             container.innerHTML = cart.map(item => {
                 total += item.price;
+                const priceLabel = item.price > 0
+                    ? `${item.price.toFixed(2).replace('.', ',')} €`
+                    : 'Sur devis';
                 return `
                     <div class="bg-stone-50 rounded-2xl p-4 border border-stone-200/80 flex items-start justify-between gap-3">
                         <div>
                             <h4 class="text-xs font-bold text-stone-900">${item.title}</h4>
                             <p class="text-[11px] text-stone-500 mt-0.5">${item.detail}</p>
-                            <span class="inline-block font-display font-bold text-sm text-stone-900 mt-2">${item.price.toFixed(2).replace('.', ',')} €</span>
+                            <span class="inline-block font-display font-bold text-sm ${item.price > 0 ? 'text-stone-900' : 'text-forest-800'} mt-2">${priceLabel}</span>
                         </div>
                         <button onclick="removeCartItem(${item.uid})" class="text-stone-400 hover:text-red-600 p-1" title="Retirer">
                             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
@@ -2171,7 +2099,6 @@
             updateFreeShipping(total);
         }
 
-        // --- LIVRAISON GRATUITE DÈS 900 € ---
         const FREE_SHIPPING_THRESHOLD = 900;
         function updateFreeShipping(total) {
             const shippingEl = document.getElementById('cart-shipping');
@@ -2192,9 +2119,22 @@
             }
         }
 
+        function showCheckoutError(msg) {
+            const box = document.getElementById('checkout-error-box');
+            if (!box) return;
+            if (!msg) {
+                box.textContent = '';
+                box.classList.add('hidden');
+            } else {
+                box.textContent = msg;
+                box.classList.remove('hidden');
+            }
+        }
+
         function toggleCart(open) {
             const drawer = document.getElementById('cart-drawer');
             if (open) {
+                showCheckoutError('');
                 drawer.classList.remove('hidden');
             } else {
                 drawer.classList.add('hidden');
@@ -2202,13 +2142,16 @@
         }
 
         function updateCheckoutInfo() {
+            showCheckoutError('');
             const method = document.getElementById('checkout-method').value;
             const box = document.getElementById('checkout-method-details');
 
             if (method === 'devis') {
                 box.innerHTML = `
-                    <p>Recevez votre devis officiel SARL (incluant frais de port camion hayon ou forfait pose TVA 10%) sous 24h.</p>
-                    <input type="text" id="client-contact" placeholder="Votre email ou numéro de téléphone..." class="w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-lg text-xs focus:outline-none focus:border-forest-700">
+                    <p>Recevez votre devis officiel SARL (incluant frais de port camion hayon, tarif palette ou forfait pose TVA 10%) sous 24h.</p>
+                    <input type="text" id="client-name-quote" placeholder="Votre nom / prénom..." class="w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-lg text-xs focus:outline-none focus:border-forest-700">
+                    <input type="text" id="client-contact" placeholder="Votre email ou numéro de téléphone *..." class="w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-lg text-xs focus:outline-none focus:border-forest-700">
+                    <input type="text" id="client-city-quote" placeholder="Code postal / Ville du chantier ou livraison..." class="w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-lg text-xs focus:outline-none focus:border-forest-700">
                 `;
             } else if (method === 'card') {
                 box.innerHTML = `
@@ -2223,20 +2166,26 @@
                 `;
             }
             const deliveryForm = document.getElementById('delivery-form');
-            if (deliveryForm) deliveryForm.classList.toggle('hidden', method === 'devis');
+            if (deliveryForm) {
+                deliveryForm.classList.toggle('hidden', method === 'devis');
+                if (method !== 'devis') {
+                    setTimeout(() => {
+                        deliveryForm.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }, 60);
+                }
+            }
         }
 
-        // --- INFORMATIONS DE LIVRAISON ---
         function getDeliveryInfo() {
             const val = id => (document.getElementById(id)?.value || '').trim();
             return {
                 firstName: val('dlv-firstname'),
                 lastName: val('dlv-lastname'),
-                email: val('dlv-email'),
+                email: val('dlv-email').replace(/\s+/g, ''),
                 phone: val('dlv-phone'),
                 address: val('dlv-address'),
                 address2: val('dlv-address2'),
-                zip: val('dlv-zip'),
+                zip: val('dlv-zip').replace(/\s+/g, ''),
                 city: val('dlv-city'),
                 notes: val('dlv-notes')
             };
@@ -2244,6 +2193,9 @@
 
         function validateDeliveryInfo() {
             const d = getDeliveryInfo();
+            const zipInput = document.getElementById('dlv-zip');
+            if (zipInput) zipInput.value = d.zip;
+
             const errors = [];
             const mark = (id, bad) => {
                 const el = document.getElementById(id);
@@ -2257,9 +2209,9 @@
                 ['dlv-firstname', d.firstName.length >= 1, 'prénom'],
                 ['dlv-lastname', d.lastName.length >= 1, 'nom'],
                 ['dlv-email', /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email), 'email valide'],
-                ['dlv-phone', d.phone.replace(/[^0-9]/g, '').length >= 10, 'téléphone'],
-                ['dlv-address', d.address.length >= 4, 'adresse'],
-                ['dlv-zip', /^[0-9]{5}$/.test(d.zip) && !/^(97|98)/.test(d.zip), 'code postal (France métropolitaine)'],
+                ['dlv-phone', d.phone.replace(/[^0-9]/g, '').length >= 10, 'téléphone (10 chiffres)'],
+                ['dlv-address', d.address.length >= 4, 'adresse complète'],
+                ['dlv-zip', /^[0-9]{5}$/.test(d.zip) && !/^(97|98)/.test(d.zip), 'code postal (5 chiffres, France métropolitaine)'],
                 ['dlv-city', d.city.length >= 2, 'ville']
             ];
             checks.forEach(([id, ok, label]) => {
@@ -2267,11 +2219,14 @@
                 if (!ok) errors.push(label);
             });
             if (errors.length > 0) {
-                showToast('Informations de livraison à compléter : ' + errors.join(', ') + '.');
+                const msg = 'Informations de livraison à compléter : ' + errors.join(', ') + '.';
+                showCheckoutError(msg);
+                showToast(msg);
                 const firstBad = checks.find(c => !c[1]);
                 document.getElementById(firstBad[0])?.focus();
                 return null;
             }
+            showCheckoutError('');
             try { localStorage.setItem('carreauxdas_delivery_info', JSON.stringify(d)); } catch (e) {}
             return d;
         }
@@ -2289,25 +2244,53 @@
         }
 
         async function submitOrderOrQuote() {
+            showCheckoutError('');
             if (cart.length === 0) {
-                showToast('Ajoutez au moins un article ou un échantillon avant de valider.');
+                showCheckoutError('Ajoutez au moins un article ou un échantillon avant de valider.');
                 return;
             }
             const method = document.getElementById('checkout-method').value;
             if (method === 'devis') {
                 const contact = document.getElementById('client-contact')?.value.trim();
+                const clientName = document.getElementById('client-name-quote')?.value.trim() || 'Non renseigné';
+                const clientCity = document.getElementById('client-city-quote')?.value.trim() || 'Non renseignée';
                 if (!contact) {
-                    showToast('Veuillez indiquer votre email ou téléphone pour recevoir le devis.');
+                    showCheckoutError('Veuillez indiquer votre email ou téléphone pour recevoir le devis.');
+                    document.getElementById('client-contact')?.focus();
                     return;
                 }
-                showToast('Demande de devis transmise à Carreaux Das SARL. Réponse sous 24h.');
-                cart = [];
-                renderCart();
-                toggleCart(false);
+                const totalAmount = cart.reduce((sum, item) => sum + (Number(item.price) || 0), 0);
+                const linesText = cart.map((item, idx) =>
+                    `${idx + 1}. ${item.title} — ${item.detail} (${item.price > 0 ? item.price.toFixed(2).replace('.', ',') + ' € TTC' : 'Sur devis'})`
+                ).join('\n');
+
+                const totalEstimeStr = totalAmount > 0 ? `${totalAmount.toFixed(2).replace('.', ',')} € TTC` : 'À chiffrer sur devis';
+
+                try {
+                    const res = await fetch('/api/quotes', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            clientName,
+                            clientContact: contact,
+                            clientCity,
+                            totalEstime: totalEstimeStr,
+                            detail: linesText
+                        })
+                    });
+                    const data = await res.json().catch(() => ({}));
+                    if (!res.ok) throw new Error(data.error || 'Erreur serveur');
+                    showToast('Demande de devis enregistrée et transmise à Carreaux Das SARL ! Réponse sous 24h.');
+                    cart = [];
+                    renderCart();
+                    toggleCart(false);
+                } catch (err) {
+                    showCheckoutError('Impossible d\'envoyer la demande pour le moment. Vous pouvez aussi nous joindre directement au 07 80 51 33 92 ou à koos45120@gmail.com.');
+                }
             } else if (method === 'card') {
                 const payableItems = cart.filter(i => i.price > 0);
                 if (payableItems.length === 0) {
-                    showToast('Votre sélection contient uniquement une étude sur devis (0 €). Choisissez "Demande de Devis".');
+                    showCheckoutError('Votre sélection contient uniquement une étude sur devis (0 €). Choisissez « Demande de Devis gratuit sous 24h » dans le menu déroulant ci-dessus.');
                     return;
                 }
                 const delivery = validateDeliveryInfo();
@@ -2342,7 +2325,7 @@
                         window.location.href = fallbackUrl.toString();
                         return;
                     }
-                    showToast('Paiement CB momentanément indisponible : utilisez "Demande de Devis" ou le virement.');
+                    showCheckoutError('Paiement CB momentanément indisponible : utilisez « Demande de Devis » ou le virement bancaire.');
                 }
             } else {
                 if (!validateDeliveryInfo()) return;
@@ -2360,12 +2343,11 @@
             const sqm = parseInt(val);
             document.getElementById('sim-surface-val').textContent = sqm;
 
-            // Calcul réaliste basé sur un écart négoce de ~19 €/m² + gain TVA 10% vs 20%
             const negoceGain = Math.round(sqm * 19);
             const tvaGain = Math.round(sqm * 10.5);
             const totalGain = negoceGain + tvaGain;
 
-            const budgetEst = Math.round(sqm * 73); // ~73 €/m² fourniture + pose TVA 10%
+            const budgetEst = Math.round(sqm * 73);
             const budgetOld = budgetEst + totalGain;
 
             document.getElementById('sim-negoce-gain').textContent = negoceGain.toLocaleString('fr-FR');
@@ -2384,12 +2366,17 @@
                 detail: `Éligible TVA réduite 10% & Garantie Décennale DTU`,
                 price: 0
             });
+            const methodSelect = document.getElementById('checkout-method');
+            if (methodSelect) {
+                methodSelect.value = 'devis';
+                updateCheckoutInfo();
+            }
             renderCart();
             toggleCart(true);
             showToast(`Simulation pour ${sqm} m² ajoutée à votre demande de devis.`);
         }
 
-        // --- ESPACE GÉRANT : GESTION DU MOT DE PASSE & SÉCURITÉ ---
+        // --- ESPACE GÉRANT ---
         function updateAdminAuthUI() {
             try { localStorage.removeItem('carreauxdas_admin_password'); } catch (e) {}
             const badge = document.getElementById('admin-login-badge');
@@ -2418,16 +2405,12 @@
             }
         }
 
-        // --- ESPACE GÉRANT : ACTIONS & AUTHENTIFICATION ---
         function openAdminModal() {
             document.getElementById('admin-modal').classList.remove('hidden');
             document.getElementById('admin-auth-tabs').classList.remove('hidden');
             document.getElementById('admin-panel-view').classList.add('hidden');
             document.getElementById('admin-logout-btn').classList.add('hidden');
             document.getElementById('admin-pass-input').value = '';
-            if (document.getElementById('adm-cur-pass')) document.getElementById('adm-cur-pass').value = '';
-            if (document.getElementById('adm-new-pass')) document.getElementById('adm-new-pass').value = '';
-            if (document.getElementById('adm-confirm-pass')) document.getElementById('adm-confirm-pass').value = '';
             if (document.getElementById('adm-stripe-url')) document.getElementById('adm-stripe-url').value = adminSettings.stripeUrl;
             if (document.getElementById('adm-iban')) document.getElementById('adm-iban').value = adminSettings.iban;
             switchAdminAuthTab('login');
@@ -2462,6 +2445,8 @@
                 document.getElementById('admin-panel-view').classList.remove('hidden');
                 document.getElementById('admin-logout-btn').classList.remove('hidden');
                 renderAdminStockList();
+                renderAdminSuppliesList();
+                loadAdminQuotes();
                 showToast('Connexion réussie.');
                 await syncLocalDataOnline();
             } catch (e) {
@@ -2561,24 +2546,25 @@
             `).join('');
         }
 
-        // --- GESTION DU STOCK (point vert) ---
+        // --- GESTION DU STOCK & SUPPRESSION DE TOUS LES MODÈLES ---
         function renderAdminStockList() {
             const list = document.getElementById('adm-stock-list');
             if (!list) return;
             const esc = str => String(str).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
             list.innerHTML = products.map(p => `
-                <label class="flex items-center justify-between gap-3 px-3.5 py-2.5 cursor-pointer hover:bg-stone-50">
-                    <span class="flex items-center gap-2 min-w-0">
+                <div class="flex items-center justify-between gap-3 px-3.5 py-2.5 hover:bg-stone-50">
+                    <label class="flex items-center gap-2 min-w-0 cursor-pointer flex-1">
                         <span class="w-2.5 h-2.5 shrink-0 rounded-full ${p.inStock ? 'bg-emerald-500' : 'bg-stone-300'}"></span>
                         <span class="font-semibold text-stone-800 truncate">${esc(p.name)}</span>
                         <span class="text-stone-400 truncate">${esc(p.format)}</span>
-                    </span>
-                    <span class="flex items-center gap-2 shrink-0">
-                        <span class="${p.inStock ? 'text-emerald-700' : 'text-stone-400'} font-medium">${p.inStock ? 'En stock' : 'Sur commande'}</span>
-                        <input type="checkbox" ${p.inStock ? 'checked' : ''} onchange="adminToggleStock('${p.id}', this.checked)" class="w-4 h-4 accent-emerald-600">
-                        ${String(p.id).startsWith('custom-') ? `<button type="button" onclick="event.preventDefault(); adminDeleteProduct('${p.id}')" class="text-rose-700 hover:underline font-medium" title="Supprimer ce modèle">Supprimer</button>` : ''}
-                    </span>
-                </label>
+                    </label>
+                    <div class="flex items-center gap-2.5 shrink-0">
+                        <span class="${p.inStock ? 'text-emerald-700' : 'text-stone-400'} font-medium hidden sm:inline">${p.inStock ? 'En stock' : 'Sur commande'}</span>
+                        <input type="checkbox" ${p.inStock ? 'checked' : ''} onchange="adminToggleStock('${esc(p.id)}', this.checked)" class="w-4 h-4 accent-emerald-600" title="En stock">
+                        <button type="button" onclick="editAdminProduct('${esc(p.id)}')" class="text-forest-800 hover:underline font-semibold" title="Modifier les informations ou photos de ce modèle">Modifier</button>
+                        <button type="button" onclick="adminDeleteProduct('${esc(p.id)}')" class="text-rose-700 hover:underline font-semibold" title="Supprimer définitivement ce modèle">Supprimer</button>
+                    </div>
+                </div>
             `).join('');
         }
 
@@ -2606,19 +2592,65 @@
             try {
                 await adminApi('DELETE', `/api/admin/products/${encodeURIComponent(productId)}`);
                 products = products.filter(p => p.id !== productId);
+                if (document.getElementById('adm-prod-id')?.value === productId) resetAdminProductForm();
                 try {
                     const stored = JSON.parse(localStorage.getItem('carreauxdas_custom_products') || '[]');
                     localStorage.setItem('carreauxdas_custom_products', JSON.stringify(stored.filter(p => p.id !== productId)));
                 } catch (e) {}
                 renderProducts();
                 renderAdminStockList();
-                showToast(`Modèle « ${product.name} » supprimé du catalogue.`);
+                showToast(`Modèle « ${product.name} » supprimé définitivement du catalogue.`);
             } catch (e) {
                 showToast(`Suppression impossible : ${e.message}`);
             }
         }
 
+        function editAdminProduct(productId) {
+            const p = products.find(x => x.id === productId);
+            if (!p) return;
+            document.getElementById('adm-prod-id').value = p.id;
+            document.getElementById('adm-name').value = p.name || '';
+            const catSelect = document.getElementById('adm-cat');
+            if (catSelect) catSelect.value = p.category || 'Effet Pierre';
+            document.getElementById('adm-format').value = p.format || '60x60 cm';
+            document.getElementById('adm-price').value = Number(p.priceSupply || 29.90).toFixed(2);
+            document.getElementById('adm-box-sqm').value = p.boxSqm || 1.44;
+            document.getElementById('adm-norm').value = p.norm || '';
+            document.getElementById('adm-in-stock').checked = p.inStock !== false;
+            document.getElementById('adm-desc').value = p.desc || '';
+            adminUploadedImages = Array.isArray(p.images) ? [...p.images] : [];
+            renderAdminPhotoPreviews();
+
+            const titleEl = document.getElementById('adm-prod-form-title');
+            if (titleEl) titleEl.textContent = `1. Modifier le modèle : ${p.name}`;
+            const pubBtn = document.getElementById('adm-publish-btn');
+            if (pubBtn) pubBtn.textContent = 'Enregistrer les modifications';
+
+            const panel = document.getElementById('admin-panel-view');
+            if (panel) panel.scrollTo({ top: 0, behavior: 'smooth' });
+            showToast(`Édition de « ${p.name} » prête ci-dessus.`);
+        }
+
+        function resetAdminProductForm() {
+            document.getElementById('adm-prod-id').value = '';
+            document.getElementById('adm-name').value = '';
+            document.getElementById('adm-cat').value = 'Effet Pierre';
+            document.getElementById('adm-format').value = '60x120 cm';
+            document.getElementById('adm-price').value = '32.90';
+            document.getElementById('adm-box-sqm').value = '1.44';
+            document.getElementById('adm-norm').value = 'R10 • 1er Choix Rectifié';
+            document.getElementById('adm-in-stock').checked = true;
+            document.getElementById('adm-desc').value = '';
+            clearAdminUploadedPhotos();
+            const titleEl = document.getElementById('adm-prod-form-title');
+            if (titleEl) titleEl.textContent = '1. Ajouter ou modifier un modèle du catalogue';
+            const pubBtn = document.getElementById('adm-publish-btn');
+            if (pubBtn) pubBtn.textContent = 'Publier le modèle dans le catalogue';
+        }
+
         async function adminAddProduct() {
+            const existingId = document.getElementById('adm-prod-id')?.value.trim();
+            const existingProduct = existingId ? products.find(p => p.id === existingId) : null;
             const name = document.getElementById('adm-name').value.trim();
             const cat = document.getElementById('adm-cat').value;
             const format = document.getElementById('adm-format').value.trim() || '60x60 cm';
@@ -2634,14 +2666,14 @@
 
             const productImages = adminUploadedImages.length > 0
                 ? [...adminUploadedImages]
-                : ['https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85'];
+                : (existingProduct?.images?.length ? [...existingProduct.images] : ['https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85']);
 
             const newProduct = {
-                id: 'custom-' + Date.now(),
+                id: existingId || ('custom-' + Date.now()),
                 name: name,
                 category: cat,
                 format: format,
-                discount: '-30%',
+                discount: existingProduct?.discount || '-30%',
                 oldPrice: +(price * 1.42).toFixed(2),
                 priceSupply: price,
                 pricePose: +(price * 0.916).toFixed(2),
@@ -2654,30 +2686,221 @@
 
             const publishBtn = document.getElementById('adm-publish-btn');
             if (publishBtn?.disabled) return;
-            if (publishBtn) { publishBtn.disabled = true; publishBtn.textContent = 'Publication en cours…'; }
+            if (publishBtn) { publishBtn.disabled = true; publishBtn.textContent = existingId ? 'Mise à jour en cours…' : 'Publication en cours…'; }
             try {
                 const saved = await publishProductOnline(newProduct);
-                products.unshift(saved);
-                setCatalogStatus('Dernier modèle enregistré en ligne. Il reste disponible après fermeture de la page.');
+                const idx = products.findIndex(p => p.id === saved.id);
+                if (idx !== -1) products[idx] = saved;
+                else products.unshift(saved);
+                setCatalogStatus(existingId
+                    ? 'Modifications enregistrées en ligne. Elles sont visibles immédiatement par tous vos clients.'
+                    : 'Dernier modèle enregistré en ligne. Il reste disponible après fermeture de la page.');
             } catch (e) {
                 console.error(e);
-                showToast(`Le modèle n'a pas pu être publié en ligne : ${e.message}`);
+                showToast(`Le modèle n'a pas pu être enregistré en ligne : ${e.message}`);
                 return;
             } finally {
-                if (publishBtn) { publishBtn.disabled = false; publishBtn.textContent = 'Publier le modèle dans le catalogue'; }
+                if (publishBtn) {
+                    publishBtn.disabled = false;
+                    publishBtn.textContent = 'Publier le modèle dans le catalogue';
+                }
             }
 
-            document.getElementById('adm-name').value = '';
-            if (document.getElementById('adm-desc')) document.getElementById('adm-desc').value = '';
-            clearAdminUploadedPhotos();
+            resetAdminProductForm();
             renderProducts();
             renderAdminStockList();
-            showToast(`Modèle "${name}" publié ! Il est visible tout de suite par tous vos clients.`);
+            showToast(existingId
+                ? `Modèle « ${name} » mis à jour !`
+                : `Modèle « ${name} » publié ! Il est visible tout de suite par tous vos clients.`);
+        }
+
+        // --- GESTION DES FOURNITURES & OUTILLAGE (AJOUT / MODIFICATION / SUPPRESSION) ---
+        let adminSupplyPhotoDataUrl = '';
+
+        async function handleAdminSupplyPhoto(event) {
+            const file = event.target.files?.[0];
+            if (!file) return;
+            adminSupplyPhotoDataUrl = await compressUploadedImage(file, 1200, 0.86);
+            updateAdminSupplyPhotoPreview();
+            showToast('Photo de la fourniture chargée.');
+        }
+
+        function updateAdminSupplyPhotoPreview() {
+            const box = document.getElementById('adm-sup-photo-preview');
+            const img = document.getElementById('adm-sup-preview-img');
+            if (!box || !img) return;
+            if (adminSupplyPhotoDataUrl) {
+                img.src = adminSupplyPhotoDataUrl;
+                box.classList.remove('hidden');
+            } else {
+                img.src = '';
+                box.classList.add('hidden');
+            }
+        }
+
+        function clearAdminSupplyPhoto() {
+            adminSupplyPhotoDataUrl = '';
+            const input = document.getElementById('adm-sup-photo');
+            if (input) input.value = '';
+            updateAdminSupplyPhotoPreview();
+        }
+
+        function editAdminSupply(id) {
+            const s = supplies.find(x => x.id === id);
+            if (!s) return;
+            document.getElementById('adm-sup-id').value = s.id;
+            document.getElementById('adm-sup-name').value = s.name;
+            document.getElementById('adm-sup-sub').value = s.subtitle || '';
+            document.getElementById('adm-sup-price').value = Number(s.price).toFixed(2);
+            document.getElementById('adm-sup-domain').value = s.domain || s.desc || '';
+            document.getElementById('adm-sup-specs').value = s.specs || '';
+            adminSupplyPhotoDataUrl = s.image || '';
+            updateAdminSupplyPhotoPreview();
+            showToast(`Édition de « ${s.name} » prête ci-dessus.`);
+        }
+
+        function resetAdminSupplyForm() {
+            document.getElementById('adm-sup-id').value = '';
+            document.getElementById('adm-sup-name').value = '';
+            document.getElementById('adm-sup-sub').value = '';
+            document.getElementById('adm-sup-price').value = '24.90';
+            document.getElementById('adm-sup-domain').value = '';
+            document.getElementById('adm-sup-specs').value = '';
+            clearAdminSupplyPhoto();
+        }
+
+        async function adminSaveSupply() {
+            const existingId = document.getElementById('adm-sup-id').value.trim();
+            const name = document.getElementById('adm-sup-name').value.trim();
+            if (!name) {
+                showToast('Veuillez saisir le nom de la fourniture.');
+                return;
+            }
+            const btn = document.getElementById('adm-sup-save-btn');
+            if (btn?.disabled) return;
+            if (btn) { btn.disabled = true; btn.textContent = 'Enregistrement…'; }
+            try {
+                const image = adminSupplyPhotoDataUrl ? await uploadPhotoIfNeeded(adminSupplyPhotoDataUrl) : '';
+                const domain = document.getElementById('adm-sup-domain').value.trim();
+                const specs = document.getElementById('adm-sup-specs').value.trim();
+                const payload = {
+                    id: existingId || ('sup-' + Date.now()),
+                    name,
+                    subtitle: document.getElementById('adm-sup-sub').value.trim(),
+                    price: parseFloat(document.getElementById('adm-sup-price').value) || 0,
+                    image,
+                    domain,
+                    specs,
+                    desc: domain
+                };
+                const saved = await adminApi('POST', '/api/admin/supplies', payload);
+                const fullSaved = Object.assign({}, payload, saved, {
+                    domain: saved.domain || domain,
+                    specs: saved.specs || specs
+                });
+                const idx = supplies.findIndex(s => s.id === fullSaved.id);
+                if (idx !== -1) supplies[idx] = fullSaved;
+                else supplies.push(fullSaved);
+                resetAdminSupplyForm();
+                renderSupplies();
+                renderAdminSuppliesList();
+                showToast(`Fourniture « ${fullSaved.name} » publiée en ligne pour tous vos clients.`);
+            } catch (e) {
+                showToast(`Erreur d'enregistrement : ${e.message}`);
+            } finally {
+                if (btn) { btn.disabled = false; btn.textContent = 'Enregistrer la fourniture'; }
+            }
+        }
+
+        async function adminDeleteSupply(id) {
+            const s = supplies.find(x => x.id === id);
+            if (!s || !confirm(`Supprimer la fourniture « ${s.name} » ?`)) return;
+            try {
+                await adminApi('DELETE', `/api/admin/supplies/${encodeURIComponent(id)}`);
+                supplies = supplies.filter(x => x.id !== id);
+                if (document.getElementById('adm-sup-id').value === id) resetAdminSupplyForm();
+                renderSupplies();
+                renderAdminSuppliesList();
+                showToast(`Fourniture « ${s.name} » supprimée.`);
+            } catch (e) {
+                showToast(`Suppression impossible : ${e.message}`);
+            }
+        }
+
+        function renderAdminSuppliesList() {
+            const list = document.getElementById('adm-supplies-list');
+            if (!list) return;
+            const esc = str => String(str || '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+            list.innerHTML = supplies.map(s => `
+                <div class="flex items-center justify-between gap-3 px-3.5 py-2.5 hover:bg-stone-50">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        ${s.image ? `<img src="${esc(s.image)}" alt="" class="w-8 h-8 rounded-lg object-cover shrink-0 border border-stone-200">` : ''}
+                        <div class="min-w-0">
+                            <span class="font-semibold text-stone-800 block truncate">${esc(s.name)}</span>
+                            <span class="text-stone-400 text-[11px] block truncate">${Number(s.price).toFixed(2).replace('.', ',')} € TTC • ${esc(s.subtitle)}</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2.5 shrink-0">
+                        <button type="button" onclick="editAdminSupply('${esc(s.id)}')" class="text-forest-800 hover:underline font-semibold">Modifier</button>
+                        <button type="button" onclick="adminDeleteSupply('${esc(s.id)}')" class="text-rose-700 hover:underline font-semibold">Supprimer</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // --- GESTION DES DEMANDES DE DEVIS REÇUES ---
+        async function loadAdminQuotes() {
+            const list = document.getElementById('adm-quotes-list');
+            const badge = document.getElementById('adm-quotes-count');
+            if (!list) return;
+            try {
+                const quotes = await adminApi('GET', '/api/admin/quotes');
+                if (badge) badge.textContent = Array.isArray(quotes) ? quotes.length : 0;
+                if (!Array.isArray(quotes) || quotes.length === 0) {
+                    list.innerHTML = '<p class="text-stone-500 bg-stone-50 p-3.5 rounded-xl border border-stone-200">Aucune demande de devis enregistrée pour le moment.</p>';
+                    return;
+                }
+                const esc = str => String(str || '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+                list.innerHTML = quotes.map(q => {
+                    const dateStr = q.createdAt ? new Date(q.createdAt).toLocaleString('fr-FR', { dateStyle: 'short', timeStyle: 'short' }) : '';
+                    const mailSubject = encodeURIComponent(`Votre devis Carreaux Das - ${q.clientName || 'Client'}`);
+                    const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(q.clientContact || '');
+                    return `
+                        <div class="bg-stone-50 border border-stone-200 rounded-xl p-3.5 space-y-2">
+                            <div class="flex items-start justify-between gap-2">
+                                <div>
+                                    <span class="font-bold text-stone-900">${esc(q.clientName || 'Client')}</span>
+                                    <span class="text-stone-400 text-[11px] ml-2">${esc(dateStr)}</span>
+                                    <div class="text-forest-800 font-semibold mt-0.5">${esc(q.clientContact)} ${q.clientCity ? '• ' + esc(q.clientCity) : ''}</div>
+                                </div>
+                                <div class="flex items-center gap-2 shrink-0">
+                                    ${isEmail ? `<a href="mailto:${esc(q.clientContact)}?subject=${mailSubject}" class="text-forest-800 hover:underline font-semibold">Répondre</a>` : ''}
+                                    <button type="button" onclick="adminDeleteQuote('${esc(q.id)}')" class="text-rose-700 hover:underline font-semibold">Supprimer</button>
+                                </div>
+                            </div>
+                            <pre class="whitespace-pre-wrap font-sans text-[11px] text-stone-700 bg-white p-2.5 rounded-lg border border-stone-200/80">${esc(q.detail)}</pre>
+                            <div class="text-right font-bold text-stone-900">Total estimé : ${esc(q.totalEstime)}</div>
+                        </div>
+                    `;
+                }).join('');
+            } catch (e) {
+                list.innerHTML = `<p class="text-rose-700 bg-rose-50 p-3 rounded-xl border border-rose-200">Impossible de charger les devis : ${e.message}</p>`;
+            }
+        }
+
+        async function adminDeleteQuote(id) {
+            if (!confirm('Supprimer cette demande de devis ?')) return;
+            try {
+                await adminApi('DELETE', `/api/admin/quotes/${encodeURIComponent(id)}`);
+                loadAdminQuotes();
+                showToast('Demande de devis supprimée.');
+            } catch (e) {
+                showToast(`Erreur : ${e.message}`);
+            }
         }
 
         function exportPublishedHtmlForNetlify() {
             const docClone = document.documentElement.cloneNode(true);
-            // Reset transient UI states on the exported HTML
             const adminModalClone = docClone.querySelector('#admin-modal');
             if (adminModalClone) adminModalClone.classList.add('hidden');
             const productModalClone = docClone.querySelector('#product-modal');
@@ -2687,6 +2910,7 @@
             const toastClone = docClone.querySelector('#toast');
             if (toastClone) toastClone.classList.add('hidden');
             docClone.querySelector('#delivery-form')?.classList.add('hidden');
+            docClone.querySelector('#checkout-error-box')?.classList.add('hidden');
             const methodClone = docClone.querySelector('#checkout-method');
             if (methodClone) methodClone.querySelectorAll('option').forEach(o => o.removeAttribute('selected'));
             docClone.querySelector('#home-hero')?.classList.remove('hidden');
@@ -2699,12 +2923,16 @@
                 docClone.querySelector('meta[property="og:url"]')?.setAttribute('content', hm.ogUrl);
             }
 
-            // Embed current products array directly into the script so every visitor sees all added photos
             const serializedProducts = JSON.stringify(products, null, 12);
+            const serializedSupplies = JSON.stringify(supplies, null, 12);
             let fullHtml = '<!DOCTYPE html>\n' + docClone.outerHTML;
             fullHtml = fullHtml.replace(
                 /let products = \[[\s\S]*?\n        \];/,
                 `let products = ${serializedProducts};`
+            );
+            fullHtml = fullHtml.replace(
+                /let supplies = \[[\s\S]*?\n        \];/,
+                `let supplies = ${serializedSupplies};`
             );
 
             const blob = new Blob([fullHtml], { type: 'text/html;charset=utf-8' });
@@ -2716,7 +2944,7 @@
             a.click();
             a.remove();
             URL.revokeObjectURL(url);
-            showToast('Fichier index.html téléchargé ! Glissez-le sur Netlify pour publier vos photos à tous.');
+            showToast('Fichier index.html téléchargé.');
         }
 
         function adminSaveSettings() {
@@ -2791,5 +3019,15 @@
             document.getElementById('legal-modal').classList.add('hidden');
         }
     </script>
+    <!-- Formulaire Netlify Forms pour envoi automatique des demandes de devis par email -->
+    <form name="demande-devis" data-netlify="true" netlify-honeypot="bot-field" hidden>
+        <input type="text" name="bot-field">
+        <input type="text" name="client_nom">
+        <input type="text" name="client_contact">
+        <input type="text" name="chantier_ville">
+        <input type="text" name="total_estime">
+        <textarea name="detail_panier"></textarea>
+    </form>
+
 </body>
 </html>
