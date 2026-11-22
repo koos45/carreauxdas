@@ -215,6 +215,7 @@
                 </div>
                 <a href="#fournitures" class="hover:text-forest-700 transition-colors py-2">Fournitures &amp; Outillage</a>
                 <a href="#echantillons" class="hover:text-forest-700 transition-colors py-2">Échantillons</a>
+                <a href="#frais-de-port" class="hover:text-forest-700 transition-colors py-2">Frais de port</a>
                 <a href="#simulateur" class="hover:text-forest-700 transition-colors py-2 flex items-center gap-1.5">
                     <span>Forfait Pose &amp; TVA 10%</span>
                     <span class="bg-forest-50 text-forest-700 text-[11px] font-semibold px-2 py-0.5 rounded-full border border-forest-100">-10% TVA</span>
@@ -248,6 +249,7 @@
             <a href="/exterieur-r11" class="whitespace-nowrap hover:text-forest-700">Extérieur R11</a>
             <a href="#fournitures" class="whitespace-nowrap hover:text-forest-700">Fournitures</a>
             <a href="#echantillons" class="whitespace-nowrap hover:text-forest-700">Échantillons</a>
+            <a href="#frais-de-port" class="whitespace-nowrap hover:text-forest-700">Frais de port</a>
             <a href="#simulateur" class="whitespace-nowrap text-forest-700 font-semibold">Pose &amp; TVA 10%</a>
         </div>
     </header>
@@ -552,6 +554,90 @@
                             </div>
                             <p class="text-xs text-stone-300 mt-2">
                                 Soit un budget global pose + carrelage estimé à <strong class="text-white"><span id="sim-budget-est">4 380</span> € TTC</strong> au lieu de <span class="line-through text-stone-400"><span id="sim-budget-old">6 150</span> €</span>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 6B. CALCULATEUR DE FRAIS DE PORT MOYEN ESPAGNE -> FRANCE ==================== -->
+    <section id="frais-de-port" class="py-14 lg:py-20 bg-stone-50 border-t border-stone-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl border border-stone-200/90 shadow-sm overflow-hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-12">
+                    <div class="lg:col-span-7 p-7 sm:p-10 space-y-6">
+                        <div>
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-forest-50 text-forest-800 border border-forest-200 text-xs font-semibold mb-3">
+                                Transport Direct Usine Espagne &rarr; France
+                            </span>
+                            <h2 class="font-display text-2xl sm:text-3xl font-bold text-stone-900 leading-tight">
+                                Estimez vos frais de port depuis l'Espagne vers la France
+                            </h2>
+                            <p class="text-sm text-stone-600 mt-2 leading-relaxed">
+                                Nos carrelages partent directement de nos usines partenaires en Espagne (Castellón) par camion hayon sur palette filmée. Simulez le coût moyen de livraison selon votre surface et votre zone en France (<strong class="text-emerald-800">offert dès 900 € TTC d'achat</strong>).
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="page-freight-zone" class="block text-xs font-bold uppercase tracking-wider text-stone-600 mb-1.5">Zone de livraison (France)</label>
+                                <select id="page-freight-zone" onchange="updatePageFreightSimulator()" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs font-semibold text-stone-800 focus:outline-none focus:border-forest-700">
+                                    <option value="sud">Sud / Sud-Ouest (31, 33, 34, 64, 66...)</option>
+                                    <option value="centre" selected>Centre / Loiret (45, 18, 28, 37, 41...)</option>
+                                    <option value="idf">Île-de-France / Paris (75, 77, 78, 91-95)</option>
+                                    <option value="nord_est">Nord / Est / Grand Ouest (59, 67, 44, 35...)</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="page-freight-type" class="block text-xs font-bold uppercase tracking-wider text-stone-600 mb-1.5">Type de carreau</label>
+                                <select id="page-freight-type" onchange="updatePageFreightSimulator()" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs font-semibold text-stone-800 focus:outline-none focus:border-forest-700">
+                                    <option value="standard" selected>Grès cérame standard (ép. 9–10 mm • ~22 kg/m²)</option>
+                                    <option value="dalle20">Dalle terrasse 20 mm (ép. 20 mm • ~42 kg/m²)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <label for="page-freight-sqm" class="text-xs font-bold uppercase tracking-wider text-stone-600">Surface à livrer</label>
+                                <span class="font-display text-xl font-bold text-stone-900"><span id="page-freight-sqm-val">25</span> m²</span>
+                            </div>
+                            <input type="range" id="page-freight-sqm" min="5" max="180" step="5" value="25" oninput="updatePageFreightSimulator()" class="w-full">
+                            <div class="flex justify-between text-[11px] text-stone-400 mt-1">
+                                <span>5 m²</span>
+                                <span>60 m²</span>
+                                <span>120 m²</span>
+                                <span>180 m²</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 bg-stone-900 text-white p-7 sm:p-10 flex flex-col justify-between space-y-6">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between text-xs text-stone-400 pb-3 border-b border-stone-800">
+                                <span>Colisage estimé (camion hayon)</span>
+                                <strong id="page-freight-pallets" class="text-white text-sm">1 palette (~550 kg)</strong>
+                            </div>
+                            <div class="flex items-center justify-between text-xs text-stone-400 pb-3 border-b border-stone-800">
+                                <span>Tarif moyen 1re palette (Espagne &rarr; France)</span>
+                                <span id="page-freight-first" class="text-stone-200 font-semibold">145,00 €</span>
+                            </div>
+                            <div class="flex items-center justify-between text-xs text-stone-400 pb-3 border-b border-stone-800">
+                                <span>Palette supplémentaire</span>
+                                <span id="page-freight-extra" class="text-stone-200 font-semibold">+ 70,00 € / palette</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-forest-900/90 border border-forest-700/60 rounded-2xl p-5">
+                            <span class="text-[11px] font-semibold uppercase tracking-wider text-emerald-300 block mb-1">Frais de port moyens estimés</span>
+                            <div class="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight">
+                                <span id="page-freight-total">145,00 €</span> <span class="text-xs font-normal text-stone-300">TTC indicatif</span>
+                            </div>
+                            <p class="text-xs text-emerald-200 mt-2 font-medium">
+                                &bull; Livraison offerte dès 900 € TTC de commande.
                             </p>
                         </div>
                     </div>
@@ -941,14 +1027,44 @@
                 <div id="cart-items-container" class="p-6 space-y-4"></div>
 
                 <div id="cart-footer" class="p-6 border-t border-stone-200 bg-stone-50 space-y-4">
+                    <!-- Calculateur frais de port moyen Espagne -> France -->
+                    <div id="freight-calculator" class="bg-white p-3.5 rounded-xl border border-stone-200 space-y-2.5 text-xs">
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold uppercase tracking-wider text-stone-700">Calculateur frais de port (Espagne &rarr; France)</span>
+                            <span id="freight-pallets-badge" class="text-[11px] font-semibold text-forest-800 bg-forest-50 px-2 py-0.5 rounded-md border border-forest-200">0 palette</span>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                            <div>
+                                <label for="freight-zone" class="block text-[11px] text-stone-500 mb-1">Zone / Département (France)</label>
+                                <select id="freight-zone" onchange="updateFreightCalculator()" class="w-full px-2.5 py-2 bg-stone-50 border border-stone-200 rounded-lg text-xs font-medium text-stone-800 focus:outline-none focus:border-forest-700">
+                                    <option value="sud">Sud / Sud-Ouest (31, 33, 34, 64, 66...)</option>
+                                    <option value="centre" selected>Centre / Loiret (45, 18, 28, 37, 41...)</option>
+                                    <option value="idf">Île-de-France / Paris (75, 77, 78, 91-95)</option>
+                                    <option value="nord_est">Nord / Est / Grand Ouest (59, 67, 44, 35...)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="freight-pallets-input" class="block text-[11px] text-stone-500 mb-1">Palettes estimées (ajustable)</label>
+                                <input type="number" id="freight-pallets-input" min="0" max="30" step="1" value="1" oninput="updateFreightCalculator(true)" class="w-full px-2.5 py-1.5 bg-stone-50 border border-stone-200 rounded-lg text-xs font-bold text-stone-900 focus:outline-none focus:border-forest-700">
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between pt-1.5 border-t border-stone-100">
+                            <span class="text-stone-500">Estimation moyenne transport Espagne &rarr; France :</span>
+                            <strong id="freight-est-price" class="font-display text-sm font-bold text-stone-900">145,00 €</strong>
+                        </div>
+                        <p id="freight-est-note" class="text-[11px] text-stone-500 leading-snug">
+                            Tarif moyen indicatif camion hayon (1 palette env. 25 à 35 m² / ~700–900 kg). Offert dès 900 € TTC d'achat.
+                        </p>
+                    </div>
+
                     <div class="space-y-1.5 text-sm">
                         <div class="flex justify-between text-stone-600">
                             <span>Sous-total articles TTC</span>
                             <span id="cart-subtotal" class="font-semibold text-stone-900">0,00 €</span>
                         </div>
                         <div class="flex justify-between text-xs text-stone-500">
-                            <span>Livraison palettisée / Échantillons</span>
-                            <span id="cart-shipping">Calculée selon département</span>
+                            <span>Frais de port estimés (Espagne &rarr; France)</span>
+                            <span id="cart-shipping">145,00 €</span>
                         </div>
                         <div id="free-shipping-box" class="mt-2 p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-900">
                             <p id="free-shipping-msg" class="font-semibold">Livraison gratuite dès 900 € d'achat</p>
@@ -2448,6 +2564,414 @@
                     "/images/modele-taulet-page-6-4.jpg"
                 ],
                 "desc": "Carrelage extérieur antidérapant R11 Écorce Brunie 6-4 au format 90x90 cm (3,24 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+            },
+            {
+                "id": "taulet-porcelanico-rectificado-p1-1-brume-de-loire",
+                "name": "Brume de Loire",
+                "category": "Carrelage Extérieur",
+                "format": "100x100 cm",
+                "discount": "-30%",
+                "oldPrice": 28.8,
+                "priceSupply": 20.28,
+                "pricePose": 18.59,
+                "boxSqm": 4.0,
+                "norm": "R11 Antidérapant • 1er Choix Rectifié",
+                "inStock": true,
+                "images": [
+                    "/images/modele-taulet-porcelanico-rectificado-page-1-1.jpg"
+                ],
+                "desc": "Carrelage grès cérame 1er choix rectifié Brume de Loire (Carrelage Extérieur) au format 100x100 cm (4,00 m²/carton), coloris beige chaleureux aux nuances minérales naturelles. Bords rectifiés permettant des joints fins et une pose soignée, haute résistance à l'usure, aux taches et au passage quotidien. Tarif direct négoce avec livraison France entière ou pose garantie décennale"
+            },
+            {
+                "id": "taulet-porcelanico-rectificado-p1-2-calcaire-d-orl-ans",
+                "name": "Calcaire d'Orléans",
+                "category": "Carrelage Extérieur",
+                "format": "100x100 cm",
+                "discount": "-30%",
+                "oldPrice": 28.8,
+                "priceSupply": 20.28,
+                "pricePose": 18.59,
+                "boxSqm": 4.0,
+                "norm": "R11 Antidérapant • 1er Choix Rectifié",
+                "inStock": true,
+                "images": [
+                    "/images/modele-taulet-porcelanico-rectificado-page-1-2.jpg"
+                ],
+                "desc": "Carrelage grès cérame 1er choix rectifié Calcaire d'Orléans (Carrelage Extérieur) au format 100x100 cm (4,00 m²/carton), coloris beige chaleureux aux nuances minérales naturelles. Bords rectifiés permettant des joints fins et une pose soignée, haute résistance à l'usure, aux taches et au passage quotidien. Tarif direct négoce avec livraison France entière ou pose garantie décennale"
+            },
+            {
+                "id": "taulet-porcelanico-rectificado-p1-3-cendre-de-sologne",
+                "name": "Cendre de Sologne",
+                "category": "Carrelage Extérieur",
+                "format": "100x100 cm",
+                "discount": "-30%",
+                "oldPrice": 31.01,
+                "priceSupply": 21.84,
+                "pricePose": 20.02,
+                "boxSqm": 4.0,
+                "norm": "R11 Antidérapant • 1er Choix Rectifié",
+                "inStock": true,
+                "images": [
+                    "/images/modele-taulet-porcelanico-rectificado-page-1-3.jpg"
+                ],
+                "desc": "Carrelage grès cérame 1er choix rectifié Cendre de Sologne (Carrelage Extérieur) au format 100x100 cm (4,00 m²/carton), coloris blanc minéral épuré qui agrandit visuellement l'espace. Bords rectifiés permettant des joints fins et une pose soignée, haute résistance à l'usure, aux taches et au passage quotidien. Tarif direct négoce avec livraison France entière ou pose garantie décennale"
+            },
+            {
+                "id": "taulet-porcelanico-rectificado-p1-4-dune-claire",
+                "name": "Dune Claire",
+                "category": "Carrelage Extérieur",
+                "format": "100x100 cm",
+                "discount": "-30%",
+                "oldPrice": 31.01,
+                "priceSupply": 21.84,
+                "pricePose": 20.02,
+                "boxSqm": 4.0,
+                "norm": "R11 Antidérapant • 1er Choix Rectifié",
+                "inStock": true,
+                "images": [
+                    "/images/modele-taulet-porcelanico-rectificado-page-1-4.jpg"
+                ],
+                "desc": "Carrelage grès cérame 1er choix rectifié Dune Claire (Carrelage Extérieur) au format 100x100 cm (4,00 m²/carton), coloris beige chaleureux aux nuances minérales naturelles. Bords rectifiés permettant des joints fins et une pose soignée, haute résistance à l'usure, aux taches et au passage quotidien. Tarif direct négoce avec livraison France entière ou pose garantie décennale"
+            },
+            {
+                "id": "taulet-porcelanico-rectificado-p1-5-corce-brunie",
+                "name": "Écorce Brunie",
+                "category": "Carrelage Extérieur",
+                "format": "100x100 cm",
+                "discount": "-30%",
+                "oldPrice": 31.01,
+                "priceSupply": 21.84,
+                "pricePose": 20.02,
+                "boxSqm": 4.0,
+                "norm": "R11 Antidérapant • 1er Choix Rectifié",
+                "inStock": true,
+                "images": [
+                    "/images/modele-taulet-porcelanico-rectificado-page-1-5.jpg"
+                ],
+                "desc": "Carrelage grès cérame 1er choix rectifié Écorce Brunie (Carrelage Extérieur) au format 100x100 cm (4,00 m²/carton), coloris gris contemporain élégant et lumineux. Bords rectifiés permettant des joints fins et une pose soignée, haute résistance à l'usure, aux taches et au passage quotidien. Tarif direct négoce avec livraison France entière ou pose garantie décennale"
+            },
+            {
+                "id": "taulet-porcelanico-rectificado-p1-6-falaise-grise",
+                "name": "Falaise Grise",
+                "category": "Carrelage Extérieur",
+                "format": "100x100 cm",
+                "discount": "-30%",
+                "oldPrice": 31.01,
+                "priceSupply": 21.84,
+                "pricePose": 20.02,
+                "boxSqm": 4.0,
+                "norm": "R11 Antidérapant • 1er Choix Rectifié",
+                "inStock": true,
+                "images": [
+                    "/images/modele-taulet-porcelanico-rectificado-page-1-6.jpg"
+                ],
+                "desc": "Carrelage grès cérame 1er choix rectifié Falaise Grise (Carrelage Extérieur) au format 100x100 cm (4,00 m²/carton), coloris gris contemporain élégant et lumineux. Bords rectifiés permettant des joints fins et une pose soignée, haute résistance à l'usure, aux taches et au passage quotidien. Tarif direct négoce avec livraison France entière ou pose garantie décennale"
+            },
+            {
+                "id": "taulet-porcelanico-rectificado-p1-7-granit-de-g-tinais",
+                "name": "Granit de Gâtinais",
+                "category": "Carrelage Extérieur",
+                "format": "100x100 cm",
+                "discount": "-30%",
+                "oldPrice": 31.01,
+                "priceSupply": 21.84,
+                "pricePose": 20.02,
+                "boxSqm": 4.0,
+                "norm": "R11 Antidérapant • 1er Choix Rectifié",
+                "inStock": true,
+                "images": [
+                    "/images/modele-taulet-porcelanico-rectificado-page-1-7.jpg"
+                ],
+                "desc": "Carrelage grès cérame 1er choix rectifié Granit de Gâtinais (Carrelage Extérieur) au format 100x100 cm (4,00 m²/carton), coloris beige chaleureux aux nuances minérales naturelles. Bords rectifiés permettant des joints fins et une pose soignée, haute résistance à l'usure, aux taches et au passage quotidien. Tarif direct négoce avec livraison France entière ou pose garantie décennale"
+            },
+            {
+                "id": "taulet-porcelanico-rectificado-p1-8-horizon-perle",
+                "name": "Horizon Perle",
+                "category": "Carrelage Extérieur",
+                "format": "100x100 cm",
+                "discount": "-30%",
+                "oldPrice": 31.01,
+                "priceSupply": 21.84,
+                "pricePose": 20.02,
+                "boxSqm": 4.0,
+                "norm": "R11 Antidérapant • 1er Choix Rectifié",
+                "inStock": true,
+                "images": [
+                    "/images/modele-taulet-porcelanico-rectificado-page-1-8.jpg"
+                ],
+                "desc": "Carrelage grès cérame 1er choix rectifié Horizon Perle (Carrelage Extérieur) au format 100x100 cm (4,00 m²/carton), coloris beige chaleureux aux nuances minérales naturelles. Bords rectifiés permettant des joints fins et une pose soignée, haute résistance à l'usure, aux taches et au passage quotidien. Tarif direct négoce avec livraison France entière ou pose garantie décennale"
+            },
+            {
+                "id": "taulet-porcelanico-rectificado-p1-9-lave-douce",
+                "name": "Lave Douce",
+                "category": "Carrelage Extérieur",
+                "format": "100x50 cm",
+                "discount": "-30%",
+                "oldPrice": 19.94,
+                "priceSupply": 14.04,
+                "pricePose": 12.87,
+                "boxSqm": 1.0,
+                "norm": "R11 Antidérapant • 1er Choix Rectifié",
+                "inStock": true,
+                "images": [
+                    "/images/modele-taulet-porcelanico-rectificado-page-1-9.jpg"
+                ],
+                "desc": "Carrelage grès cérame 1er choix rectifié Lave Douce (Carrelage Extérieur) au format 100x50 cm (1,00 m²/carton), coloris beige chaleureux aux nuances minérales naturelles. Bords rectifiés permettant des joints fins et une pose soignée, haute résistance à l'usure, aux taches et au passage quotidien. Tarif direct négoce avec livraison France entière ou pose garantie décennale"
+            },
+            {
+                "id": "taulet-porcelanico-rectificado-p1-10-marni-re-beige",
+                "name": "Marnière Beige",
+                "category": "Carrelage Extérieur",
+                "format": "100x50 cm",
+                "discount": "-30%",
+                "oldPrice": 24.37,
+                "priceSupply": 17.16,
+                "pricePose": 15.73,
+                "boxSqm": 1.0,
+                "norm": "R11 Antidérapant • 1er Choix Rectifié",
+                "inStock": true,
+                "images": [
+                    "/images/modele-taulet-porcelanico-rectificado-page-1-10.jpg"
+                ],
+                "desc": "Carrelage grès cérame 1er choix rectifié Marnière Beige (Carrelage Extérieur) au format 100x50 cm (1,00 m²/carton), coloris beige chaleureux aux nuances minérales naturelles. Bords rectifiés permettant des joints fins et une pose soignée, haute résistance à l'usure, aux taches et au passage quotidien. Tarif direct négoce avec livraison France entière ou pose garantie décennale"
+            },
+            {
+                "id": "taulet-porcelanico-rectificado-p1-11-nuage-min-ral",
+                "name": "Nuage Minéral",
+                "category": "Carrelage Extérieur",
+                "format": "100x50 cm",
+                "discount": "-30%",
+                "oldPrice": 19.94,
+                "priceSupply": 14.04,
+                "pricePose": 12.87,
+                "boxSqm": 1.0,
+                "norm": "R11 Antidérapant • 1er Choix Rectifié",
+                "inStock": true,
+                "images": [
+                    "/images/modele-taulet-porcelanico-rectificado-page-1-11.jpg"
+                ],
+                "desc": "Carrelage grès cérame 1er choix rectifié Nuage Minéral (Carrelage Extérieur) au format 100x50 cm (1,00 m²/carton), coloris beige chaleureux aux nuances minérales naturelles. Bords rectifiés permettant des joints fins et une pose soignée, haute résistance à l'usure, aux taches et au passage quotidien. Tarif direct négoce avec livraison France entière ou pose garantie décennale"
+            },
+            {
+                "id": "taulet-porcelanico-rectificado-p1-12-ocre-de-bourgogne",
+                "name": "Ocre de Bourgogne",
+                "category": "Carrelage Extérieur",
+                "format": "100x50 cm",
+                "discount": "-30%",
+                "oldPrice": 24.37,
+                "priceSupply": 17.16,
+                "pricePose": 15.73,
+                "boxSqm": 1.0,
+                "norm": "R11 Antidérapant • 1er Choix Rectifié",
+                "inStock": true,
+                "images": [
+                    "/images/modele-taulet-porcelanico-rectificado-page-1-12.jpg"
+                ],
+                "desc": "Carrelage grès cérame 1er choix rectifié Ocre de Bourgogne (Carrelage Extérieur) au format 100x50 cm (1,00 m²/carton), coloris beige chaleureux aux nuances minérales naturelles. Bords rectifiés permettant des joints fins et une pose soignée, haute résistance à l'usure, aux taches et au passage quotidien. Tarif direct négoce avec livraison France entière ou pose garantie décennale"
+            },
+            {
+                "id": "taulet-porcelanico-rectificado-p2-1-quartzite-clair",
+                "name": "Quartzite Clair",
+                "category": "Carrelage Extérieur",
+                "format": "100x50 cm",
+                "discount": "-30%",
+                "oldPrice": 19.94,
+                "priceSupply": 14.04,
+                "pricePose": 12.87,
+                "boxSqm": 1.0,
+                "norm": "R11 Antidérapant • 1er Choix Rectifié",
+                "inStock": true,
+                "images": [
+                    "/images/modele-taulet-porcelanico-rectificado-page-2-1.jpg"
+                ],
+                "desc": "Carrelage grès cérame 1er choix rectifié Quartzite Clair (Carrelage Extérieur) au format 100x50 cm (1,00 m²/carton), coloris beige chaleureux aux nuances minérales naturelles. Bords rectifiés permettant des joints fins et une pose soignée, haute résistance à l'usure, aux taches et au passage quotidien. Tarif direct négoce avec livraison France entière ou pose garantie décennale"
+            },
+            {
+                "id": "taulet-porcelanico-rectificado-p2-2-roche-tann-e",
+                "name": "Roche Tannée",
+                "category": "Carrelage Extérieur",
+                "format": "100x50 cm",
+                "discount": "-30%",
+                "oldPrice": 19.94,
+                "priceSupply": 14.04,
+                "pricePose": 12.87,
+                "boxSqm": 1.0,
+                "norm": "R11 Antidérapant • 1er Choix Rectifié",
+                "inStock": true,
+                "images": [
+                    "/images/modele-taulet-porcelanico-rectificado-page-2-2.jpg"
+                ],
+                "desc": "Carrelage grès cérame 1er choix rectifié Roche Tannée (Carrelage Extérieur) au format 100x50 cm (1,00 m²/carton), coloris beige chaleureux aux nuances minérales naturelles. Bords rectifiés permettant des joints fins et une pose soignée, haute résistance à l'usure, aux taches et au passage quotidien. Tarif direct négoce avec livraison France entière ou pose garantie décennale"
+            },
+            {
+                "id": "taulet-porcelanico-rectificado-p2-3-schiste-gris",
+                "name": "Schiste Gris",
+                "category": "Effet Pierre",
+                "format": "60x60 cm",
+                "discount": "-30%",
+                "oldPrice": 19.94,
+                "priceSupply": 14.04,
+                "pricePose": 12.87,
+                "boxSqm": 1.44,
+                "norm": "R10 • 1er Choix Rectifié",
+                "inStock": true,
+                "images": [
+                    "/images/modele-taulet-porcelanico-rectificado-page-2-3.jpg"
+                ],
+                "desc": "Carrelage grès cérame 1er choix rectifié Schiste Gris (Effet Pierre) au format 60x60 cm (1,44 m²/carton), coloris teinte naturelle intemporelle facile à harmoniser. Bords rectifiés permettant des joints fins et une pose soignée, haute résistance à l'usure, aux taches et au passage quotidien. Tarif direct négoce avec livraison France entière ou pose garantie décennale"
+            },
+            {
+                "id": "taulet-porcelanico-rectificado-p2-4-terre-de-france",
+                "name": "Terre de France",
+                "category": "Effet Pierre",
+                "format": "60x60 cm",
+                "discount": "-30%",
+                "oldPrice": 19.94,
+                "priceSupply": 14.04,
+                "pricePose": 12.87,
+                "boxSqm": 1.44,
+                "norm": "R10 • 1er Choix Rectifié",
+                "inStock": true,
+                "images": [
+                    "/images/modele-taulet-porcelanico-rectificado-page-2-4.jpg"
+                ],
+                "desc": "Carrelage grès cérame 1er choix rectifié Terre de France (Effet Pierre) au format 60x60 cm (1,44 m²/carton), coloris teinte naturelle intemporelle facile à harmoniser. Bords rectifiés permettant des joints fins et une pose soignée, haute résistance à l'usure, aux taches et au passage quotidien. Tarif direct négoce avec livraison France entière ou pose garantie décennale"
+            },
+            {
+                "id": "taulet-porcelanico-rectificado-p2-5-verrerie-naturelle",
+                "name": "Verrerie Naturelle",
+                "category": "Effet Pierre",
+                "format": "60x60 cm",
+                "discount": "-30%",
+                "oldPrice": 19.94,
+                "priceSupply": 14.04,
+                "pricePose": 12.87,
+                "boxSqm": 1.44,
+                "norm": "R10 • 1er Choix Rectifié",
+                "inStock": true,
+                "images": [
+                    "/images/modele-taulet-porcelanico-rectificado-page-2-5.jpg"
+                ],
+                "desc": "Carrelage grès cérame 1er choix rectifié Verrerie Naturelle (Effet Pierre) au format 60x60 cm (1,44 m²/carton), coloris teinte naturelle intemporelle facile à harmoniser. Bords rectifiés permettant des joints fins et une pose soignée, haute résistance à l'usure, aux taches et au passage quotidien. Tarif direct négoce avec livraison France entière ou pose garantie décennale"
+            },
+            {
+                "id": "taulet-porcelanico-rectificado-p2-6-z-nith-pierre",
+                "name": "Zénith Pierre",
+                "category": "Effet Pierre",
+                "format": "60x60 cm",
+                "discount": "-30%",
+                "oldPrice": 39.43,
+                "priceSupply": 27.77,
+                "pricePose": 25.45,
+                "boxSqm": 1.44,
+                "norm": "R10 • 1er Choix Rectifié",
+                "inStock": true,
+                "images": [
+                    "/images/modele-taulet-porcelanico-rectificado-page-2-6.jpg"
+                ],
+                "desc": "Carrelage grès cérame 1er choix rectifié Zénith Pierre (Effet Pierre) au format 60x60 cm (1,44 m²/carton), coloris teinte naturelle intemporelle facile à harmoniser. Bords rectifiés permettant des joints fins et une pose soignée, haute résistance à l'usure, aux taches et au passage quotidien. Tarif direct négoce avec livraison France entière ou pose garantie décennale"
+            },
+            {
+                "id": "taulet-porcelanico-rectificado-p2-7-ambre-doux",
+                "name": "Ambre Doux",
+                "category": "Effet Pierre",
+                "format": "60x60 cm",
+                "discount": "-30%",
+                "oldPrice": 35.44,
+                "priceSupply": 24.96,
+                "pricePose": 22.88,
+                "boxSqm": 1.44,
+                "norm": "R10 • 1er Choix Rectifié",
+                "inStock": true,
+                "images": [
+                    "/images/modele-taulet-porcelanico-rectificado-page-2-7.jpg"
+                ],
+                "desc": "Carrelage grès cérame 1er choix rectifié Ambre Doux (Effet Pierre) au format 60x60 cm (1,44 m²/carton), coloris teinte naturelle intemporelle facile à harmoniser. Bords rectifiés permettant des joints fins et une pose soignée, haute résistance à l'usure, aux taches et au passage quotidien. Tarif direct négoce avec livraison France entière ou pose garantie décennale"
+            },
+            {
+                "id": "taulet-porcelanico-rectificado-p2-8-val-de-briare",
+                "name": "Val de Briare",
+                "category": "Effet Pierre",
+                "format": "60x60 cm",
+                "discount": "-30%",
+                "oldPrice": 35.44,
+                "priceSupply": 24.96,
+                "pricePose": 22.88,
+                "boxSqm": 1.44,
+                "norm": "R10 • 1er Choix Rectifié",
+                "inStock": true,
+                "images": [
+                    "/images/modele-taulet-porcelanico-rectificado-page-2-8.jpg"
+                ],
+                "desc": "Carrelage grès cérame 1er choix rectifié Val de Briare (Effet Pierre) au format 60x60 cm (1,44 m²/carton), coloris teinte naturelle intemporelle facile à harmoniser. Bords rectifiés permettant des joints fins et une pose soignée, haute résistance à l'usure, aux taches et au passage quotidien. Tarif direct négoce avec livraison France entière ou pose garantie décennale"
+            },
+            {
+                "id": "taulet-porcelanico-rectificado-p2-9-ch-ne-de-puisaye",
+                "name": "Chêne de Puisaye",
+                "category": "Effet Pierre",
+                "format": "60x60 cm",
+                "discount": "-30%",
+                "oldPrice": 38.77,
+                "priceSupply": 27.3,
+                "pricePose": 25.03,
+                "boxSqm": 1.44,
+                "norm": "R10 • 1er Choix Rectifié",
+                "inStock": true,
+                "images": [
+                    "/images/modele-taulet-porcelanico-rectificado-page-2-9.jpg"
+                ],
+                "desc": "Carrelage grès cérame 1er choix rectifié Chêne de Puisaye (Effet Pierre) au format 60x60 cm (1,44 m²/carton), coloris teinte naturelle intemporelle facile à harmoniser. Bords rectifiés permettant des joints fins et une pose soignée, haute résistance à l'usure, aux taches et au passage quotidien. Tarif direct négoce avec livraison France entière ou pose garantie décennale"
+            },
+            {
+                "id": "taulet-porcelanico-rectificado-p2-10-marbre-d-amilly",
+                "name": "Marbre d'Amilly",
+                "category": "Effet Pierre",
+                "format": "60x60 cm",
+                "discount": "-30%",
+                "oldPrice": 37.66,
+                "priceSupply": 26.52,
+                "pricePose": 24.31,
+                "boxSqm": 1.44,
+                "norm": "R10 • 1er Choix Rectifié",
+                "inStock": true,
+                "images": [
+                    "/images/modele-taulet-porcelanico-rectificado-page-2-10.jpg"
+                ],
+                "desc": "Carrelage grès cérame 1er choix rectifié Marbre d'Amilly (Effet Pierre) au format 60x60 cm (1,44 m²/carton), coloris teinte naturelle intemporelle facile à harmoniser. Bords rectifiés permettant des joints fins et une pose soignée, haute résistance à l'usure, aux taches et au passage quotidien. Tarif direct négoce avec livraison France entière ou pose garantie décennale"
+            },
+            {
+                "id": "taulet-porcelanico-rectificado-p2-11-b-ton-d-atelier",
+                "name": "Béton d'Atelier",
+                "category": "Effet Pierre",
+                "format": "60x60 cm",
+                "discount": "-30%",
+                "oldPrice": 37.66,
+                "priceSupply": 26.52,
+                "pricePose": 24.31,
+                "boxSqm": 1.44,
+                "norm": "R10 • 1er Choix Rectifié",
+                "inStock": true,
+                "images": [
+                    "/images/modele-taulet-porcelanico-rectificado-page-2-11.jpg"
+                ],
+                "desc": "Carrelage grès cérame 1er choix rectifié Béton d'Atelier (Effet Pierre) au format 60x60 cm (1,44 m²/carton), coloris teinte naturelle intemporelle facile à harmoniser. Bords rectifiés permettant des joints fins et une pose soignée, haute résistance à l'usure, aux taches et au passage quotidien. Tarif direct négoce avec livraison France entière ou pose garantie décennale"
+            },
+            {
+                "id": "taulet-porcelanico-rectificado-p2-12-ardente-sable-2",
+                "name": "Ardente Sable 2",
+                "category": "Effet Pierre",
+                "format": "60x60 cm",
+                "discount": "-30%",
+                "oldPrice": 38.77,
+                "priceSupply": 27.3,
+                "pricePose": 25.03,
+                "boxSqm": 1.44,
+                "norm": "R10 • 1er Choix Rectifié",
+                "inStock": true,
+                "images": [
+                    "/images/modele-taulet-porcelanico-rectificado-page-2-12.jpg"
+                ],
+                "desc": "Carrelage grès cérame 1er choix rectifié Ardente Sable 2 (Effet Pierre) au format 60x60 cm (1,44 m²/carton), coloris teinte naturelle intemporelle facile à harmoniser. Bords rectifiés permettant des joints fins et une pose soignée, haute résistance à l'usure, aux taches et au passage quotidien. Tarif direct négoce avec livraison France entière ou pose garantie décennale"
             }
         ];
 
@@ -2603,6 +3127,8 @@
             renderSupplies();
             updateSimulator(60);
             renderCart();
+            updateFreightCalculator(false);
+            updatePageFreightSimulator();
             updateAdminAuthUI();
             restoreDeliveryInfo();
             loadOnlineCatalog();
@@ -3037,18 +3563,23 @@
 
         // --- GESTION DU PANIER & DEVIS ---
         function addProductToCart() {
+            manualPalletOverride = false;
             if (!activeProduct) return;
             const boxes = parseInt(document.getElementById('calc-boxes').textContent);
             const realSqm = boxes * activeProduct.boxSqm;
             const unitPrice = modalMode === 'supply' ? activeProduct.priceSupply : activeProduct.pricePose;
             const total = realSqm * unitPrice;
 
+            const is20mm = /20\s*mm/i.test(activeProduct.format || '');
+            const kgPerSqm = is20mm ? 42 : 22;
             cart.push({
                 uid: Date.now(),
                 type: 'tile',
                 title: `${activeProduct.name} (${activeProduct.format})`,
                 detail: `${boxes} cartons (${realSqm.toFixed(2).replace('.', ',')} m²) • ${modalMode === 'supply' ? 'Livraison seule TVA 20%' : 'Avec forfait pose TVA 10%'}`,
-                price: total
+                price: total,
+                sqm: realSqm,
+                weightKg: Math.round(realSqm * kgPerSqm)
             });
 
             closeProductModal();
@@ -3086,6 +3617,7 @@
         }
 
         function addSupplyToCart(supplyId) {
+            manualPalletOverride = false;
             const s = supplies.find(item => item.id === supplyId);
             if (!s) return;
 
@@ -3094,12 +3626,14 @@
             const unitPrice = Number(s.price);
             const lineTotal = +(unitPrice * qty).toFixed(2);
 
+            const estKg = /25\s*kg/i.test(s.subtitle || '') ? qty * 25 : (/5\s*kg/i.test(s.subtitle || '') ? qty * 5 : qty * 4);
             cart.push({
                 uid: Date.now(),
                 type: 'supply',
                 title: qty > 1 ? `${s.name} (x${qty})` : s.name,
                 detail: `${qty} unité(s) × ${unitPrice.toFixed(2).replace('.', ',')} € • ${s.subtitle}`,
-                price: lineTotal
+                price: lineTotal,
+                weightKg: estKg
             });
 
             if (qtyInput) qtyInput.value = '1';
@@ -3134,6 +3668,7 @@
         }
 
         function removeCartItem(uid) {
+            manualPalletOverride = false;
             cart = cart.filter(item => item.uid !== uid);
             renderCart();
         }
@@ -3187,20 +3722,120 @@
         }
 
         const FREE_SHIPPING_THRESHOLD = 900;
-        function updateFreeShipping(total) {
+        const FREIGHT_ZONES = {
+            sud:      { firstPallet: 115, extraPallet: 55, label: 'Sud / Sud-Ouest' },
+            centre:   { firstPallet: 145, extraPallet: 70, label: 'Centre / Loiret (45)' },
+            idf:      { firstPallet: 165, extraPallet: 75, label: 'Île-de-France / Paris' },
+            nord_est: { firstPallet: 185, extraPallet: 85, label: 'Nord / Est / Grand Ouest' }
+        };
+
+        let lastCartSubtotal = 0;
+        let manualPalletOverride = false;
+
+        function computeSuggestedPallets() {
+            const tileItems = cart.filter(i => i.type === 'tile');
+            if (tileItems.length === 0) return cart.length > 0 ? 1 : 0;
+            const totalSqm = tileItems.reduce((acc, i) => acc + (Number(i.sqm) || 0), 0);
+            const totalKg = tileItems.reduce((acc, i) => acc + (Number(i.weightKg) || 0), 0);
+            const bySqm = totalSqm > 0 ? Math.ceil(totalSqm / 30) : 1;
+            const byKg = totalKg > 0 ? Math.ceil(totalKg / 850) : 1;
+            return Math.max(1, Math.min(30, Math.max(bySqm, byKg)));
+        }
+
+        function updateFreightCalculator(fromUserInput = false) {
+            const zoneKey = document.getElementById('freight-zone')?.value || 'centre';
+            const palletsInput = document.getElementById('freight-pallets-input');
+            const badgeEl = document.getElementById('freight-pallets-badge');
+            const estPriceEl = document.getElementById('freight-est-price');
+            const noteEl = document.getElementById('freight-est-note');
             const shippingEl = document.getElementById('cart-shipping');
+            if (!palletsInput || !estPriceEl) return;
+
+            if (fromUserInput) {
+                manualPalletOverride = true;
+            } else if (!manualPalletOverride) {
+                palletsInput.value = String(computeSuggestedPallets());
+            }
+
+            const pallets = Math.max(0, Math.min(30, parseInt(palletsInput.value, 10) || 0));
+            const zone = FREIGHT_ZONES[zoneKey] || FREIGHT_ZONES.centre;
+            const rawFreight = pallets <= 0 ? 0 : (zone.firstPallet + Math.max(0, pallets - 1) * zone.extraPallet);
+            const isFree = lastCartSubtotal >= FREE_SHIPPING_THRESHOLD;
+            const displayedFreight = isFree ? 0 : rawFreight;
+
+            if (badgeEl) {
+                badgeEl.textContent = pallets <= 1 ? `${pallets} palette` : `${pallets} palettes`;
+            }
+
+            if (pallets === 0) {
+                estPriceEl.textContent = '0,00 €';
+            } else if (isFree) {
+                estPriceEl.innerHTML = `<span class="line-through text-stone-400 font-normal mr-1.5">${rawFreight.toFixed(2).replace('.', ',')} €</span><span class="text-emerald-700">Offert (0,00 €)</span>`;
+            } else {
+                estPriceEl.textContent = `${displayedFreight.toFixed(2).replace('.', ',')} €`;
+            }
+
+            if (shippingEl) {
+                if (pallets === 0) {
+                    shippingEl.textContent = '0,00 €';
+                } else if (isFree) {
+                    shippingEl.innerHTML = '<strong class="text-emerald-700">Offerte (dès 900 €)</strong>';
+                } else {
+                    shippingEl.textContent = `~${displayedFreight.toFixed(2).replace('.', ',')} € (${zone.label})`;
+                }
+            }
+
+            if (noteEl) {
+                noteEl.textContent = `Moyenne transport Espagne → ${zone.label} : ~${zone.firstPallet} € (1re palette) puis ~${zone.extraPallet} €/palette sup. Offert dès 900 € TTC.`;
+            }
+        }
+
+        function updatePageFreightSimulator() {
+            const zoneKey = document.getElementById('page-freight-zone')?.value || 'centre';
+            const tileType = document.getElementById('page-freight-type')?.value || 'standard';
+            const sqm = Math.max(1, parseInt(document.getElementById('page-freight-sqm')?.value, 10) || 25);
+
+            const sqmValEl = document.getElementById('page-freight-sqm-val');
+            if (sqmValEl) sqmValEl.textContent = sqm;
+
+            const kgPerSqm = tileType === 'dalle20' ? 42 : 22;
+            const totalKg = Math.round(sqm * kgPerSqm);
+            const maxSqmPerPallet = tileType === 'dalle20' ? 20 : 30;
+            const pallets = Math.max(1, Math.max(Math.ceil(sqm / maxSqmPerPallet), Math.ceil(totalKg / 850)));
+
+            const zone = FREIGHT_ZONES[zoneKey] || FREIGHT_ZONES.centre;
+            const totalFreight = zone.firstPallet + Math.max(0, pallets - 1) * zone.extraPallet;
+
+            const palletsEl = document.getElementById('page-freight-pallets');
+            const firstEl = document.getElementById('page-freight-first');
+            const extraEl = document.getElementById('page-freight-extra');
+            const totalEl = document.getElementById('page-freight-total');
+
+            if (palletsEl) palletsEl.textContent = `${pallets} palette${pallets > 1 ? 's' : ''} (~${totalKg.toLocaleString('fr-FR')} kg)`;
+            if (firstEl) firstEl.textContent = `${zone.firstPallet.toFixed(2).replace('.', ',')} €`;
+            if (extraEl) extraEl.textContent = `+ ${zone.extraPallet.toFixed(2).replace('.', ',')} € / palette`;
+            if (totalEl) totalEl.textContent = `${totalFreight.toFixed(2).replace('.', ',')} €`;
+
+            const cartZoneEl = document.getElementById('freight-zone');
+            if (cartZoneEl && cartZoneEl.value !== zoneKey) {
+                cartZoneEl.value = zoneKey;
+                updateFreightCalculator(false);
+            }
+        }
+
+        function updateFreeShipping(total) {
+            lastCartSubtotal = Number(total) || 0;
             const msgEl = document.getElementById('free-shipping-msg');
             const barEl = document.getElementById('free-shipping-bar');
-            if (!shippingEl || !msgEl || !barEl) return;
-            const pct = Math.min(100, Math.round((total / FREE_SHIPPING_THRESHOLD) * 100));
+            updateFreightCalculator(false);
+            if (!msgEl || !barEl) return;
+            const pct = Math.min(100, Math.round((lastCartSubtotal / FREE_SHIPPING_THRESHOLD) * 100));
             barEl.style.width = pct + '%';
-            if (total >= FREE_SHIPPING_THRESHOLD) {
-                shippingEl.innerHTML = '<strong class="text-emerald-700">Gratuite</strong>';
+            if (lastCartSubtotal >= FREE_SHIPPING_THRESHOLD) {
                 msgEl.textContent = 'Bravo ! La livraison vous est offerte.';
             } else {
-                shippingEl.textContent = 'Calculée selon département';
-                const remaining = (FREE_SHIPPING_THRESHOLD - total).toFixed(2).replace('.', ',');
-                msgEl.textContent = total > 0
+                const remaining = (FREE_SHIPPING_THRESHOLD - lastCartSubtotal).toFixed(2).replace('.', ',');
+                msgEl.textContent = lastCartSubtotal > 0
                     ? `Plus que ${remaining} € pour profiter de la livraison gratuite`
                     : 'Livraison gratuite dès 900 € d\'achat';
             }
@@ -3347,9 +3982,19 @@
                     return;
                 }
                 const totalAmount = cart.reduce((sum, item) => sum + (Number(item.price) || 0), 0);
+                const freightSummaryText = (() => {
+                    const pInput = document.getElementById('freight-pallets-input');
+                    const zKey = document.getElementById('freight-zone')?.value || 'centre';
+                    const zLabel = (FREIGHT_ZONES[zKey] || FREIGHT_ZONES.centre).label;
+                    const pCount = Math.max(0, parseInt(pInput?.value, 10) || 0);
+                    if (pCount === 0) return '';
+                    if (totalAmount >= FREE_SHIPPING_THRESHOLD) return `\nEstimation port Espagne → France (${zLabel}, ${pCount} palette(s)) : Offert (dès 900 € TTC)`;
+                    const fAmt = (FREIGHT_ZONES[zKey] || FREIGHT_ZONES.centre).firstPallet + Math.max(0, pCount - 1) * (FREIGHT_ZONES[zKey] || FREIGHT_ZONES.centre).extraPallet;
+                    return `\nEstimation port Espagne → France (${zLabel}, ${pCount} palette(s)) : ~${fAmt.toFixed(2).replace('.', ',')} € TTC`;
+                })();
                 const linesText = cart.map((item, idx) =>
                     `${idx + 1}. ${item.title} — ${item.detail} (${item.price > 0 ? item.price.toFixed(2).replace('.', ',') + ' € TTC' : 'Sur devis'})`
-                ).join('\n');
+                ).join('\n') + freightSummaryText;
 
                 const totalEstimeStr = totalAmount > 0 ? `${totalAmount.toFixed(2).replace('.', ',')} € TTC` : 'À chiffrer sur devis';
 
