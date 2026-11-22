@@ -1,8 +1,0 @@
-https://carreauxdas.netlify.app/* https://carreauxdas.net/:splat 301!
-http://carreauxdas.netlify.app/* https://carreauxdas.net/:splat 301!
-/effet-pierre   /index.html   200
-/effet-marbre   /index.html   200
-/effet-bois     /index.html   200
-/effet-beton    /index.html   200
-/carrelage-exterieur /index.html 200
-/exterieur-r11  /index.html   200
