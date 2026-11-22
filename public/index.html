@@ -941,14 +941,44 @@
                 <div id="cart-items-container" class="p-6 space-y-4"></div>
 
                 <div id="cart-footer" class="p-6 border-t border-stone-200 bg-stone-50 space-y-4">
+                    <!-- Calculateur frais de port moyen Espagne -> France -->
+                    <div id="freight-calculator" class="bg-white p-3.5 rounded-xl border border-stone-200 space-y-2.5 text-xs">
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold uppercase tracking-wider text-stone-700">Calculateur frais de port (Espagne &rarr; France)</span>
+                            <span id="freight-pallets-badge" class="text-[11px] font-semibold text-forest-800 bg-forest-50 px-2 py-0.5 rounded-md border border-forest-200">0 palette</span>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                            <div>
+                                <label for="freight-zone" class="block text-[11px] text-stone-500 mb-1">Zone / Département (France)</label>
+                                <select id="freight-zone" onchange="updateFreightCalculator()" class="w-full px-2.5 py-2 bg-stone-50 border border-stone-200 rounded-lg text-xs font-medium text-stone-800 focus:outline-none focus:border-forest-700">
+                                    <option value="sud">Sud / Sud-Ouest (31, 33, 34, 64, 66...)</option>
+                                    <option value="centre" selected>Centre / Loiret (45, 18, 28, 37, 41...)</option>
+                                    <option value="idf">Île-de-France / Paris (75, 77, 78, 91-95)</option>
+                                    <option value="nord_est">Nord / Est / Grand Ouest (59, 67, 44, 35...)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="freight-pallets-input" class="block text-[11px] text-stone-500 mb-1">Palettes estimées (ajustable)</label>
+                                <input type="number" id="freight-pallets-input" min="0" max="30" step="1" value="1" oninput="updateFreightCalculator(true)" class="w-full px-2.5 py-1.5 bg-stone-50 border border-stone-200 rounded-lg text-xs font-bold text-stone-900 focus:outline-none focus:border-forest-700">
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between pt-1.5 border-t border-stone-100">
+                            <span class="text-stone-500">Estimation moyenne transport Espagne &rarr; France :</span>
+                            <strong id="freight-est-price" class="font-display text-sm font-bold text-stone-900">145,00 €</strong>
+                        </div>
+                        <p id="freight-est-note" class="text-[11px] text-stone-500 leading-snug">
+                            Tarif moyen indicatif camion hayon (1 palette env. 25 à 35 m² / ~700–900 kg). Offert dès 900 € TTC d'achat.
+                        </p>
+                    </div>
+
                     <div class="space-y-1.5 text-sm">
                         <div class="flex justify-between text-stone-600">
                             <span>Sous-total articles TTC</span>
                             <span id="cart-subtotal" class="font-semibold text-stone-900">0,00 €</span>
                         </div>
                         <div class="flex justify-between text-xs text-stone-500">
-                            <span>Livraison palettisée / Échantillons</span>
-                            <span id="cart-shipping">Calculée selon département</span>
+                            <span>Frais de port estimés (Espagne &rarr; France)</span>
+                            <span id="cart-shipping">145,00 €</span>
                         </div>
                         <div id="free-shipping-box" class="mt-2 p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-900">
                             <p id="free-shipping-msg" class="font-semibold">Livraison gratuite dès 900 € d'achat</p>
@@ -1362,27 +1392,27 @@
                 desc: 'Dalle forte épaisseur 20 mm ingélive pour terrasses et plages de piscine. Pose facile sur plots réglables, sur lit de gravier ou collée sur dalle béton.'
             },
             {
-                "id": "ext-1-1-granit-de-g-tinais",
-                "name": "Carrelage Extérieur R11 Granit de Gâtinais",
+                "id": "ext-1-1-modele-1-1",
+                "name": "Carrelage Extérieur R11 Modele 1 #1",
                 "category": "Carrelage Extérieur",
-                "format": "120x120 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 39.43,
                 "priceSupply": 27.77,
                 "pricePose": 25.45,
-                "boxSqm": 1.42,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-1-1.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Granit de Gâtinais au format 120x120 cm (1,42 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 1 #1 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-1-2-horizon-perle",
-                "name": "Carrelage Extérieur R11 Horizon Perle",
+                "id": "ext-1-2-modele-1-2",
+                "name": "Carrelage Extérieur R11 Modele 1 #2",
                 "category": "Carrelage Extérieur",
-                "format": "120x30 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 26.58,
                 "priceSupply": 18.72,
@@ -1393,13 +1423,13 @@
                 "images": [
                     "/images/modele-taulet-page-1-2.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Horizon Perle au format 120x30 cm (1,44 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 1 #2 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-1-3-lave-douce",
-                "name": "Carrelage Extérieur R11 Lave Douce",
+                "id": "ext-1-3-modele-1-3",
+                "name": "Carrelage Extérieur R11 Modele 1 #3",
                 "category": "Carrelage Extérieur",
-                "format": "120x30 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 26.58,
                 "priceSupply": 18.72,
@@ -1410,30 +1440,30 @@
                 "images": [
                     "/images/modele-taulet-page-1-3.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Lave Douce au format 120x30 cm (1,44 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 1 #3 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-1-4-marni-re-beige",
-                "name": "Carrelage Extérieur R11 Marnière Beige",
+                "id": "ext-1-4-modele-1-4",
+                "name": "Carrelage Extérieur R11 Modele 1 #4",
                 "category": "Carrelage Extérieur",
-                "format": "120x60 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 26.58,
                 "priceSupply": 18.72,
                 "pricePose": 17.16,
-                "boxSqm": 2.88,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-1-4.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Marnière Beige au format 120x60 cm (2,88 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 1 #4 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-1-5-nuage-min-ral",
-                "name": "Carrelage Extérieur R11 Nuage Minéral",
+                "id": "ext-1-5-modele-1-5",
+                "name": "Carrelage Extérieur R11 Modele 1 #5",
                 "category": "Carrelage Extérieur",
-                "format": "120x60 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 26.58,
                 "priceSupply": 18.72,
@@ -1444,334 +1474,334 @@
                 "images": [
                     "/images/modele-taulet-page-1-5.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Nuage Minéral au format 120x60 cm (1,44 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 1 #5 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-1-6-ocre-de-bourgogne",
-                "name": "Carrelage Extérieur R11 Ocre de Bourgogne",
+                "id": "ext-1-6-modele-1-6",
+                "name": "Carrelage Extérieur R11 Modele 1 #6",
                 "category": "Carrelage Extérieur",
-                "format": "120x60 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 26.58,
                 "priceSupply": 18.72,
                 "pricePose": 17.16,
-                "boxSqm": 2.88,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-1-6.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Ocre de Bourgogne au format 120x60 cm (2,88 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 1 #6 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-1-7-quartzite-clair",
-                "name": "Carrelage Extérieur R11 Quartzite Clair",
+                "id": "ext-1-7-modele-1-7",
+                "name": "Carrelage Extérieur R11 Modele 1 #7",
                 "category": "Carrelage Extérieur",
-                "format": "120x60 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 26.58,
                 "priceSupply": 18.72,
                 "pricePose": 17.16,
-                "boxSqm": 2.88,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-1-7.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Quartzite Clair au format 120x60 cm (2,88 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 1 #7 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-1-8-roche-tann-e",
-                "name": "Carrelage Extérieur R11 Roche Tannée",
+                "id": "ext-1-8-modele-1-8",
+                "name": "Carrelage Extérieur R11 Modele 1 #8",
                 "category": "Carrelage Extérieur",
-                "format": "120x60 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 31.01,
                 "priceSupply": 21.84,
                 "pricePose": 20.02,
-                "boxSqm": 2.88,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-1-8.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Roche Tannée au format 120x60 cm (2,88 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 1 #8 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-1-9-schiste-gris",
-                "name": "Carrelage Extérieur R11 Schiste Gris",
+                "id": "ext-1-9-modele-1-9",
+                "name": "Carrelage Extérieur R11 Modele 1 #9",
                 "category": "Carrelage Extérieur",
-                "format": "120x60 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 31.01,
                 "priceSupply": 21.84,
                 "pricePose": 20.02,
-                "boxSqm": 2.88,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-1-9.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Schiste Gris au format 120x60 cm (2,88 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 1 #9 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-1-10-terre-de-france",
-                "name": "Carrelage Extérieur R11 Terre de France",
+                "id": "ext-1-10-modele-1-10",
+                "name": "Carrelage Extérieur R11 Modele 1 #10",
                 "category": "Carrelage Extérieur",
-                "format": "120x60 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 26.58,
                 "priceSupply": 18.72,
                 "pricePose": 17.16,
-                "boxSqm": 2.88,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-1-10.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Terre de France au format 120x60 cm (2,88 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 1 #10 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-1-11-verrerie-naturelle",
-                "name": "Carrelage Extérieur R11 Verrerie Naturelle",
+                "id": "ext-1-11-modele-1-11",
+                "name": "Carrelage Extérieur R11 Modele 1 #11",
                 "category": "Carrelage Extérieur",
-                "format": "120x60 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 26.58,
                 "priceSupply": 18.72,
                 "pricePose": 17.16,
-                "boxSqm": 2.88,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-1-11.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Verrerie Naturelle au format 120x60 cm (2,88 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 1 #11 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-1-12-z-nith-pierre",
-                "name": "Carrelage Extérieur R11 Zénith Pierre",
+                "id": "ext-1-12-modele-1-12",
+                "name": "Carrelage Extérieur R11 Modele 1 #12",
                 "category": "Carrelage Extérieur",
-                "format": "120x60 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 26.58,
                 "priceSupply": 18.72,
                 "pricePose": 17.16,
-                "boxSqm": 2.88,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-1-12.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Zénith Pierre au format 120x60 cm (2,88 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 1 #12 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-2-1-roche-tann-e",
-                "name": "Carrelage Extérieur R11 Roche Tannée",
+                "id": "ext-2-1-modele-2-1",
+                "name": "Carrelage Extérieur R11 Modele 2 #1",
                 "category": "Carrelage Extérieur",
-                "format": "120x60 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 26.58,
                 "priceSupply": 18.72,
                 "pricePose": 17.16,
-                "boxSqm": 2.88,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-2-1.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Roche Tannée au format 120x60 cm (2,88 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 2 #1 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-2-2-schiste-gris",
-                "name": "Carrelage Extérieur R11 Schiste Gris",
+                "id": "ext-2-2-modele-2-2",
+                "name": "Carrelage Extérieur R11 Modele 2 #2",
                 "category": "Carrelage Extérieur",
-                "format": "120x60 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 26.58,
                 "priceSupply": 18.72,
                 "pricePose": 17.16,
-                "boxSqm": 2.88,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-2-2.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Schiste Gris au format 120x60 cm (2,88 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 2 #2 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-2-3-terre-de-france",
-                "name": "Carrelage Extérieur R11 Terre de France",
+                "id": "ext-2-3-modele-2-3",
+                "name": "Carrelage Extérieur R11 Modele 2 #3",
                 "category": "Carrelage Extérieur",
-                "format": "120x60 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 26.58,
                 "priceSupply": 18.72,
                 "pricePose": 17.16,
-                "boxSqm": 2.88,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-2-3.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Terre de France au format 120x60 cm (2,88 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 2 #3 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-2-4-verrerie-naturelle",
-                "name": "Carrelage Extérieur R11 Verrerie Naturelle",
+                "id": "ext-2-4-modele-2-4",
+                "name": "Carrelage Extérieur R11 Modele 2 #4",
                 "category": "Carrelage Extérieur",
-                "format": "120x60 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 26.58,
                 "priceSupply": 18.72,
                 "pricePose": 17.16,
-                "boxSqm": 2.88,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-2-4.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Verrerie Naturelle au format 120x60 cm (2,88 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 2 #4 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-2-5-z-nith-pierre",
-                "name": "Carrelage Extérieur R11 Zénith Pierre",
+                "id": "ext-2-5-modele-2-5",
+                "name": "Carrelage Extérieur R11 Modele 2 #5",
                 "category": "Carrelage Extérieur",
-                "format": "120x60 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 26.58,
                 "priceSupply": 18.72,
                 "pricePose": 17.16,
-                "boxSqm": 2.88,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-2-5.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Zénith Pierre au format 120x60 cm (2,88 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 2 #5 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-2-6-ambre-doux",
-                "name": "Carrelage Extérieur R11 Ambre Doux",
+                "id": "ext-2-6-modele-2-6",
+                "name": "Carrelage Extérieur R11 Modele 2 #6",
                 "category": "Carrelage Extérieur",
-                "format": "120x60 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 26.58,
                 "priceSupply": 18.72,
                 "pricePose": 17.16,
-                "boxSqm": 2.88,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-2-6.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Ambre Doux au format 120x60 cm (2,88 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 2 #6 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-2-7-ardente-sable-2-7",
-                "name": "Carrelage Extérieur R11 Ardente Sable 2-7",
+                "id": "ext-2-7-modele-2-7",
+                "name": "Carrelage Extérieur R11 Modele 2 #7",
                 "category": "Carrelage Extérieur",
-                "format": "120x60 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 26.58,
                 "priceSupply": 18.72,
                 "pricePose": 17.16,
-                "boxSqm": 2.88,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-2-7.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Ardente Sable 2-7 au format 120x60 cm (2,88 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 2 #7 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-2-8-brume-de-loire-2-8",
-                "name": "Carrelage Extérieur R11 Brume de Loire 2-8",
+                "id": "ext-2-8-modele-2-8",
+                "name": "Carrelage Extérieur R11 Modele 2 #8",
                 "category": "Carrelage Extérieur",
-                "format": "30x60 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 22.15,
                 "priceSupply": 15.6,
                 "pricePose": 14.3,
-                "boxSqm": 0.72,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-2-8.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Brume de Loire 2-8 au format 30x60 cm (0,72 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 2 #8 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-2-9-calcaire-d-orl-ans-2-9",
-                "name": "Carrelage Extérieur R11 Calcaire d'Orléans 2-9",
+                "id": "ext-2-9-modele-2-9",
+                "name": "Carrelage Extérieur R11 Modele 2 #9",
                 "category": "Carrelage Extérieur",
-                "format": "30x60 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 26.58,
                 "priceSupply": 18.72,
                 "pricePose": 17.16,
-                "boxSqm": 0.72,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-2-9.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Calcaire d'Orléans 2-9 au format 30x60 cm (0,72 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 2 #9 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-2-10-cendre-de-sologne-2-10",
-                "name": "Carrelage Extérieur R11 Cendre de Sologne 2-10",
+                "id": "ext-2-10-modele-2-10",
+                "name": "Carrelage Extérieur R11 Modele 2 #10",
                 "category": "Carrelage Extérieur",
-                "format": "30x60 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 27.09,
                 "priceSupply": 19.08,
                 "pricePose": 17.49,
-                "boxSqm": 0.72,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-2-10.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Cendre de Sologne 2-10 au format 30x60 cm (0,72 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 2 #10 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-2-11-dune-claire-2-11",
-                "name": "Carrelage Extérieur R11 Dune Claire 2-11",
+                "id": "ext-2-11-modele-2-11",
+                "name": "Carrelage Extérieur R11 Modele 2 #11",
                 "category": "Carrelage Extérieur",
-                "format": "37x75 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 22.15,
                 "priceSupply": 15.6,
                 "pricePose": 14.3,
-                "boxSqm": 1.11,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-2-11.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Dune Claire 2-11 au format 37x75 cm (1,11 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 2 #11 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-2-12-corce-brunie-2-12",
-                "name": "Carrelage Extérieur R11 Écorce Brunie 2-12",
+                "id": "ext-2-12-modele-2-12",
+                "name": "Carrelage Extérieur R11 Modele 2 #12",
                 "category": "Carrelage Extérieur",
-                "format": "49x49 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 13.29,
                 "priceSupply": 9.36,
                 "pricePose": 8.58,
-                "boxSqm": 0.96,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-2-12.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Écorce Brunie 2-12 au format 49x49 cm (0,96 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 2 #12 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-3-1-brume-de-loire-3-1",
-                "name": "Carrelage Extérieur R11 Brume de Loire 3-1",
+                "id": "ext-3-1-modele-3-1",
+                "name": "Carrelage Extérieur R11 Modele 3 #1",
                 "category": "Carrelage Extérieur",
                 "format": "60x60 cm",
                 "discount": "-30%",
@@ -1784,11 +1814,11 @@
                 "images": [
                     "/images/modele-taulet-page-3-1.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Brume de Loire 3-1 au format 60x60 cm (1,44 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 3 #1 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-3-2-calcaire-d-orl-ans-3-2",
-                "name": "Carrelage Extérieur R11 Calcaire d'Orléans 3-2",
+                "id": "ext-3-2-modele-3-2",
+                "name": "Carrelage Extérieur R11 Modele 3 #2",
                 "category": "Carrelage Extérieur",
                 "format": "60x60 cm",
                 "discount": "-30%",
@@ -1801,11 +1831,11 @@
                 "images": [
                     "/images/modele-taulet-page-3-2.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Calcaire d'Orléans 3-2 au format 60x60 cm (1,44 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 3 #2 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-3-3-cendre-de-sologne-3-3",
-                "name": "Carrelage Extérieur R11 Cendre de Sologne 3-3",
+                "id": "ext-3-3-modele-3-3",
+                "name": "Carrelage Extérieur R11 Modele 3 #3",
                 "category": "Carrelage Extérieur",
                 "format": "60x60 cm",
                 "discount": "-30%",
@@ -1818,11 +1848,11 @@
                 "images": [
                     "/images/modele-taulet-page-3-3.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Cendre de Sologne 3-3 au format 60x60 cm (1,44 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 3 #3 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-3-4-dune-claire-3-4",
-                "name": "Carrelage Extérieur R11 Dune Claire 3-4",
+                "id": "ext-3-4-modele-3-4",
+                "name": "Carrelage Extérieur R11 Modele 3 #4",
                 "category": "Carrelage Extérieur",
                 "format": "60x60 cm",
                 "discount": "-30%",
@@ -1835,11 +1865,11 @@
                 "images": [
                     "/images/modele-taulet-page-3-4.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Dune Claire 3-4 au format 60x60 cm (1,44 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 3 #4 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-3-5-corce-brunie-3-5",
-                "name": "Carrelage Extérieur R11 Écorce Brunie 3-5",
+                "id": "ext-3-5-modele-3-5",
+                "name": "Carrelage Extérieur R11 Modele 3 #5",
                 "category": "Carrelage Extérieur",
                 "format": "60x60 cm",
                 "discount": "-30%",
@@ -1852,11 +1882,11 @@
                 "images": [
                     "/images/modele-taulet-page-3-5.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Écorce Brunie 3-5 au format 60x60 cm (1,44 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 3 #5 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-3-6-falaise-grise-3-6",
-                "name": "Carrelage Extérieur R11 Falaise Grise 3-6",
+                "id": "ext-3-6-modele-3-6",
+                "name": "Carrelage Extérieur R11 Modele 3 #6",
                 "category": "Carrelage Extérieur",
                 "format": "60x60 cm",
                 "discount": "-30%",
@@ -1869,28 +1899,28 @@
                 "images": [
                     "/images/modele-taulet-page-3-6.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Falaise Grise 3-6 au format 60x60 cm (1,44 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 3 #6 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-3-7-granit-de-g-tinais-3-7",
-                "name": "Carrelage Extérieur R11 Granit de Gâtinais 3-7",
+                "id": "ext-3-7-modele-3-7",
+                "name": "Carrelage Extérieur R11 Modele 3 #7",
                 "category": "Carrelage Extérieur",
                 "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 24.37,
                 "priceSupply": 17.16,
                 "pricePose": 15.73,
-                "boxSqm": 1.08,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-3-7.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Granit de Gâtinais 3-7 au format 60x60 cm (1,08 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 3 #7 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-3-8-horizon-perle-3-8",
-                "name": "Carrelage Extérieur R11 Horizon Perle 3-8",
+                "id": "ext-3-8-modele-3-8",
+                "name": "Carrelage Extérieur R11 Modele 3 #8",
                 "category": "Carrelage Extérieur",
                 "format": "60x60 cm",
                 "discount": "-30%",
@@ -1903,11 +1933,11 @@
                 "images": [
                     "/images/modele-taulet-page-3-8.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Horizon Perle 3-8 au format 60x60 cm (1,44 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 3 #8 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-3-9-lave-douce-3-9",
-                "name": "Carrelage Extérieur R11 Lave Douce 3-9",
+                "id": "ext-3-9-modele-3-9",
+                "name": "Carrelage Extérieur R11 Modele 3 #9",
                 "category": "Carrelage Extérieur",
                 "format": "60x60 cm",
                 "discount": "-30%",
@@ -1920,11 +1950,11 @@
                 "images": [
                     "/images/modele-taulet-page-3-9.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Lave Douce 3-9 au format 60x60 cm (1,44 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 3 #9 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-3-10-marni-re-beige-3-10",
-                "name": "Carrelage Extérieur R11 Marnière Beige 3-10",
+                "id": "ext-3-10-modele-3-10",
+                "name": "Carrelage Extérieur R11 Modele 3 #10",
                 "category": "Carrelage Extérieur",
                 "format": "60x60 cm",
                 "discount": "-30%",
@@ -1937,517 +1967,517 @@
                 "images": [
                     "/images/modele-taulet-page-3-10.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Marnière Beige 3-10 au format 60x60 cm (1,44 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 3 #10 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-3-11-nuage-min-ral-3-11",
-                "name": "Carrelage Extérieur R11 Nuage Minéral 3-11",
+                "id": "ext-3-11-modele-3-11",
+                "name": "Carrelage Extérieur R11 Modele 3 #11",
                 "category": "Carrelage Extérieur",
-                "format": "75x75 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 19.94,
                 "priceSupply": 14.04,
                 "pricePose": 12.87,
-                "boxSqm": 1.13,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-3-11.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Nuage Minéral 3-11 au format 75x75 cm (1,13 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 3 #11 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-3-12-ocre-de-bourgogne-3-12",
-                "name": "Carrelage Extérieur R11 Ocre de Bourgogne 3-12",
+                "id": "ext-3-12-modele-3-12",
+                "name": "Carrelage Extérieur R11 Modele 3 #12",
                 "category": "Carrelage Extérieur",
-                "format": "75x75 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 19.94,
                 "priceSupply": 14.04,
                 "pricePose": 12.87,
-                "boxSqm": 1.13,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-3-12.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Ocre de Bourgogne 3-12 au format 75x75 cm (1,13 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 3 #12 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-4-1-horizon-perle-4-1",
-                "name": "Carrelage Extérieur R11 Horizon Perle 4-1",
+                "id": "ext-4-1-modele-4-1",
+                "name": "Carrelage Extérieur R11 Modele 4 #1",
                 "category": "Carrelage Extérieur",
-                "format": "75x75 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 19.94,
                 "priceSupply": 14.04,
                 "pricePose": 12.87,
-                "boxSqm": 1.13,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-4-1.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Horizon Perle 4-1 au format 75x75 cm (1,13 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 4 #1 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-4-2-lave-douce-4-2",
-                "name": "Carrelage Extérieur R11 Lave Douce 4-2",
+                "id": "ext-4-2-modele-4-2",
+                "name": "Carrelage Extérieur R11 Modele 4 #2",
                 "category": "Carrelage Extérieur",
-                "format": "75x75 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 19.94,
                 "priceSupply": 14.04,
                 "pricePose": 12.87,
-                "boxSqm": 1.13,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-4-2.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Lave Douce 4-2 au format 75x75 cm (1,13 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 4 #2 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-4-3-marni-re-beige-4-3",
-                "name": "Carrelage Extérieur R11 Marnière Beige 4-3",
+                "id": "ext-4-3-modele-4-3",
+                "name": "Carrelage Extérieur R11 Modele 4 #3",
                 "category": "Carrelage Extérieur",
-                "format": "75x75 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 19.94,
                 "priceSupply": 14.04,
                 "pricePose": 12.87,
-                "boxSqm": 2.25,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-4-3.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Marnière Beige 4-3 au format 75x75 cm (2,25 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 4 #3 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-4-4-nuage-min-ral-4-4",
-                "name": "Carrelage Extérieur R11 Nuage Minéral 4-4",
+                "id": "ext-4-4-modele-4-4",
+                "name": "Carrelage Extérieur R11 Modele 4 #4",
                 "category": "Carrelage Extérieur",
-                "format": "75x75 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 31.01,
                 "priceSupply": 21.84,
                 "pricePose": 20.02,
-                "boxSqm": 1.13,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-4-4.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Nuage Minéral 4-4 au format 75x75 cm (1,13 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 4 #4 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-4-5-ocre-de-bourgogne-4-5",
-                "name": "Carrelage Extérieur R11 Ocre de Bourgogne 4-5",
+                "id": "ext-4-5-modele-4-5",
+                "name": "Carrelage Extérieur R11 Modele 4 #5",
                 "category": "Carrelage Extérieur",
-                "format": "75x75 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 19.94,
                 "priceSupply": 14.04,
                 "pricePose": 12.87,
-                "boxSqm": 1.13,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-4-5.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Ocre de Bourgogne 4-5 au format 75x75 cm (1,13 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 4 #5 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-4-6-quartzite-clair-4-6",
-                "name": "Carrelage Extérieur R11 Quartzite Clair 4-6",
+                "id": "ext-4-6-modele-4-6",
+                "name": "Carrelage Extérieur R11 Modele 4 #6",
                 "category": "Carrelage Extérieur",
-                "format": "75x75 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 26.58,
                 "priceSupply": 18.72,
                 "pricePose": 17.16,
-                "boxSqm": 2.25,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-4-6.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Quartzite Clair 4-6 au format 75x75 cm (2,25 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 4 #6 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-4-7-roche-tann-e-4-7",
-                "name": "Carrelage Extérieur R11 Roche Tannée 4-7",
+                "id": "ext-4-7-modele-4-7",
+                "name": "Carrelage Extérieur R11 Modele 4 #7",
                 "category": "Carrelage Extérieur",
-                "format": "75x75 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 19.94,
                 "priceSupply": 14.04,
                 "pricePose": 12.87,
-                "boxSqm": 2.25,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-4-7.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Roche Tannée 4-7 au format 75x75 cm (2,25 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 4 #7 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-4-8-schiste-gris-4-8",
-                "name": "Carrelage Extérieur R11 Schiste Gris 4-8",
+                "id": "ext-4-8-modele-4-8",
+                "name": "Carrelage Extérieur R11 Modele 4 #8",
                 "category": "Carrelage Extérieur",
-                "format": "75x75 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 19.94,
                 "priceSupply": 14.04,
                 "pricePose": 12.87,
-                "boxSqm": 2.25,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-4-8.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Schiste Gris 4-8 au format 75x75 cm (2,25 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 4 #8 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-4-9-terre-de-france-4-9",
-                "name": "Carrelage Extérieur R11 Terre de France 4-9",
+                "id": "ext-4-9-modele-4-9",
+                "name": "Carrelage Extérieur R11 Modele 4 #9",
                 "category": "Carrelage Extérieur",
-                "format": "75x75 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 19.94,
                 "priceSupply": 14.04,
                 "pricePose": 12.87,
-                "boxSqm": 2.25,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-4-9.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Terre de France 4-9 au format 75x75 cm (2,25 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 4 #9 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-4-10-verrerie-naturelle-4-10",
-                "name": "Carrelage Extérieur R11 Verrerie Naturelle 4-10",
+                "id": "ext-4-10-modele-4-10",
+                "name": "Carrelage Extérieur R11 Modele 4 #10",
                 "category": "Carrelage Extérieur",
-                "format": "75x75 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 19.94,
                 "priceSupply": 14.04,
                 "pricePose": 12.87,
-                "boxSqm": 2.25,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-4-10.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Verrerie Naturelle 4-10 au format 75x75 cm (2,25 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 4 #10 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-4-11-z-nith-pierre-4-11",
-                "name": "Carrelage Extérieur R11 Zénith Pierre 4-11",
+                "id": "ext-4-11-modele-4-11",
+                "name": "Carrelage Extérieur R11 Modele 4 #11",
                 "category": "Carrelage Extérieur",
-                "format": "75x75 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 26.58,
                 "priceSupply": 18.72,
                 "pricePose": 17.16,
-                "boxSqm": 1.13,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-4-11.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Zénith Pierre 4-11 au format 75x75 cm (1,13 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 4 #11 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-4-12-ambre-doux-4-12",
-                "name": "Carrelage Extérieur R11 Ambre Doux 4-12",
+                "id": "ext-4-12-modele-4-12",
+                "name": "Carrelage Extérieur R11 Modele 4 #12",
                 "category": "Carrelage Extérieur",
-                "format": "75x75 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 19.94,
                 "priceSupply": 14.04,
                 "pricePose": 12.87,
-                "boxSqm": 1.13,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-4-12.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Ambre Doux 4-12 au format 75x75 cm (1,13 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 4 #12 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-5-1-schiste-gris-5-1",
-                "name": "Carrelage Extérieur R11 Schiste Gris 5-1",
+                "id": "ext-5-1-modele-5-1",
+                "name": "Carrelage Extérieur R11 Modele 5 #1",
                 "category": "Carrelage Extérieur",
-                "format": "75x75 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 37.66,
                 "priceSupply": 26.52,
                 "pricePose": 24.31,
-                "boxSqm": 1.13,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-5-1.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Schiste Gris 5-1 au format 75x75 cm (1,13 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 5 #1 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-5-2-terre-de-france-5-2",
-                "name": "Carrelage Extérieur R11 Terre de France 5-2",
+                "id": "ext-5-2-modele-5-2",
+                "name": "Carrelage Extérieur R11 Modele 5 #2",
                 "category": "Carrelage Extérieur",
-                "format": "75x75 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 19.94,
                 "priceSupply": 14.04,
                 "pricePose": 12.87,
-                "boxSqm": 1.13,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-5-2.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Terre de France 5-2 au format 75x75 cm (1,13 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 5 #2 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-5-3-verrerie-naturelle-5-3",
-                "name": "Carrelage Extérieur R11 Verrerie Naturelle 5-3",
+                "id": "ext-5-3-modele-5-3",
+                "name": "Carrelage Extérieur R11 Modele 5 #3",
                 "category": "Carrelage Extérieur",
-                "format": "90x90 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 22.15,
                 "priceSupply": 15.6,
                 "pricePose": 14.3,
-                "boxSqm": 3.24,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-5-3.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Verrerie Naturelle 5-3 au format 90x90 cm (3,24 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 5 #3 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-5-4-z-nith-pierre-5-4",
-                "name": "Carrelage Extérieur R11 Zénith Pierre 5-4",
+                "id": "ext-5-4-modele-5-4",
+                "name": "Carrelage Extérieur R11 Modele 5 #4",
                 "category": "Carrelage Extérieur",
-                "format": "90x90 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 22.15,
                 "priceSupply": 15.6,
                 "pricePose": 14.3,
-                "boxSqm": 3.24,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-5-4.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Zénith Pierre 5-4 au format 90x90 cm (3,24 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 5 #4 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-5-5-ambre-doux-5-5",
-                "name": "Carrelage Extérieur R11 Ambre Doux 5-5",
+                "id": "ext-5-5-modele-5-5",
+                "name": "Carrelage Extérieur R11 Modele 5 #5",
                 "category": "Carrelage Extérieur",
-                "format": "90x90 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 22.15,
                 "priceSupply": 15.6,
                 "pricePose": 14.3,
-                "boxSqm": 3.24,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-5-5.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Ambre Doux 5-5 au format 90x90 cm (3,24 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 5 #5 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-5-6-ardente-sable-5-6",
-                "name": "Carrelage Extérieur R11 Ardente Sable 5-6",
+                "id": "ext-5-6-modele-5-6",
+                "name": "Carrelage Extérieur R11 Modele 5 #6",
                 "category": "Carrelage Extérieur",
-                "format": "90x90 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 22.15,
                 "priceSupply": 15.6,
                 "pricePose": 14.3,
-                "boxSqm": 3.24,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-5-6.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Ardente Sable 5-6 au format 90x90 cm (3,24 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 5 #6 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-5-7-brume-de-loire-5-7",
-                "name": "Carrelage Extérieur R11 Brume de Loire 5-7",
+                "id": "ext-5-7-modele-5-7",
+                "name": "Carrelage Extérieur R11 Modele 5 #7",
                 "category": "Carrelage Extérieur",
-                "format": "90x90 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 22.15,
                 "priceSupply": 15.6,
                 "pricePose": 14.3,
-                "boxSqm": 3.24,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-5-7.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Brume de Loire 5-7 au format 90x90 cm (3,24 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 5 #7 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-5-8-calcaire-d-orl-ans-5-8",
-                "name": "Carrelage Extérieur R11 Calcaire d'Orléans 5-8",
+                "id": "ext-5-8-modele-5-8",
+                "name": "Carrelage Extérieur R11 Modele 5 #8",
                 "category": "Carrelage Extérieur",
-                "format": "90x90 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 22.15,
                 "priceSupply": 15.6,
                 "pricePose": 14.3,
-                "boxSqm": 3.24,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-5-8.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Calcaire d'Orléans 5-8 au format 90x90 cm (3,24 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 5 #8 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-5-9-cendre-de-sologne-5-9",
-                "name": "Carrelage Extérieur R11 Cendre de Sologne 5-9",
+                "id": "ext-5-9-modele-5-9",
+                "name": "Carrelage Extérieur R11 Modele 5 #9",
                 "category": "Carrelage Extérieur",
-                "format": "90x90 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 22.15,
                 "priceSupply": 15.6,
                 "pricePose": 14.3,
-                "boxSqm": 3.24,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-5-9.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Cendre de Sologne 5-9 au format 90x90 cm (3,24 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 5 #9 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-5-10-dune-claire-5-10",
-                "name": "Carrelage Extérieur R11 Dune Claire 5-10",
+                "id": "ext-5-10-modele-5-10",
+                "name": "Carrelage Extérieur R11 Modele 5 #10",
                 "category": "Carrelage Extérieur",
-                "format": "90x90 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 28.8,
                 "priceSupply": 20.28,
                 "pricePose": 18.59,
-                "boxSqm": 3.24,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-5-10.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Dune Claire 5-10 au format 90x90 cm (3,24 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 5 #10 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-5-11-corce-brunie-5-11",
-                "name": "Carrelage Extérieur R11 Écorce Brunie 5-11",
+                "id": "ext-5-11-modele-5-11",
+                "name": "Carrelage Extérieur R11 Modele 5 #11",
                 "category": "Carrelage Extérieur",
-                "format": "90x90 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 22.15,
                 "priceSupply": 15.6,
                 "pricePose": 14.3,
-                "boxSqm": 3.24,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-5-11.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Écorce Brunie 5-11 au format 90x90 cm (3,24 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 5 #11 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-5-12-falaise-grise-5-12",
-                "name": "Carrelage Extérieur R11 Falaise Grise 5-12",
+                "id": "ext-5-12-modele-5-12",
+                "name": "Carrelage Extérieur R11 Modele 5 #12",
                 "category": "Carrelage Extérieur",
-                "format": "90x90 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 22.15,
                 "priceSupply": 15.6,
                 "pricePose": 14.3,
-                "boxSqm": 3.24,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-5-12.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Falaise Grise 5-12 au format 90x90 cm (3,24 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 5 #12 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-6-1-calcaire-d-orl-ans-6-1",
-                "name": "Carrelage Extérieur R11 Calcaire d'Orléans 6-1",
+                "id": "ext-6-1-modele-6-1",
+                "name": "Carrelage Extérieur R11 Modele 6 #1",
                 "category": "Carrelage Extérieur",
-                "format": "90x90 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 22.15,
                 "priceSupply": 15.6,
                 "pricePose": 14.3,
-                "boxSqm": 1.62,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-6-1.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Calcaire d'Orléans 6-1 au format 90x90 cm (1,62 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 6 #1 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-6-2-cendre-de-sologne-6-2",
-                "name": "Carrelage Extérieur R11 Cendre de Sologne 6-2",
+                "id": "ext-6-2-modele-6-2",
+                "name": "Carrelage Extérieur R11 Modele 6 #2",
                 "category": "Carrelage Extérieur",
-                "format": "90x90 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 22.15,
                 "priceSupply": 15.6,
                 "pricePose": 14.3,
-                "boxSqm": 3.24,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-6-2.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Cendre de Sologne 6-2 au format 90x90 cm (3,24 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 6 #2 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-6-3-dune-claire-6-3",
-                "name": "Carrelage Extérieur R11 Dune Claire 6-3",
+                "id": "ext-6-3-modele-6-3",
+                "name": "Carrelage Extérieur R11 Modele 6 #3",
                 "category": "Carrelage Extérieur",
-                "format": "90x90 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 22.15,
                 "priceSupply": 15.6,
                 "pricePose": 14.3,
-                "boxSqm": 1.62,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-6-3.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Dune Claire 6-3 au format 90x90 cm (1,62 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 6 #3 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             },
             {
-                "id": "ext-6-4-corce-brunie-6-4",
-                "name": "Carrelage Extérieur R11 Écorce Brunie 6-4",
+                "id": "ext-6-4-modele-6-4",
+                "name": "Carrelage Extérieur R11 Modele 6 #4",
                 "category": "Carrelage Extérieur",
-                "format": "90x90 cm",
+                "format": "60x60 cm",
                 "discount": "-30%",
                 "oldPrice": 22.15,
                 "priceSupply": 15.6,
                 "pricePose": 14.3,
-                "boxSqm": 3.24,
+                "boxSqm": 1.44,
                 "norm": "R11 Antidérapant • 1er Choix Rectifié",
                 "inStock": true,
                 "images": [
                     "/images/modele-taulet-page-6-4.jpg"
                 ],
-                "desc": "Carrelage extérieur antidérapant R11 Écorce Brunie 6-4 au format 90x90 cm (3,24 m²/carton) : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans"
+                "desc": "Carrelage extérieur antidérapant R11 Modele 6 #4 au format 60x60 cm : un carrelage grès cérame pleine masse au coloris teinte naturelle intemporelle facile à harmoniser. Sa surface structurée haute adhérence garantit une sécurité optimale pieds nus ou mouillés sur terrasse, balcon, contour de piscine et entrée de maison. Résistant au gel, aux UV et aux taches, ce grès cérame rectifié permet des joints fins et soignés. Tarif direct négoce avec livraison France entière ou pose par nos artisans."
             }
         ];
 
@@ -2603,6 +2633,7 @@
             renderSupplies();
             updateSimulator(60);
             renderCart();
+            updateFreightCalculator(false);
             updateAdminAuthUI();
             restoreDeliveryInfo();
             loadOnlineCatalog();
@@ -2656,7 +2687,11 @@
                 products = products.filter(p => !hiddenSet.has(p.id));
                 const existingIds = new Set(products.map(p => p.id));
                 const newOnes = online.filter(p => p && p.id && !hiddenSet.has(p.id) && !existingIds.has(p.id));
+                const fixImgPath = u => typeof u === 'string'
+                    ? u.replace('/images/catalogue/', '/images/').replace(/\/images\/modele-(\d+)-(\d+)(?:-\1-\2)?\.jpg$/, '/images/modele-taulet-page-$1-$2.jpg')
+                    : u;
                 online.forEach(op => {
+                    if (Array.isArray(op.images)) op.images = op.images.map(fixImgPath);
                     const idx = products.findIndex(p => p.id === op.id);
                     if (idx !== -1) products[idx] = op;
                 });
@@ -2809,7 +2844,7 @@
                                 src="${p.images[0]}" 
                                 alt="${p.name} - ${p.format}"
                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                onerror="this.src='https://placehold.co/800x600/E5E1D8/292622?text=${encodeURIComponent(p.name)}'"
+                                onerror="if(!this.dataset.altTried && this.src.includes('modele-taulet-page-')){this.dataset.altTried='1';this.src=this.src.replace(/modele-taulet-page-(\d+)-(\d+)/,'modele_taulet_page_$1_$2');}else{this.onerror=null;this.src='https://placehold.co/800x600/E5E1D8/292622?text=${encodeURIComponent(p.name)}';}""
                             >
                             <div class="absolute top-3 left-3 flex items-center gap-1.5">
                                 <span class="bg-white/95 backdrop-blur-xs text-stone-900 text-[11px] font-bold px-2.5 py-1 rounded-lg shadow-xs">
@@ -3037,18 +3072,23 @@
 
         // --- GESTION DU PANIER & DEVIS ---
         function addProductToCart() {
+            manualPalletOverride = false;
             if (!activeProduct) return;
             const boxes = parseInt(document.getElementById('calc-boxes').textContent);
             const realSqm = boxes * activeProduct.boxSqm;
             const unitPrice = modalMode === 'supply' ? activeProduct.priceSupply : activeProduct.pricePose;
             const total = realSqm * unitPrice;
 
+            const is20mm = /20\s*mm/i.test(activeProduct.format || '');
+            const kgPerSqm = is20mm ? 42 : 22;
             cart.push({
                 uid: Date.now(),
                 type: 'tile',
                 title: `${activeProduct.name} (${activeProduct.format})`,
                 detail: `${boxes} cartons (${realSqm.toFixed(2).replace('.', ',')} m²) • ${modalMode === 'supply' ? 'Livraison seule TVA 20%' : 'Avec forfait pose TVA 10%'}`,
-                price: total
+                price: total,
+                sqm: realSqm,
+                weightKg: Math.round(realSqm * kgPerSqm)
             });
 
             closeProductModal();
@@ -3086,6 +3126,7 @@
         }
 
         function addSupplyToCart(supplyId) {
+            manualPalletOverride = false;
             const s = supplies.find(item => item.id === supplyId);
             if (!s) return;
 
@@ -3094,12 +3135,14 @@
             const unitPrice = Number(s.price);
             const lineTotal = +(unitPrice * qty).toFixed(2);
 
+            const estKg = /25\s*kg/i.test(s.subtitle || '') ? qty * 25 : (/5\s*kg/i.test(s.subtitle || '') ? qty * 5 : qty * 4);
             cart.push({
                 uid: Date.now(),
                 type: 'supply',
                 title: qty > 1 ? `${s.name} (x${qty})` : s.name,
                 detail: `${qty} unité(s) × ${unitPrice.toFixed(2).replace('.', ',')} € • ${s.subtitle}`,
-                price: lineTotal
+                price: lineTotal,
+                weightKg: estKg
             });
 
             if (qtyInput) qtyInput.value = '1';
@@ -3134,6 +3177,7 @@
         }
 
         function removeCartItem(uid) {
+            manualPalletOverride = false;
             cart = cart.filter(item => item.uid !== uid);
             renderCart();
         }
@@ -3187,22 +3231,91 @@
         }
 
         const FREE_SHIPPING_THRESHOLD = 900;
-        function updateFreeShipping(total) {
+        // Moyennes indicatives transport palettisé Espagne (Castellón) -> France métropolitaine (camion hayon)
+        const FREIGHT_ZONES = {
+            sud:      { firstPallet: 115, extraPallet: 55, label: 'Sud / Sud-Ouest' },
+            centre:   { firstPallet: 145, extraPallet: 70, label: 'Centre / Loiret (45)' },
+            idf:      { firstPallet: 165, extraPallet: 75, label: 'Île-de-France / Paris' },
+            nord_est: { firstPallet: 185, extraPallet: 85, label: 'Nord / Est / Grand Ouest' }
+        };
+
+        let lastCartSubtotal = 0;
+        let manualPalletOverride = false;
+
+        function computeSuggestedPallets() {
+            const tileItems = cart.filter(i => i.type === 'tile');
+            if (tileItems.length === 0) return cart.length > 0 ? 1 : 0;
+            const totalSqm = tileItems.reduce((acc, i) => acc + (Number(i.sqm) || 0), 0);
+            const totalKg = tileItems.reduce((acc, i) => acc + (Number(i.weightKg) || 0), 0);
+            // ~30 m² ou ~850 kg par palette complète standard
+            const bySqm = totalSqm > 0 ? Math.ceil(totalSqm / 30) : 1;
+            const byKg = totalKg > 0 ? Math.ceil(totalKg / 850) : 1;
+            return Math.max(1, Math.min(30, Math.max(bySqm, byKg)));
+        }
+
+        function updateFreightCalculator(fromUserInput = false) {
+            const zoneKey = document.getElementById('freight-zone')?.value || 'centre';
+            const palletsInput = document.getElementById('freight-pallets-input');
+            const badgeEl = document.getElementById('freight-pallets-badge');
+            const estPriceEl = document.getElementById('freight-est-price');
+            const noteEl = document.getElementById('freight-est-note');
             const shippingEl = document.getElementById('cart-shipping');
+            if (!palletsInput || !estPriceEl) return;
+
+            if (fromUserInput) {
+                manualPalletOverride = true;
+            } else if (!manualPalletOverride) {
+                palletsInput.value = String(computeSuggestedPallets());
+            }
+
+            const pallets = Math.max(0, Math.min(30, parseInt(palletsInput.value, 10) || 0));
+            const zone = FREIGHT_ZONES[zoneKey] || FREIGHT_ZONES.centre;
+            const rawFreight = pallets <= 0 ? 0 : (zone.firstPallet + Math.max(0, pallets - 1) * zone.extraPallet);
+            const isFree = lastCartSubtotal >= FREE_SHIPPING_THRESHOLD;
+            const displayedFreight = isFree ? 0 : rawFreight;
+
+            if (badgeEl) {
+                badgeEl.textContent = pallets <= 1 ? `${pallets} palette` : `${pallets} palettes`;
+            }
+
+            if (pallets === 0) {
+                estPriceEl.textContent = '0,00 €';
+            } else if (isFree) {
+                estPriceEl.innerHTML = `<span class="line-through text-stone-400 font-normal mr-1.5">${rawFreight.toFixed(2).replace('.', ',')} €</span><span class="text-emerald-700">Offert (0,00 €)</span>`;
+            } else {
+                estPriceEl.textContent = `${displayedFreight.toFixed(2).replace('.', ',')} €`;
+            }
+
+            if (shippingEl) {
+                if (pallets === 0) {
+                    shippingEl.textContent = '0,00 €';
+                } else if (isFree) {
+                    shippingEl.innerHTML = '<strong class="text-emerald-700">Offerte (dès 900 €)</strong>';
+                } else {
+                    shippingEl.textContent = `~${displayedFreight.toFixed(2).replace('.', ',')} € (${zone.label})`;
+                }
+            }
+
+            if (noteEl) {
+                noteEl.textContent = `Moyenne transport Espagne → ${zone.label} : ~${zone.firstPallet} € (1re palette) puis ~${zone.extraPallet} €/palette sup. Offert dès 900 € TTC.`;
+            }
+        }
+
+        function updateFreeShipping(total) {
+            lastCartSubtotal = Number(total) || 0;
             const msgEl = document.getElementById('free-shipping-msg');
             const barEl = document.getElementById('free-shipping-bar');
-            if (!shippingEl || !msgEl || !barEl) return;
-            const pct = Math.min(100, Math.round((total / FREE_SHIPPING_THRESHOLD) * 100));
+            updateFreightCalculator(false);
+            if (!msgEl || !barEl) return;
+            const pct = Math.min(100, Math.round((lastCartSubtotal / FREE_SHIPPING_THRESHOLD) * 100));
             barEl.style.width = pct + '%';
-            if (total >= FREE_SHIPPING_THRESHOLD) {
-                shippingEl.innerHTML = '<strong class="text-emerald-700">Gratuite</strong>';
+            if (lastCartSubtotal >= FREE_SHIPPING_THRESHOLD) {
                 msgEl.textContent = 'Bravo ! La livraison vous est offerte.';
             } else {
-                shippingEl.textContent = 'Calculée selon département';
-                const remaining = (FREE_SHIPPING_THRESHOLD - total).toFixed(2).replace('.', ',');
-                msgEl.textContent = total > 0
+                const remaining = (FREE_SHIPPING_THRESHOLD - lastCartSubtotal).toFixed(2).replace('.', ',');
+                msgEl.textContent = lastCartSubtotal > 0
                     ? `Plus que ${remaining} € pour profiter de la livraison gratuite`
-                    : 'Livraison gratuite dès 900 € d\'achat';
+                    : 'Livraison gratuite dès 900 € d'achat';
             }
         }
 
@@ -3347,9 +3460,19 @@
                     return;
                 }
                 const totalAmount = cart.reduce((sum, item) => sum + (Number(item.price) || 0), 0);
+                const freightSummaryText = (() => {
+                    const pInput = document.getElementById('freight-pallets-input');
+                    const zKey = document.getElementById('freight-zone')?.value || 'centre';
+                    const zLabel = (FREIGHT_ZONES[zKey] || FREIGHT_ZONES.centre).label;
+                    const pCount = Math.max(0, parseInt(pInput?.value, 10) || 0);
+                    if (pCount === 0) return '';
+                    if (totalAmount >= FREE_SHIPPING_THRESHOLD) return `\nEstimation port Espagne → France (${zLabel}, ${pCount} palette(s)) : Offert (dès 900 € TTC)`;
+                    const fAmt = (FREIGHT_ZONES[zKey] || FREIGHT_ZONES.centre).firstPallet + Math.max(0, pCount - 1) * (FREIGHT_ZONES[zKey] || FREIGHT_ZONES.centre).extraPallet;
+                    return `\nEstimation port Espagne → France (${zLabel}, ${pCount} palette(s)) : ~${fAmt.toFixed(2).replace('.', ',')} € TTC`;
+                })();
                 const linesText = cart.map((item, idx) =>
                     `${idx + 1}. ${item.title} — ${item.detail} (${item.price > 0 ? item.price.toFixed(2).replace('.', ',') + ' € TTC' : 'Sur devis'})`
-                ).join('\n');
+                ).join('\n') + freightSummaryText;
 
                 const totalEstimeStr = totalAmount > 0 ? `${totalAmount.toFixed(2).replace('.', ',')} € TTC` : 'À chiffrer sur devis';
 
