@@ -1,0 +1,41 @@
+name: Importer Catalogue Tau-let
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import-catalogue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configurer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Installer les dépendances et Chromium
+        run: |
+          pip install requests beautifulsoup4 playwright
+          playwright install --with-deps chromium
+
+      - name: Exécuter l'aspiration Tau-let
+        run: |
+          if [ -f "public/import_taulet.py" ]; then
+            python public/import_taulet.py
+          else
+            python import_taulet.py
+          fi
+
+      - name: Publier les modifications sur GitHub
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action Carreaux Das"
+          git add -A
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Import automatique catalogue extérieur Tau-let (SEO + Marge 30%)" && git push)
